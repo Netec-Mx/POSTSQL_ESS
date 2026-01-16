@@ -175,17 +175,17 @@ La siguiente pantalla debe mostrar la ruta de los componentes a instalar.
 Elegir los componentes de PostgreSQL que se instalarán en el sistema.
 
 1.	En la pantalla **Select Components**, verás las siguientes opciones:
-    - PostgreSQL Server (servidor de base de datos).
-    - pgAdmin 4 (herramienta de administración gráfica).
-    - Stack Builder (herramienta para descargar componentes adicionales).
-    - Command Line Tools (herramientas de línea de comandos).
+    - **PostgreSQL Server** (servidor de base de datos).
+    - **pgAdmin 4** (herramienta de administración gráfica).
+    - **Stack Builder** (herramienta para descargar componentes adicionales).
+    - **Command Line Tools** (herramientas de línea de comandos).
 2.	Asegúrate de que TODOS los componentes estén seleccionados (marcados con check).
 3.	Verifica especialmente que pgAdmin 4 esté seleccionado, ya que es esencial para este curso.
 4.	Haz clic en **Next** para continuar.
 
 
 #### Salida Esperada:
-La siguiente pantalla debe solicitar la ubicación del directorio de datos.
+La siguiente pantalla lista los componentes a instalar.
 
 ![diagrama3](../images/img3.png)
 
@@ -210,7 +210,7 @@ Establecer la ubicación donde PostgreSQL almacenará las bases de datos.
 
 
 #### Salida Esperada:
-La siguiente pantalla debe solicitar la configuración de la contraseña del superusuario.
+La siguiente pantalla debe solicitar la ruta predeterminada para la instalación del software.
 
 ![diagrama4](../images/img4.png)
 
@@ -292,11 +292,12 @@ Establecer la configuración regional para ordenamiento y formato de datos.
 
 
 #### Salida Esperada:
-Debe aparecer una pantalla de resumen mostrando todas las opciones de instalación configuradas.
+Debe aparecer las opciones para seleccionar la región.
 
 ![diagrama7](../images/img7.png)
 
 <br/>
+Debe aparecer una pantalla de resumen mostrando todas las opciones de instalación configuradas.
 
 ![diagrama81](../images/img81.png)
 
@@ -1023,7 +1024,3 @@ Servidor PostgreSQL:
 | Usuario                       | postgres                 |
 | Contraseña                    | [La que configuraste]    |
 | Base de datos predeterminada  | postgres                 |
-
-
-                   |
-
