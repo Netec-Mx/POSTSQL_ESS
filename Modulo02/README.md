@@ -91,43 +91,44 @@ Comprender el **dominio del negocio** y documentar los **requerimientos funciona
 
 1. **Lee y analiza el siguiente escenario de negocio:**
 
-**Escenario de la Tienda de Barrio "El Rinconcito":**
-- La tienda vende productos de consumo diario (alimentos, bebidas, artículos de limpieza, etc.)
-- Cada producto pertenece a una categoría específica
-- La tienda maneja un inventario de productos con stock actual
-- Se registran clientes frecuentes con sus datos básicos (nombre, teléfono, dirección)
-- Se realizan ventas diarias que incluyen múltiples productos
-- Cada venta debe registrar: fecha, cliente (si está registrado), total, productos vendidos y cantidades
-- La tienda trabaja con varios proveedores que suministran diferentes productos
-- Se necesita saber qué proveedor suministra cada producto y a qué precio
+    **Escenario de la Tienda de Barrio "El Rinconcito":**
+    - La tienda vende productos de consumo diario (alimentos, bebidas, artículos de limpieza, etc.)
+    - Cada producto pertenece a una categoría específica
+    - La tienda maneja un inventario de productos con stock actual
+    - Se registran clientes frecuentes con sus datos básicos (nombre, teléfono, dirección)
+    - Se realizan ventas diarias que incluyen múltiples productos
+    - Cada venta debe registrar: fecha, cliente (si está registrado), total, productos vendidos y cantidades
+    - La tienda trabaja con varios proveedores que suministran diferentes productos
+    - Se necesita saber qué proveedor suministra cada producto y a qué precio
 
----
+
+<br/><br/>
 
 2. **Documenta en tu editor de texto los requerimientos identificados:**
 
-### Requerimientos Funcionales – Tienda El Rinconcito
-- **RF1:** Gestionar catálogo de productos con información detallada
-- **RF2:** Organizar productos por categorías
-- **RF3:** Controlar inventario de productos (stock disponible)
-- **RF4:** Registrar información de clientes frecuentes
-- **RF5:** Procesar ventas con múltiples productos
-- **RF6:** Mantener registro histórico de ventas
-- **RF7:** Gestionar información de proveedores
-- **RF8:** Relacionar productos con sus proveedores y precios de compra
+    ### Requerimientos Funcionales – Tienda El Rinconcito
+    - **RF1:** Gestionar catálogo de productos con información detallada
+    - **RF2:** Organizar productos por categorías
+    - **RF3:** Controlar inventario de productos (stock disponible)
+    - **RF4:** Registrar información de clientes frecuentes
+    - **RF5:** Procesar ventas con múltiples productos
+    - **RF6:** Mantener registro histórico de ventas
+    - **RF7:** Gestionar información de proveedores
+    - **RF8:** Relacionar productos con sus proveedores y precios de compra
 
----
+<br/><br/>
 
 3. **Identifica las preguntas clave que la base de datos debe responder:**
-- ¿Qué productos tenemos en stock?
-- ¿Cuáles son las ventas de un período específico?
-- ¿Qué productos compra un cliente frecuente?
-- ¿Quién es el proveedor de un producto específico?
-- ¿Cuál es el total de ventas por categoría?
+    - ¿Qué productos tenemos en stock?
+    - ¿Cuáles son las ventas de un período específico?
+    - ¿Qué productos compra un cliente frecuente?
+    - ¿Quién es el proveedor de un producto específico?
+    - ¿Cuál es el total de ventas por categoría?
 
 
 
 #### Resultado Esperado:
-Documento de texto con requerimientos funcionales claramente identificados y preguntas de negocio documentadas.
+    Documento de texto con requerimientos funcionales claramente identificados y preguntas de negocio documentadas.
 
 
 #### Verificación:
@@ -148,33 +149,34 @@ Identificar las **entidades principales** del sistema basándose en los requerim
     #### ENTIDADES IDENTIFICADAS
 
     1. **PRODUCTO**
-    - **Representa:** Artículos que se venden en la tienda
-    - **Justificación:** RF1, RF2, RF3
+        - **Representa:** Artículos que se venden en la tienda
+        - **Justificación:** RF1, RF2, RF3
 
     2. **CATEGORIA**
-    - **Representa:** Clasificación de productos
-    - **Justificación:** RF2
+        - **Representa:** Clasificación de productos
+        - **Justificación:** RF2
 
     3. **CLIENTE**
-    - **Representa:** Personas que compran en la tienda
-    - **Justificación:** RF4
+        - **Representa:** Personas que compran en la tienda
+        - **Justificación:** RF4
 
     4. **VENTA**
-    - **Representa:** Transacción de compra
-    - **Justificación:** RF5, RF6
+        - **Representa:** Transacción de compra
+        - **Justificación:** RF5, RF6
 
     5. **DETALLE_VENTA**
-    - **Representa:** Línea individual de productos en una venta
-    - **Justificación:** RF5 (relación **N:M** entre `VENTA` y `PRODUCTO`)
+        - **Representa:** Línea individual de productos en una venta
+        - **Justificación:** RF5 (relación **N:M** entre `VENTA` y `PRODUCTO`)
 
     6. **PROVEEDOR**
-    - **Representa:** Empresas que suministran productos
-    - **Justificación:** RF7
+        - **Representa:** Empresas que suministran productos
+        - **Justificación:** RF7
 
     7. **PRODUCTO_PROVEEDOR**
-    - **Representa:** Relación entre productos y proveedores con precio
-    - **Justificación:** RF8 (relación **N:M** entre `PRODUCTO` y `PROVEEDOR`)
+        - **Representa:** Relación entre productos y proveedores con precio
+        - **Justificación:** RF8 (relación **N:M** entre `PRODUCTO` y `PROVEEDOR`)
 
+<br/><br/>
 
 2. **Abre tu herramienta de diagramación** (draw.io).
 
@@ -186,7 +188,7 @@ Identificar las **entidades principales** del sistema basándose en los requerim
 
 #### Resultado Esperado:
 
-Diagrama con 7 rectángulos representando las entidades: PRODUCTO, CATEGORIA, CLIENTE, VENTA, DETALLE_VENTA, PROVEEDOR, PRODUCTO_PROVEEDOR.
+    Diagrama con 7 rectángulos representando las entidades: PRODUCTO, CATEGORIA, CLIENTE, VENTA, DETALLE_VENTA, PROVEEDOR, PRODUCTO_PROVEEDOR.
 
 #### Verificación:
 - [ ] Has identificado al menos **7 entidades**
@@ -204,98 +206,98 @@ Definir los **atributos (columnas)** de cada entidad con sus **tipos de datos ap
 
 1. Para cada entidad, define sus atributos siguiendo este formato:
 
----
+    ---
 
-#### ENTIDAD: CATEGORIA
-**Atributos:**
-- `categoria_id` (`INTEGER`) **[PK]** – Identificador único
-- `nombre` (`VARCHAR(100)`) – Nombre de la categoría
-- `descripcion` (`TEXT`) – Descripción detallada
+    #### ENTIDAD: CATEGORIA
+    **Atributos:**
+    - `categoria_id` (`INTEGER`) **[PK]** – Identificador único
+    - `nombre` (`VARCHAR(100)`) – Nombre de la categoría
+    - `descripcion` (`TEXT`) – Descripción detallada
 
----
+    ---
 
-#### ENTIDAD: PRODUCTO
-**Atributos:**
-- `producto_id` (`INTEGER`) **[PK]** – Identificador único
-- `nombre` (`VARCHAR(200)`) – Nombre del producto
-- `descripcion` (`TEXT`) – Descripción del producto
-- `precio_venta` (`DECIMAL(10,2)`) – Precio de venta al público
-- `codigo_barras` (`VARCHAR(50)`) – Código de barras único
-- `stock_actual` (`INTEGER`) – Cantidad en inventario
-- `stock_minimo` (`INTEGER`) – Nivel mínimo de reorden
-- `categoria_id` (`INTEGER`) **[FK]** – Referencia a `CATEGORIA`
-- `fecha_registro` (`TIMESTAMP`) – Fecha de alta del producto
-- `activo` (`BOOLEAN`) – Indica si el producto está activo
+    #### ENTIDAD: PRODUCTO
+    **Atributos:**
+    - `producto_id` (`INTEGER`) **[PK]** – Identificador único
+    - `nombre` (`VARCHAR(200)`) – Nombre del producto
+    - `descripcion` (`TEXT`) – Descripción del producto
+    - `precio_venta` (`DECIMAL(10,2)`) – Precio de venta al público
+    - `codigo_barras` (`VARCHAR(50)`) – Código de barras único
+    - `stock_actual` (`INTEGER`) – Cantidad en inventario
+    - `stock_minimo` (`INTEGER`) – Nivel mínimo de reorden
+    - `categoria_id` (`INTEGER`) **[FK]** – Referencia a `CATEGORIA`
+    - `fecha_registro` (`TIMESTAMP`) – Fecha de alta del producto
+    - `activo` (`BOOLEAN`) – Indica si el producto está activo
 
----
+    ---
 
-#### ENTIDAD: CLIENTE
-**Atributos:**
-- `cliente_id` (`INTEGER`) **[PK]** – Identificador único
-- `nombre` (`VARCHAR(100)`) – Nombre completo
-- `telefono` (`VARCHAR(20)`) – Teléfono de contacto
-- `email` (`VARCHAR(100)`) – Correo electrónico
-- `direccion` (`VARCHAR(255)`) – Dirección física
-- `fecha_registro` (`TIMESTAMP`) – Fecha de registro como cliente
-- `activo` (`BOOLEAN`) – Indica si el cliente está activo
+    #### ENTIDAD: CLIENTE
+    **Atributos:**
+    - `cliente_id` (`INTEGER`) **[PK]** – Identificador único
+    - `nombre` (`VARCHAR(100)`) – Nombre completo
+    - `telefono` (`VARCHAR(20)`) – Teléfono de contacto
+    - `email` (`VARCHAR(100)`) – Correo electrónico
+    - `direccion` (`VARCHAR(255)`) – Dirección física
+    - `fecha_registro` (`TIMESTAMP`) – Fecha de registro como cliente
+    - `activo` (`BOOLEAN`) – Indica si el cliente está activo
 
----
+    ---
 
-#### ENTIDAD: VENTA
-**Atributos:**
-- `venta_id` (`INTEGER`) **[PK]** – Identificador único
-- `fecha_venta` (`TIMESTAMP`) – Fecha y hora de la venta
-- `cliente_id` (`INTEGER`) **[FK]** – Referencia a `CLIENTE` (NULL si es venta anónima)
-- `subtotal` (`DECIMAL(10,2)`) – Suma de productos
-- `impuesto` (`DECIMAL(10,2)`) – Impuestos aplicados
-- `total` (`DECIMAL(10,2)`) – Total de la venta
-- `metodo_pago` (`VARCHAR(50)`) – Efectivo, tarjeta, transferencia
+    #### ENTIDAD: VENTA
+    **Atributos:**
+    - `venta_id` (`INTEGER`) **[PK]** – Identificador único
+    - `fecha_venta` (`TIMESTAMP`) – Fecha y hora de la venta
+    - `cliente_id` (`INTEGER`) **[FK]** – Referencia a `CLIENTE` (NULL si es venta anónima)
+    - `subtotal` (`DECIMAL(10,2)`) – Suma de productos
+    - `impuesto` (`DECIMAL(10,2)`) – Impuestos aplicados
+    - `total` (`DECIMAL(10,2)`) – Total de la venta
+    - `metodo_pago` (`VARCHAR(50)`) – Efectivo, tarjeta, transferencia
 
----
+    ---
 
-#### ENTIDAD: DETALLE_VENTA
-**Atributos:**
-- `detalle_venta_id` (`INTEGER`) **[PK]** – Identificador único
-- `venta_id` (`INTEGER`) **[FK]** – Referencia a `VENTA`
-- `producto_id` (`INTEGER`) **[FK]** – Referencia a `PRODUCTO`
-- `cantidad` (`INTEGER`) – Cantidad vendida
-- `precio_unitario` (`DECIMAL(10,2)`) – Precio al momento de la venta
-- `subtotal` (`DECIMAL(10,2)`) – `cantidad × precio_unitario`
+    #### ENTIDAD: DETALLE_VENTA
+    **Atributos:**
+    - `detalle_venta_id` (`INTEGER`) **[PK]** – Identificador único
+    - `venta_id` (`INTEGER`) **[FK]** – Referencia a `VENTA`
+    - `producto_id` (`INTEGER`) **[FK]** – Referencia a `PRODUCTO`
+    - `cantidad` (`INTEGER`) – Cantidad vendida
+    - `precio_unitario` (`DECIMAL(10,2)`) – Precio al momento de la venta
+    - `subtotal` (`DECIMAL(10,2)`) – `cantidad × precio_unitario`
 
----
+    ---
 
-#### ENTIDAD: PROVEEDOR
-**Atributos:**
-- `proveedor_id` (`INTEGER`) **[PK]** – Identificador único
-- `nombre_empresa` (`VARCHAR(200)`) – Razón social
-- `contacto_nombre` (`VARCHAR(100)`) – Nombre del contacto
-- `contacto_telefono` (`VARCHAR(20)`) – Teléfono del contacto
-- `contacto_email` (`VARCHAR(100)`) – Email del contacto
-- `direccion` (`VARCHAR(255)`) – Dirección del proveedor
-- `activo` (`BOOLEAN`) – Indica si el proveedor está activo
+    #### ENTIDAD: PROVEEDOR
+    **Atributos:**
+    - `proveedor_id` (`INTEGER`) **[PK]** – Identificador único
+    - `nombre_empresa` (`VARCHAR(200)`) – Razón social
+    - `contacto_nombre` (`VARCHAR(100)`) – Nombre del contacto
+    - `contacto_telefono` (`VARCHAR(20)`) – Teléfono del contacto
+    - `contacto_email` (`VARCHAR(100)`) – Email del contacto
+    - `direccion` (`VARCHAR(255)`) – Dirección del proveedor
+    - `activo` (`BOOLEAN`) – Indica si el proveedor está activo
 
----
+    ---
 
-#### ENTIDAD: PRODUCTO_PROVEEDOR
-**Atributos:**
-- `producto_proveedor_id` (`INTEGER`) **[PK]** – Identificador único
-- `producto_id` (`INTEGER`) **[FK]** – Referencia a `PRODUCTO`
-- `proveedor_id` (`INTEGER`) **[FK]** – Referencia a `PROVEEDOR`
-- `precio_compra` (`DECIMAL(10,2)`) – Precio de compra al proveedor
-- `tiempo_entrega_dias` (`INTEGER`) – Días de entrega
-- `es_proveedor_principal` (`BOOLEAN`) – Indica proveedor preferido
+    #### ENTIDAD: PRODUCTO_PROVEEDOR
+    **Atributos:**
+    - `producto_proveedor_id` (`INTEGER`) **[PK]** – Identificador único
+    - `producto_id` (`INTEGER`) **[FK]** – Referencia a `PRODUCTO`
+    - `proveedor_id` (`INTEGER`) **[FK]** – Referencia a `PROVEEDOR`
+    - `precio_compra` (`DECIMAL(10,2)`) – Precio de compra al proveedor
+    - `tiempo_entrega_dias` (`INTEGER`) – Días de entrega
+    - `es_proveedor_principal` (`BOOLEAN`) – Indica proveedor preferido
 
----
+    ---
 
 
 2. En tu diagrama
-- Agrega los atributos dentro de cada **rectángulo de entidad**
-- Marca las **claves primarias (PK)** con un símbolo especial o subrayado
-- Marca las **claves foráneas (FK)** con un indicador visual
+    - Agrega los atributos dentro de cada **rectángulo de entidad**
+    - Marca las **claves primarias (PK)** con un símbolo especial o subrayado
+    - Marca las **claves foráneas (FK)** con un indicador visual
 
 
 #### Resultado Esperado:
-Diagrama con todas las entidades mostrando sus atributos completos, con claves primarias y foráneas claramente identificadas.
+    Diagrama con todas las entidades mostrando sus atributos completos, con claves primarias y foráneas claramente identificadas.
 
 
 #### Verificación:
