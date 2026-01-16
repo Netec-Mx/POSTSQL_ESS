@@ -125,11 +125,10 @@ Comprender el **dominio del negocio** y documentar los **requerimientos funciona
     - ¿Quién es el proveedor de un producto específico?
     - ¿Cuál es el total de ventas por categoría?
 
-
+<br/><br/>
 
 #### Resultado Esperado:
-    Documento de texto con requerimientos funcionales claramente identificados y preguntas de negocio documentadas.
-
+- Documento de texto con requerimientos funcionales claramente identificados y preguntas de negocio documentadas.
 
 #### Verificación:
 - [ ] Has identificado al menos **8 requerimientos funcionales**
@@ -184,11 +183,11 @@ Identificar las **entidades principales** del sistema basándose en los requerim
 
 4. **Nombra cada rectángulo** con el nombre de la entidad en **MAYÚSCULAS**.
 
-
+<br/><br/>
 
 #### Resultado Esperado:
 
-    Diagrama con 7 rectángulos representando las entidades: PRODUCTO, CATEGORIA, CLIENTE, VENTA, DETALLE_VENTA, PROVEEDOR, PRODUCTO_PROVEEDOR.
+Diagrama con 7 rectángulos representando las entidades: PRODUCTO, CATEGORIA, CLIENTE, VENTA, DETALLE_VENTA, PROVEEDOR, PRODUCTO_PROVEEDOR.
 
 #### Verificación:
 - [ ] Has identificado al menos **7 entidades**
@@ -295,9 +294,10 @@ Definir los **atributos (columnas)** de cada entidad con sus **tipos de datos ap
     - Marca las **claves primarias (PK)** con un símbolo especial o subrayado
     - Marca las **claves foráneas (FK)** con un indicador visual
 
+<br/><br/>
 
 #### Resultado Esperado:
-    Diagrama con todas las entidades mostrando sus atributos completos, con claves primarias y foráneas claramente identificadas.
+Diagrama con todas las entidades mostrando sus atributos completos, con claves primarias y foráneas claramente identificadas.
 
 
 #### Verificación:
@@ -358,13 +358,19 @@ Definir las relaciones entre entidades y determinar su cardinalidad (1:1, 1:N, N
                         - Atributos adicionales: precio_compra, tiempo_entrega_dias
     ```
 
+<br/><br/>
+
 2.	En tu diagrama, dibuja líneas conectando las entidades relacionadas.
+
+<br/><br/>
 
 3.	Usa notación Crow's Foot para indicar cardinalidad:
     - Línea simple (|) = Uno
     - Pata de gallo (< o >) = Muchos
     - Círculo (o) = Opcional (0)
     - Línea perpendicular (|) = Obligatorio (1)
+
+<br/><br/>
 
 4.	Ejemplos de notación:
 
@@ -378,6 +384,7 @@ Definir las relaciones entre entidades y determinar su cardinalidad (1:1, 1:N, N
     PRODUCTO >──< PROVEEDOR
     (Muchos a muchos a través de tabla intermedia)
     ```
+<br/><br/>
 
 #### Resultado Esperado:
 Diagrama completo con todas las entidades conectadas mediante líneas que muestran las relaciones y su cardinalidad usando notación estándar.
@@ -460,6 +467,8 @@ Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repet
     4. Todos los campos de fecha usan TIMESTAMP (atómico)
         Justificación: No se divide fecha y hora en campos separados
     ```
+
+<br/><br/>
 
 #### Resultado Esperado:
 Documentación que confirma que todas las entidades cumplen con 1FN, con justificaciones de diseño documentadas.
@@ -739,6 +748,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
      El diseño está normalizado hasta **Tercera Forma Normal (3FN)** con excepciones debidamente justificadas
 
 
+<br/><br/>
 
 #### Resultado Esperado:
 Documentación completa del análisis de 3FN con todas las dependencias transitivas identificadas y resueltas o justificadas.
@@ -1106,7 +1116,7 @@ Crear documentación complementaria que explique las decisiones de diseño y jus
     ═══════════════════════════════════════════════════════════════
     ```
 
-<br/><br/>
+<br/>
 
 2.	Guarda este documento como: "TiendaBarrio_Documentacion_Diseno_[TuNombre].txt"
 
@@ -1356,86 +1366,94 @@ Lista de verificación completa con todos los ítems revisados y validados, con 
 
 ### Prueba 1: Validación de Entidades
 
-Revisa tu diseño y confirma:
+#### Revisa tu diseño y confirma:
 
-```txt
-Entidades requeridas presentes:
-✅ CATEGORIA
-✅ PRODUCTO
-✅ CLIENTE
-✅ VENTA
-✅ DETALLE_VENTA
-✅ PROVEEDOR
-✅ PRODUCTO_PROVEEDOR
-```txt
+- Entidades requeridas presentes:
 
-Total: 7 entidades
+    - CATEGORIA  
+    - PRODUCTO  
+    - CLIENTE  
+    - VENTA  
+    - DETALLE_VENTA  
+    - PROVEEDOR  
+    - PRODUCTO_PROVEEDOR  
+
+- Total: 7 entidades
 
 #### Resultado Esperado: 
 Las 7 entidades están presentes en tu diagrama.
 
+<br/>
+
 ### Prueba 2: Validación de Relaciones
 Verifica que estas relaciones existan en tu diagrama:
 
-```txt
 Relaciones requeridas:
-✅ CATEGORIA (1) ──< (N) PRODUCTO
-✅ CLIENTE (1) ──< (N) VENTA [cliente_id puede ser NULL]
-✅ VENTA (1) ──< (N) DETALLE_VENTA
-✅ PRODUCTO (1) ──< (N) DETALLE_VENTA
-✅ PRODUCTO (1) ──< (N) PRODUCTO_PROVEEDOR
-✅ PROVEEDOR (1) ──< (N) PRODUCTO_PROVEEDOR
-```txt
 
-Total: 6 relaciones
+    - CATEGORIA (1) ──< (N) PRODUCTO  
+    - CLIENTE (1) ──< (N) VENTA (cliente_id puede ser NULL)  
+    - VENTA (1) ──< (N) DETALLE_VENTA  
+    - PRODUCTO (1) ──< (N) DETALLE_VENTA  
+    - PRODUCTO (1) ──< (N) PRODUCTO_PROVEEDOR  
+    - PROVEEDOR (1) ──< (N) PRODUCTO_PROVEEDOR  
+
+- Total: 6 relaciones
+
+<br/><br/>
+
 #### Resultado Esperado: 
+
 Las 6 relaciones están correctamente dibujadas con cardinalidad apropiada.
 
+<br/>
 
 ### Prueba 3: Validación de Normalización
-Confirma cumplimiento de formas normales:
 
-```txt
-Primera Forma Normal (1FN):
-✅ No hay atributos multivaluados
-✅ No hay grupos repetitivos
-✅ Todos los atributos son atómicos
+Confirmación del cumplimiento de las formas normales:
 
-Segunda Forma Normal (2FN):
-✅ Todas las entidades tienen PKs simples (surrogate keys)
-✅ No hay dependencias parciales
+    **Primera Forma Normal (1FN):**
+        - No existen atributos multivaluados.
+        - No hay grupos repetitivos.
+        - Todos los atributos son atómicos.
 
-Tercera Forma Normal (3FN):
-✅ No hay dependencias transitivas no justificadas
-✅ Categorías están en tabla separada
-✅ Proveedores están en tabla separada
-✅ Atributos calculados persistidos están justificados
-```
+    **Segunda Forma Normal (2FN):**
+        - Todas las entidades utilizan claves primarias simples (surrogate keys).
+        - No existen dependencias parciales.
+
+    **Tercera Forma Normal (3FN):**
+        - No existen dependencias transitivas no justificadas.
+        - Las categorías están modeladas en una tabla separada.
+        - Los proveedores están modelados en una tabla separada.
+        - Los atributos calculados persistidos están debidamente justificados.
+
 
 #### Resultado Esperado: 
 Tu diseño cumple con todas las formas normales hasta 3FN.
 
 
+<br/>
+
 ### Prueba 4: Simulación de Consulta Compleja
 
 Verifica que tu diseño soporta esta consulta:
 
-Consulta: "Obtener el nombre del cliente, productos comprados, cantidades y total gastado para todas las ventas del último mes, ordenado por total descendente."
+**Consulta:** "Obtener el nombre del cliente, productos comprados, cantidades y total gastado para todas las ventas del último mes, ordenado por total descendente."
+
 
 Tablas necesarias:
-- CLIENTE (nombre del cliente)
-- VENTA (fecha, total)
-- DETALLE_VENTA (cantidad, precio_unitario)
-- PRODUCTO (nombre del producto)
+    - CLIENTE (nombre del cliente)
+    - VENTA (fecha, total)
+    - DETALLE_VENTA (cantidad, precio_unitario)
+    - PRODUCTO (nombre del producto)
 
 #### Validación:
-```txt
-✅ Existe relación CLIENTE → VENTA (via cliente_id)
-✅ Existe relación VENTA → DETALLE_VENTA (via venta_id)
-✅ Existe relación DETALLE_VENTA → PRODUCTO (via producto_id)
-✅ Todos los atributos necesarios existen en las tablas
-✅ La consulta es posible mediante JOINs
-```
+
+- [ ] Existe relación CLIENTE → VENTA (vía cliente_id)
+- [ ] Existe relación VENTA → DETALLE_VENTA (vía venta_id)
+- [ ] Existe relación DETALLE_VENTA → PRODUCTO (vía producto_id)
+- [ ] Todos los atributos necesarios existen en las tablas
+- [ ] La consulta es posible mediante JOINs
+
 
 #### Resultado Esperado: 
 Tu diseño soporta esta consulta compleja.
@@ -1661,27 +1679,27 @@ PRODUCTO (producto_id, nombre, categoria_id [FK])
 #### Casos comunes en tienda de barrio:
 
 
-**✅ CORRECTO: Categorías en tabla separada**
+**CORRECTO: Categorías en tabla separada**
 
 ```
 CATEGORIA (categoria_id, nombre, descripcion)
 PRODUCTO (producto_id, nombre, categoria_id)
 ```
 
-**❌ INCORRECTO: Datos de categoría en PRODUCTO**
+**INCORRECTO: Datos de categoría en PRODUCTO**
 
 ```
 PRODUCTO (producto_id, nombre, categoria_nombre, categoria_descripcion)
 ```
 
-**✅ CORRECTO: Proveedores en tabla separada**
+**CORRECTO: Proveedores en tabla separada**
 
 ```
 PROVEEDOR (proveedor_id, nombre_empresa, telefono)
 PRODUCTO_PROVEEDOR (producto_id, proveedor_id, precio_compra)
 ```
 
-**❌ INCORRECTO: Datos de proveedor repetidos**
+**INCORRECTO: Datos de proveedor repetidos**
 
 ```
 PRODUCTO (producto_id, nombre, proveedor_nombre, proveedor_telefono)
@@ -1717,15 +1735,14 @@ Falta de familiaridad con la herramienta de diagramación.
    - Doble clic dentro del rectángulo
    - Lista los atributos uno por línea:
 
-```
-PRODUCTO
-────────────────
-PK producto_id (INTEGER)
-nombre (VARCHAR(200))
-precio_venta (DECIMAL(10,2))
-FK categoria_id (INTEGER)
-
-```
+    ```
+    PRODUCTO
+    ────────────────
+    PK producto_id (INTEGER)
+    nombre (VARCHAR(200))
+    precio_venta (DECIMAL(10,2))
+    FK categoria_id (INTEGER)
+    ```
 
 3. **Crear relaciones (líneas):**
    - Selecciona la herramienta **"Connector"** (flecha con línea)
@@ -1740,10 +1757,10 @@ FK categoria_id (INTEGER)
    - O agrega texto manualmente cerca de los extremos:
 
 
-```
-CATEGORIA ──────1────────< PRODUCTO
-               uno       muchos
-```
+    ```
+    CATEGORIA ──────1────────< PRODUCTO
+                uno       muchos
+    ```
 
 
 5. **Organizar el diagrama:**
@@ -1771,25 +1788,22 @@ Este laboratorio es principalmente de diseño conceptual y no requiere limpieza 
 
 1. **Guarda todos tus archivos de trabajo:**
 
-```
-* TiendaBarrio_ER_Diagrama_[TuNombre].png (o .pdf)
-* TiendaBarrio_Documentacion_Diseno_[TuNombre].txt
-* TiendaBarrio_Notas_[TuNombre].txt (si creaste notas adicionales)
-```
+    - TiendaBarrio_ER_Diagrama_[TuNombre].png (o .pdf)
+    - TiendaBarrio_Documentacion_Diseno_[TuNombre].txt
+    - TiendaBarrio_Notas_[TuNombre].txt (si creaste notas adicionales)
 
 2. **Organiza tus archivos en una carpeta:**
 
-```
-Crear carpeta: Lab02_Diseño_BD_TiendaBarrio/
-Mover todos los archivos relacionados a esta carpeta
-```
+    Crear carpeta: Lab02_Diseño_BD_TiendaBarrio/
+    Mover todos los archivos relacionados a esta carpeta
+
 
 3. **Haz backup de tu trabajo:**
-- Guarda una copia en la nube (Google Drive, OneDrive)
-- O envía por email a ti mismo
-- Necesitarás estos diseños para laboratorios futuros
+    - Guarda una copia en la nube (Google Drive, OneDrive)
+    - O envía por email a ti mismo
+    - Necesitarás estos diseños para laboratorios futuros
 
-> **Importante:** NO borres estos archivos. Los utilizarás en el **Lab 03** para implementar este diseño en **PostgreSQL** usando **DDL**.
+    > **Importante:** NO borres estos archivos. Los utilizarás en el **Lab 03** para implementar este diseño en **PostgreSQL** usando **DDL**.
 
 
 
@@ -1801,17 +1815,19 @@ Mover todos los archivos relacionados a esta carpeta
 
 En este laboratorio has completado exitosamente:
 
-- ✅ Análisis de requerimientos de negocio para una tienda de barrio.
-- ✅ Identificación de **7 entidades principales** del dominio.
-- ✅ Definición completa de atributos con **tipos de datos apropiados**.
-- ✅ Establecimiento de **relaciones con cardinalidad correcta** (1:1, 1:N, N:M).
-- ✅ Aplicación de **Primera Forma Normal (1FN)** eliminando grupos repetitivos.
-- ✅ Aplicación de **Segunda Forma Normal (2FN)** eliminando dependencias parciales.
-- ✅ Aplicación de **Tercera Forma Normal (3FN)** eliminando dependencias transitivas.
-- ✅ Creación de un **diagrama entidad–relación profesional** con notación estándar.
-- ✅ Documentación completa de **decisiones de diseño y justificaciones**.
-- ✅ Validación del diseño contra **requerimientos funcionales**.
+- Análisis de requerimientos de negocio para una tienda de barrio.
+- Identificación de **7 entidades principales** del dominio.
+- Definición completa de atributos con **tipos de datos apropiados**.
+- Establecimiento de **relaciones con cardinalidad correcta** (1:1, 1:N, N:M).
+- Aplicación de **Primera Forma Normal (1FN)** eliminando grupos repetitivos.
+- Aplicación de **Segunda Forma Normal (2FN)** eliminando dependencias parciales.
+- Aplicación de **Tercera Forma Normal (3FN)** eliminando dependencias transitivas.
+- Creación de un **diagrama entidad–relación profesional** con notación estándar.
+- Documentación completa de **decisiones de diseño y justificaciones**.
+- Validación del diseño contra **requerimientos funcionales**.
 
+
+<br/><br/>
 
 ## Conceptos Clave Aprendidos
 
@@ -1837,7 +1853,7 @@ En este laboratorio has completado exitosamente:
 ### Claves y Relaciones
 - Las claves primarias (**PK**) identifican de forma única cada registro
 - Las claves foráneas (**FK**) implementan relaciones entre tablas
-- Las claves *surrogate* (`INTEGER` auto-incrementable
+- Las claves *surrogate* (`INTEGER` auto-incrementable)
 
 
 <br/><br/>
