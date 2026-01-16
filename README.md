@@ -2,7 +2,7 @@
 
 
 
-# Nombre del curso
+# PostgreSQL 
 
 
 
