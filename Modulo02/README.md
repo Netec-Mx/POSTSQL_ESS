@@ -1900,8 +1900,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
   https://www.postgresql.org/docs/18/datatype.html  
   Referencia completa de tipos de datos disponibles
 
----
-
 ### Herramientas de Diagramación
 - **draw.io (diagrams.net)**  
   https://app.diagrams.net/  
@@ -1920,8 +1918,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Herramienta educativa gratuita para diagramas ER
 
 
----
-
 ### Tutoriales y Guías
 - **Database Normalization Explained**  
   https://www.guru99.com/database-normalization.html  
@@ -1936,8 +1932,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Explicación detallada de la notación Crow’s Foot
 
 
----
-
 ### Videos Educativos
 - **Database Design Course (freeCodeCamp)**  
   https://www.youtube.com/watch?v=ztHopE5Wnpc  
@@ -1946,16 +1940,12 @@ Considera estas preguntas para consolidar tu aprendizaje:
 - **Normalización de Bases de Datos**  
   Buscar en YouTube tutoriales en español sobre normalización
 
----
-
 ### Libros Recomendados
 - **"Database Design for Mere Mortals" – Michael J. Hernandez**  
   Excelente introducción al diseño de bases de datos relacionales
 
 - **"SQL and Relational Theory" – C. J. Date**  
   Fundamentos teóricos profundos de bases de datos relacionales
-
----
 
 ### Comunidades y Foros
 
