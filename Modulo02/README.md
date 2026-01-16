@@ -446,8 +446,8 @@ Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repet
 
 3.	Documenta las decisiones de diseño:
 
-    ```txt
-    ***DECISIONES DE NORMALIZACIÓN 1FN:**
+    ```md
+    **DECISIONES DE NORMALIZACIÓN 1FN:**
 
     1. CLIENTE.nombre: Se mantiene como campo único (no dividir en nombre/apellido)
         Justificación: Simplicidad para tienda de barrio, no se requiere ordenamiento formal
