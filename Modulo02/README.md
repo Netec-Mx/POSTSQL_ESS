@@ -726,24 +726,24 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
     **Estado final de normalización**
 
     **Primera Forma Normal (1FN):**
-        - Todos los atributos son atómicos
-        - No hay grupos repetitivos
-        - Cada intersección fila–columna contiene un solo valor
+    - Todos los atributos son atómicos
+    - No hay grupos repetitivos
+    - Cada intersección fila–columna contiene un solo valor
 
     **Segunda Forma Normal (2FN):**
-        - Cumple con 1FN
-        - No existen dependencias parciales
-        - Todos los atributos no clave dependen de la clave primaria completa
+    - Cumple con 1FN
+    - No existen dependencias parciales
+    - Todos los atributos no clave dependen de la clave primaria completa
 
     **Tercera Forma Normal (3FN):**
-        - Cumple con 2FN
-        - No existen dependencias transitivas, excepto atributos calculados justificados
-        - Todas las dependencias funcionales son directas a la clave primaria
+    - Cumple con 2FN
+    - No existen dependencias transitivas, excepto atributos calculados justificados
+    - Todas las dependencias funcionales son directas a la clave primaria
 
     **Excepciones documentadas:**
-        1. `VENTA.total` – Atributo calculado mantenido por razones de auditoría
-        2. `DETALLE_VENTA.subtotal` – Atributo calculado mantenido por razones históricas
-        3. Campos de dirección no normalizados – Simplicidad del negocio
+    1. `VENTA.total` – Atributo calculado mantenido por razones de auditoría
+    2. `DETALLE_VENTA.subtotal` – Atributo calculado mantenido por razones históricas
+    3. Campos de dirección no normalizados – Simplicidad del negocio
 
     **Conclusión:**  
      El diseño está normalizado hasta **Tercera Forma Normal (3FN)** con excepciones debidamente justificadas
