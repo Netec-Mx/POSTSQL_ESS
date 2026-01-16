@@ -410,37 +410,36 @@ Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repet
 
 2.	Analiza posibles violaciones:
 
-    ```md
-    ANÁLISIS DE 1FN:
+    **ANÁLISIS DE 1FN:**
 
-    ENTIDAD: CLIENTE
-    ❌ Problema potencial: Atributo "nombre" podría contener nombre y apellido
-    ✅ Solución: Dividir en nombre y apellido (opcional para tienda de barrio)
-    ✅ Decisión: Mantener "nombre" completo por simplicidad del negocio
+    ENTIDAD: **CLIENTE**
+    - Problema potencial: atributo `nombre` podría contener nombre y apellido
+    - Solución considerada: dividir en `nombre` y `apellido` (opcional para tienda de barrio)
+    - Decisión: mantener `nombre` completo por simplicidad del negocio
 
-    ENTIDAD: PRODUCTO
-    ✅ Todos los atributos son atómicos
-    ✅ No hay grupos repetitivos
-    ✅ stock_actual es un valor único, no múltiples ubicaciones
+    ENTIDAD: **PRODUCTO**
+    - Todos los atributos son atómicos
+    - No hay grupos repetitivos
+    - `stock_actual` es un valor único, no múltiples ubicaciones
 
-    ENTIDAD: VENTA
-    ❌ Problema potencial: Si tuviéramos "productos" como lista en VENTA
-    ✅ Solución aplicada: Tabla DETALLE_VENTA separa cada producto
-    ✅ Cumple 1FN: Cada venta se relaciona con productos mediante tabla intermedia
+    ENTIDAD: **VENTA**
+    - Problema potencial: existencia de una lista de productos dentro de VENTA
+    - Solución aplicada: tabla `DETALLE_VENTA` separa cada producto
+    - Cumple 1FN: cada venta se relaciona con productos mediante tabla intermedia
 
-    ENTIDAD: DETALLE_VENTA
-    ✅ Cada detalle representa un solo producto en una venta
-    ✅ Atributos atómicos: cantidad, precio_unitario, subtotal
-    ✅ Cumple 1FN completamente
+    ENTIDAD: **DETALLE_VENTA**
+    - Cada detalle representa un solo producto en una venta
+    - Atributos atómicos: `cantidad`, `precio_unitario`, `subtotal`
+    - Cumple 1FN completamente
 
-    ENTIDAD: PROVEEDOR
-    ✅ Datos de contacto son atómicos
-    ✅ Un solo contacto por proveedor
+    ENTIDAD: **PROVEEDOR**
+    - Datos de contacto atómicos
+    - Un solo contacto por proveedor
 
-    ENTIDAD: PRODUCTO_PROVEEDOR
-    ✅ Representa una relación única producto-proveedor
-    ✅ Atributos atómicos
-    ```
+    ENTIDAD: **PRODUCTO_PROVEEDOR**
+    - Representa una relación única producto–proveedor
+    - Atributos atómicos
+
 
 <br/><br/>
 
@@ -479,89 +478,83 @@ Verificar y aplicar la Segunda Forma Normal para eliminar dependencias parciales
 
 1.	Identifica entidades con claves primarias compuestas:
 
-    ```txt
-    ANÁLISIS DE 2FN:
+   **ANÁLISIS DE 2FN:**
 
-    Regla de 2FN: Debe cumplir 1FN Y todos los atributos no-clave deben depender
-                    completamente de la clave primaria (no dependencias parciales)
+    - **Regla de 2FN**: Debe cumplir 1FN Y todos los atributos no-clave deben depender completamente de la clave primaria (no dependencias parciales)
 
-    ENTIDADES CON CLAVE SIMPLE (Cumplen 2FN automáticamente):
-    - CATEGORIA (PK: categoria_id)
-    - PRODUCTO (PK: producto_id)
-    - CLIENTE (PK: cliente_id)
-    - VENTA (PK: venta_id)
-    - PROVEEDOR (PK: proveedor_id)
+    - **ENTIDADES CON CLAVE SIMPLE** (Cumplen 2FN automáticamente):
+        - **CATEGORIA** (PK: `categoria_id`)
+        - **PRODUCTO** (PK: `producto_id`)
+        - **CLIENTE** (PK: `cliente_id`)
+        - **VENTA** (PK: `venta_id`)
+        - **PROVEEDOR** (PK: `proveedor_id`)
 
-    ENTIDADES CON POTENCIAL CLAVE COMPUESTA:
 
-    DETALLE_VENTA:
-    ✅ Diseño actual: PK simple (detalle_venta_id)
-    🔍 Alternativa: PK compuesta (venta_id, producto_id)
+    - **ENTIDADES CON POTENCIAL CLAVE COMPUESTA**:
 
-    Análisis con PK compuesta (venta_id, producto_id):
-    - cantidad → depende de (venta_id, producto_id) ✅
-    - precio_unitario → depende de (venta_id, producto_id) ✅
-    - subtotal → depende de (venta_id, producto_id) ✅
+        - DETALLE_VENTA:
+            - **Diseño actual**: PK simple (detalle_venta_id)
+            - **Alternativa**: PK compuesta (venta_id, producto_id)
 
-    ✅ Cumple 2FN: No hay dependencias parciales
-    ✅ Decisión: Mantener PK simple por flexibilidad
+        - Análisis con PK compuesta (venta_id, producto_id):
+            - cantidad → depende de (venta_id, producto_id) 
+            - precio_unitario → depende de (venta_id, producto_id) 
+            - subtotal → depende de (venta_id, producto_id) 
 
-    PRODUCTO_PROVEEDOR:
-    ✅ Diseño actual: PK simple (producto_proveedor_id)
-    🔍 Alternativa: PK compuesta (producto_id, proveedor_id)
+        - Cumple 2FN: No hay dependencias parciales
+        - Decisión: Mantener PK simple por flexibilidad
 
-    Análisis con PK compuesta (producto_id, proveedor_id):
-    - precio_compra → depende de (producto_id, proveedor_id) ✅
-    - tiempo_entrega_dias → depende de (producto_id, proveedor_id) ✅
-    - es_proveedor_principal → depende de (producto_id, proveedor_id) ✅
+    - **PRODUCTO_PROVEEDOR**:
+        - Diseño actual: PK simple (producto_proveedor_id)
+        - Alternativa: PK compuesta (producto_id, proveedor_id)
 
-    ✅ Cumple 2FN: No hay dependencias parciales
-    ✅ Decisión: Mantener PK simple por flexibilidad
-    ```
+    - Análisis con PK compuesta (producto_id, proveedor_id):
+        - precio_compra → depende de (producto_id, proveedor_id) 
+        - tiempo_entrega_dias → depende de (producto_id, proveedor_id) 
+        - es_proveedor_principal → depende de (producto_id, proveedor_id) 
 
+    - Cumple 2FN: No hay dependencias parciales
+    - Decisión: Mantener PK simple por flexibilidad
+    
 <br/><br/>
 
-2.	Verifica dependencias funcionales:
+2. Verifica dependencias funcionales:
 
-    ```txt
-    VERIFICACIÓN DE DEPENDENCIAS FUNCIONALES:
+    **PRODUCTO**:
+    - producto_id → nombre, descripcion, precio_venta, codigo_barras, stock_actual, stock_minimo, categoria_id, fecha_registro, activo
+    - Todos los atributos dependen completamente de producto_id
 
-    PRODUCTO:
-    producto_id → nombre, descripcion, precio_venta, codigo_barras,
-                    stock_actual, stock_minimo, categoria_id, fecha_registro, activo
-    ✅ Todos los atributos dependen completamente de producto_id
+    **VENTA:**
+    - venta_id → fecha_venta, cliente_id, subtotal, impuesto, total, metodo_pago
+    - Todos los atributos dependen completamente de venta_id
 
-    VENTA:
-    venta_id → fecha_venta, cliente_id, subtotal, impuesto, total, metodo_pago
-    ✅ Todos los atributos dependen completamente de venta_id
+    **DETALLE_VENTA:**
+    - detalle_venta_id → venta_id, producto_id, cantidad, precio_unitario, subtotal
+    - Todos los atributos dependen completamente de detalle_venta_id
 
-    DETALLE_VENTA:
-    detalle_venta_id → venta_id, producto_id, cantidad, precio_unitario, subtotal
-    ✅ Todos los atributos dependen completamente de detalle_venta_id
-
-    ❌ Nota: precio_unitario podría obtenerse de PRODUCTO, pero se almacena
-                para mantener histórico (el precio puede cambiar con el tiempo)
-    ✅ Justificación: Es correcto almacenar precio_unitario en DETALLE_VENTA
-    ```
+    > **Nota:** precio_unitario podría obtenerse de PRODUCTO, pero se almacena para mantener histórico (el precio puede cambiar con el tiempo)
+   
+    - Justificación: Es correcto almacenar precio_unitario en DETALLE_VENTA
+    
 
 <br/><br/>
 
 3.	Documenta el cumplimiento de 2FN:
 
-    ```txt
-    CUMPLIMIENTO DE 2FN - RESUMEN:
+    ## Cumplimiento de Segunda Forma Normal (2FN) – Resumen
 
-    ✅ Todas las entidades utilizan claves primarias simples (surrogate keys)
-    ✅ No existen dependencias parciales en ninguna entidad
-    ✅ Decisión de diseño: Usar INTEGER autoincrementable como PK
-        Ventajas:
-        - Simplifica relaciones
-        - Mejor performance en índices
-        - Facilita migraciones y replicación
-        - Evita problemas de dependencias parciales
+    - Todas las entidades utilizan claves primarias simples (surrogate keys).
+    - No existen dependencias parciales en ninguna entidad.
+    - Decisión de diseño: uso de claves primarias `INTEGER` autoincrementables.
 
-    ✅ El diseño actual cumple completamente con 2FN
-    ```
+        **Ventajas de la decisión:**
+        - Simplifica las relaciones entre tablas.
+        - Mejora el rendimiento de los índices.
+        - Facilita procesos de migración y replicación.
+        - Evita problemas de dependencias parciales.
+
+    - El diseño actual cumple completamente con la Segunda Forma Normal (2FN).
+
 
 <br/><br/>
 
@@ -583,127 +576,168 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
 1.	Analiza dependencias transitivas en cada entidad:
 
-```txt
-   ANÁLISIS DE 3FN:
+    ## Análisis de Tercera Forma Normal (3FN)
 
-   Regla de 3FN: Debe cumplir 2FN Y no debe haber dependencias transitivas
-                 (atributos no-clave que dependan de otros atributos no-clave)
+    **Regla de 3FN:**  
+    Debe cumplir con 2FN y no debe haber dependencias transitivas  
+    (atributos no clave que dependan de otros atributos no clave).
 
-   ENTIDAD: PRODUCTO
-   Dependencias:
-   - producto_id → categoria_id
-   - categoria_id → nombre_categoria, descripcion_categoria
+    <br/>
 
-   ✅ CORRECTO: nombre_categoria NO está en PRODUCTO
-   ✅ La relación se maneja mediante FK a tabla CATEGORIA separada
-   ✅ Cumple 3FN: No hay dependencias transitivas
+    ### Entidad: PRODUCTO
 
-   ENTIDAD: VENTA
-   Análisis de atributos calculados:
-   - subtotal, impuesto, total
+    **Dependencias:**
+    - producto_id → categoria_id  
+    - categoria_id → nombre_categoria, descripcion_categoria  
 
-   🔍 Pregunta: ¿Es "total" dependiente transitivamente?
-   - venta_id → subtotal, impuesto
-   - subtotal, impuesto → total (total = subtotal + impuesto)
+    **Evaluación:**
+    - nombre_categoria no está almacenado en PRODUCTO  
+    - La relación se maneja mediante una clave foránea hacia la tabla CATEGORIA  
+    - Cumple 3FN: no existen dependencias transitivas
 
-   ❌ Técnicamente es dependencia transitiva
-   ✅ DECISIÓN: Mantener "total" por razones de negocio
-      Justificación:
-      - Histórico: Los cálculos pueden cambiar con el tiempo
-      - Performance: Evita recalcular en cada consulta
-      - Auditoría: Valor exacto al momento de la venta
-      - Integridad: Valor confirmado por el sistema
+    <br/>
 
-   ⚠️ Nota: Esta es una excepción justificada por requisitos de negocio
+    ### Entidad: VENTA
 
-   ENTIDAD: DETALLE_VENTA
-   Análisis:
-   - detalle_venta_id → cantidad, precio_unitario
-   - cantidad, precio_unitario → subtotal
+    **Análisis de atributos calculados:**
+    - subtotal  
+    - impuesto  
+    - total  
 
-   ✅ DECISIÓN: Mantener "subtotal" (similar justificación que VENTA.total)
+    **Análisis de dependencias:**
+    - venta_id → subtotal, impuesto  
+    - subtotal, impuesto → total (total = subtotal + impuesto)  
 
-   ENTIDAD: CLIENTE
-   Dependencias:
-   - cliente_id → direccion
-   - direccion → ¿ciudad, estado, código_postal?
+    **Evaluación:**
+    - Técnicamente existe una dependencia transitiva  
+    - Decisión: mantener el atributo `total` por razones de negocio  
 
-   ✅ DECISIÓN: Mantener "direccion" como campo único
-      Justificación:
-      - Tienda de barrio: No requiere análisis geográfico complejo
-      - Simplicidad: Evita sobrenormalización
-      - Si se requiriera análisis geográfico, se crearía tabla DIRECCION
+    **Justificación:**
+    - Histórico: los cálculos pueden cambiar con el tiempo  
+    - Performance: evita recalcular el total en cada consulta  
+    - Auditoría: conserva el valor exacto al momento de la venta  
+    - Integridad: valor confirmado por el sistema  
 
-   ENTIDAD: PROVEEDOR
-   Similar a CLIENTE:
-   ✅ "direccion" como campo único es aceptable para este contexto
-```
+    **Nota:**  
+    Esta es una excepción justificada por requisitos de negocio.
+
+    <br/>
+
+    ### Entidad: DETALLE_VENTA
+
+    **Dependencias:**
+    - detalle_venta_id → cantidad, precio_unitario  
+    - cantidad, precio_unitario → subtotal  
+
+    **Evaluación:**
+    - Decisión: mantener el atributo `subtotal`  
+    - Justificación similar a la del atributo `VENTA.total`
+
+    <br/>
+
+    ### Entidad: CLIENTE
+
+    **Dependencias:**
+    - cliente_id → direccion  
+    - direccion → ciudad, estado, código_postal (potencial)  
+
+    **Evaluación:**
+    - Decisión: mantener `direccion` como un campo único  
+
+    **Justificación:**
+    - El contexto de una tienda de barrio no requiere análisis geográfico complejo  
+    - Se prioriza simplicidad sobre sobrenormalización  
+    - Si se requiriera análisis geográfico, se podría crear una tabla DIRECCION
+
+    <br/>
+
+    ### Entidad: PROVEEDOR
+
+    **Evaluación:**
+    - Caso similar a CLIENTE  
+    - El uso de un solo campo `direccion` es aceptable para este contexto
+
 
 <br/><br/>
 
 2.	Identifica y resuelve dependencias transitivas:
-```txt
-   RESOLUCIÓN DE DEPENDENCIAS TRANSITIVAS:
 
-   CASO 1: Categorías de Productos
-   ✅ YA RESUELTO: Tabla CATEGORIA separada
+    ## Resolución de Dependencias Transitivas
 
-   Antes (hipotético - violación 3FN):
-   PRODUCTO (producto_id, nombre, categoria_nombre, categoria_descripcion)
-   producto_id → categoria_nombre → categoria_descripcion
+    ### Caso 1: Categorías de Productos
+    **Estado:** Resuelto  
+    **Solución:** Tabla `CATEGORIA` separada
 
-   Después (diseño actual - cumple 3FN):
-   PRODUCTO (producto_id, nombre, categoria_id)
-   CATEGORIA (categoria_id, nombre, descripcion)
+    **Antes (hipotético – violación de 3FN):**
+    ```
+    PRODUCTO (producto_id, nombre, categoria_nombre, categoria_descripcion)
+    producto_id → categoria_nombre → categoria_descripcion
+    ```
 
-   CASO 2: Información de Proveedor en Productos
-   ✅ YA RESUELTO: Tabla PRODUCTO_PROVEEDOR
+    **Después (diseño actual – cumple 3FN):**
+    ```
+    PRODUCTO (producto_id, nombre, categoria_id)
+    CATEGORIA (categoria_id, nombre, descripcion)
+    ```
 
-   Antes (hipotético - violación 3FN):
-   PRODUCTO (producto_id, proveedor_nombre, proveedor_telefono)
-   producto_id → proveedor_id → proveedor_nombre, proveedor_telefono
+    <br/>
 
-   Después (diseño actual - cumple 3FN):
-   PRODUCTO (producto_id, nombre, ...)
-   PRODUCTO_PROVEEDOR (producto_id, proveedor_id, precio_compra)
-   PROVEEDOR (proveedor_id, nombre_empresa, contacto_telefono)
+    ### Caso 2: Información de Proveedor en Productos
+    **Estado:** Resuelto  
+    **Solución:** Tabla `PRODUCTO_PROVEEDOR`
 
-   CASO 3: Atributos Calculados (Excepción justificada)
-   ⚠️ EXCEPCIÓN ACEPTADA:
-   - VENTA.total (calculado de subtotal + impuesto)
-   - DETALLE_VENTA.subtotal (calculado de cantidad * precio_unitario)
+    **Antes (hipotético – violación de 3FN):**
+    ```
+    PRODUCTO (producto_id, proveedor_nombre, proveedor_telefono)
+    producto_id → proveedor_id → proveedor_nombre, proveedor_telefono
+    ```
 
-   Justificación documentada en análisis anterior
-```
+    **Después (diseño actual – cumple 3FN):**
+    ```
+    PRODUCTO (producto_id, nombre, ...)
+    PRODUCTO_PROVEEDOR (producto_id, proveedor_id, precio_compra)
+    PROVEEDOR (proveedor_id, nombre_empresa, contacto_telefono)
+    ```
+
+    <br/>
+
+    ### Caso 3: Atributos Calculados (Excepción Justificada)
+        - `VENTA.total` (calculado de `subtotal + impuesto`)
+        - `DETALLE_VENTA.subtotal` (calculado de `cantidad * precio_unitario`)
+
+    **Justificación:**  
+    Documentada en el análisis anterior.
+
 
 <br/><br/>
 
-3.	Documenta el estado final de normalización:
-```txt
-   ESTADO FINAL DE NORMALIZACIÓN:
+3. Documenta el estado final de normalización:
 
-   ✅ PRIMERA FORMA NORMAL (1FN):
-   - Todos los atributos son atómicos
-   - No hay grupos repetitivos
-   - Cada intersección fila-columna contiene un solo valor
+    **Estado final de normalización**
 
-   ✅ SEGUNDA FORMA NORMAL (2FN):
-   - Cumple 1FN
-   - No hay dependencias parciales
-   - Todos los atributos no-clave dependen de la clave primaria completa
+    **Primera Forma Normal (1FN):**
+        - Todos los atributos son atómicos
+        - No hay grupos repetitivos
+        - Cada intersección fila–columna contiene un solo valor
 
-   ✅ TERCERA FORMA NORMAL (3FN):
-   - Cumple 2FN
-   - No hay dependencias transitivas (excepto atributos calculados justificados)
-   - Todas las dependencias funcionales son directas a la clave primaria
+    **Segunda Forma Normal (2FN):**
+        - Cumple con 1FN
+        - No existen dependencias parciales
+        - Todos los atributos no clave dependen de la clave primaria completa
 
-   EXCEPCIONES DOCUMENTADAS:
-   1. VENTA.total - Atributo calculado mantenido por razones de auditoría
-   2. DETALLE_VENTA.subtotal - Atributo calculado mantenido por razones históricas
-   3. Campos de dirección no normalizados - Simplicidad del negocio
+    **Tercera Forma Normal (3FN):**
+        - Cumple con 2FN
+        - No existen dependencias transitivas, excepto atributos calculados justificados
+        - Todas las dependencias funcionales son directas a la clave primaria
 
-   ✅ El diseño está normalizado hasta 3FN con excepciones justificadas
-```
+    **Excepciones documentadas:**
+        1. `VENTA.total` – Atributo calculado mantenido por razones de auditoría
+        2. `DETALLE_VENTA.subtotal` – Atributo calculado mantenido por razones históricas
+        3. Campos de dirección no normalizados – Simplicidad del negocio
+
+    **Conclusión:**  
+     El diseño está normalizado hasta **Tercera Forma Normal (3FN)** con excepciones debidamente justificadas
+
 
 
 #### Resultado Esperado:
@@ -1098,39 +1132,39 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
 
 1.	Utiliza la siguiente lista de verificación para revisar tu diseño:
 
-    #### 1. COMPLETITUD DE ENTIDADES
+    #### I. COMPLETITUD DE ENTIDADES
         - [ ] Todas las entidades necesarias están identificadas
         - [ ] Cada entidad tiene un propósito claro
         - [ ] No hay entidades redundantes
         - [ ] Las entidades intermedias para N:M están presentes
 
-    #### 2. ATRIBUTOS
+    #### II. ATRIBUTOS
         - [ ] Cada entidad tiene todos los atributos necesarios
         - [ ] Todos los atributos tienen tipos de datos definidos
         - [ ] Los tipos de datos son apropiados (`VARCHAR`, `INTEGER`, `DECIMAL`, etc.)
         - [ ] No hay atributos multivaluados (violación 1FN)
         - [ ] Los atributos calculados están justificados
 
-    #### 3. CLAVES PRIMARIAS
+    #### III. CLAVES PRIMARIAS
         - [ ] Cada entidad tiene una clave primaria definida
         - [ ] Las PKs son únicas e inmutables
         - [ ] Se usa nomenclatura consistente (`[tabla]_id`)
         - [ ] Las PKs están marcadas claramente en el diagrama
 
-    #### 4. CLAVES FORÁNEAS
+    #### IV. CLAVES FORÁNEAS
         - [ ] Todas las relaciones tienen FKs apropiadas
         - [ ] Las FKs referencian PKs válidas
         - [ ] La nomenclatura de FKs es consistente
         - [ ] Las FKs están marcadas en el diagrama
 
-    #### 5. RELACIONES
+    #### V. RELACIONES
         - [ ] Todas las relaciones necesarias están modeladas
         - [ ] La cardinalidad está correctamente definida (1:1, 1:N, N:M)
         - [ ] Las relaciones N:M usan tablas intermedias
         - [ ] La direccionalidad de las relaciones es correcta
         - [ ] Las relaciones están claramente dibujadas en el diagrama
 
-    #### 6. NORMALIZACIÓN
+    #### VI. NORMALIZACIÓN
         - [ ] **Primera Forma Normal (1FN)**
             - [ ] No hay grupos repetitivos
             - [ ] Todos los atributos son atómicos
@@ -1141,20 +1175,20 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
             - [ ] No hay dependencias transitivas (o están justificadas)
             - [ ] Atributos no-clave no dependen de otros atributos no-clave
 
-    #### 7. NOMENCLATURA Y CONVENCIONES
+    #### VII. NOMENCLATURA Y CONVENCIONES
         - [ ] Nombres de tablas en singular o plural consistente
         - [ ] Uso de `snake_case` para nombres
         - [ ] Nombres descriptivos y claros
         - [ ] Convenciones de PK/FK consistentes
         - [ ] Idioma consistente (español o inglés)
 
-    #### 8. INTEGRIDAD
+    #### VIII. INTEGRIDAD
         - [ ] Constraints `NOT NULL` apropiados
         - [ ] Constraints `UNIQUE` donde sea necesario
         - [ ] Constraints `CHECK` para validaciones
         - [ ] Consideración de `ON DELETE` / `ON UPDATE` para FKs
 
-    #### 9. DIAGRAMA ER
+    #### IX. DIAGRAMA ER
         - [ ] Usa notación estándar (Crow’s Foot o Chen)
         - [ ] Todas las entidades están representadas
         - [ ] Todas las relaciones están dibujadas
@@ -1163,7 +1197,7 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
         - [ ] Incluye título, autor y fecha
         - [ ] Incluye leyenda de notación
 
-    #### 10. DOCUMENTACIÓN
+    #### X. DOCUMENTACIÓN
         - [ ] Las decisiones de diseño están documentadas
         - [ ] Las alternativas consideradas están explicadas
         - [ ] Las reglas de negocio están identificadas
@@ -1171,35 +1205,36 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
         - [ ] Las consideraciones futuras están documentadas
 
 
-<br/><br/>
+<br/>
 
 2.	Realiza una validación cruzada contra los requerimientos originales:
 
-#### Validación contra Requerimientos
+    #### Validación contra Requerimientos
 
     - **RF1: Gestionar catálogo de productos con información detallada**  
-    ✅ Soportado por: Entidad `PRODUCTO` con todos los atributos necesarios
+    Soportado por: Entidad `PRODUCTO` con todos los atributos necesarios
 
     - **RF2: Organizar productos por categorías**  
-    ✅ Soportado por: Entidad `CATEGORIA`, relación **1:N** con `PRODUCTO`
+    Soportado por: Entidad `CATEGORIA`, relación **1:N** con `PRODUCTO`
 
     - **RF3: Controlar inventario de productos (stock disponible)**  
-    ✅ Soportado por: `PRODUCTO.stock_actual`, `PRODUCTO.stock_minimo`
+    Soportado por: `PRODUCTO.stock_actual` y `PRODUCTO.stock_minimo`
 
     - **RF4: Registrar información de clientes frecuentes**  
-    ✅ Soportado por: Entidad `CLIENTE` con datos de contacto
+    Soportado por: Entidad `CLIENTE` con datos de contacto
 
     - **RF5: Procesar ventas con múltiples productos**  
-    ✅ Soportado por: Entidades `VENTA` y `DETALLE_VENTA`
+    Soportado por: Entidades `VENTA` y `DETALLE_VENTA`
 
     - **RF6: Mantener registro histórico de ventas**  
-    ✅ Soportado por: `VENTA.fecha_venta` y persistencia de precios históricos
+    Soportado por: `VENTA.fecha_venta` y persistencia de precios históricos
 
     - **RF7: Gestionar información de proveedores**  
-    ✅ Soportado por: Entidad `PROVEEDOR`
+    Soportado por: Entidad `PROVEEDOR`
 
     - **RF8: Relacionar productos con sus proveedores y precios de compra**  
-    ✅ Soportado por: Entidad `PRODUCTO_PROVEEDOR` con `precio_compra`
+    Soportado por: Entidad `PRODUCTO_PROVEEDOR` con `precio_compra`
+
 
 
 <br/>
@@ -1217,7 +1252,7 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
 
     #### Q1. ¿Qué productos están por debajo del stock mínimo?
     - **Tablas necesarias:** `PRODUCTO`
-    - **Validación:** ✅ Posible
+    - **Validación:** Posible
     ```sql
     SELECT * FROM PRODUCTO WHERE stock_actual < stock_minimo;
     ```
@@ -1225,7 +1260,7 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
     #### Q2. ¿Cuál es el total de ventas del mes actual?
 
     * **Tablas necesarias:** `VENTA`
-    * **Validación:** ✅ Posible
+    * **Validación:** Posible
 
     ```sql
     SELECT SUM(total) FROM VENTA WHERE fecha_venta >= [inicio_mes];
@@ -1234,7 +1269,7 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
     #### Q3. ¿Qué productos ha comprado el cliente Juan Pérez?
 
     * **Tablas necesarias:** `CLIENTE`, `VENTA`, `DETALLE_VENTA`, `PRODUCTO`
-    * **Validación:** ✅ Posible
+    * **Validación:** Posible
 
     ```sql
     -- JOIN entre CLIENTE → VENTA → DETALLE_VENTA → PRODUCTO usando las FKs
@@ -1243,7 +1278,7 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
     #### Q4. ¿Cuáles son los proveedores del producto "Leche"?
 
     * **Tablas necesarias:** `PRODUCTO`, `PRODUCTO_PROVEEDOR`, `PROVEEDOR`
-    * **Validación:** ✅ Posible
+    * **Validación:** Posible
 
     ```sql
     -- JOIN entre PRODUCTO → PRODUCTO_PROVEEDOR → PROVEEDOR
@@ -1252,34 +1287,34 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
     #### Q5. ¿Cuántos productos se vendieron por categoría este mes?
 
     * **Tablas necesarias:** `CATEGORIA`, `PRODUCTO`, `DETALLE_VENTA`, `VENTA`
-    * **Validación:** ✅ Posible
+    * **Validación:** Posible
 
     ```sql
     -- JOIN y GROUP BY por categoría
     ```
 
-#### Resultado
+    #### Resultado
 
-**Todas las consultas típicas del negocio están soportadas por el diseño**
+        **Todas las consultas típicas del negocio están soportadas por el diseño**
 
 
 4.	Identifica posibles mejoras o ajustes finales:
 
     **MEJORAS IDENTIFICADAS:**
 
-    - ✅ **Considerado:** Agregar índice en `PRODUCTO.codigo_barras`  
+    - **Considerado:** Agregar índice en `PRODUCTO.codigo_barras`  
     **Justificación:** Búsquedas frecuentes por código de barras  
     **Acción:** Documentar para fase de implementación
 
-    - ✅ **Considerado:** Agregar campo `VENTA.notas` (`TEXT`)  
+    - **Considerado:** Agregar campo `VENTA.notas` (`TEXT`)  
     **Justificación:** Permitir comentarios adicionales en ventas  
     **Acción:** Campo opcional, agregar si es necesario
 
-    - ✅ **Considerado:** Agregar `CHECK` constraint en `DETALLE_VENTA.cantidad`  
+    - **Considerado:** Agregar `CHECK` constraint en `DETALLE_VENTA.cantidad`  
     **Justificación:** Asegurar `cantidad > 0`  
     **Acción:** Documentar para fase de implementación DDL
 
-    - ✅ **Considerado:** Agregar campo `PRODUCTO.imagen_url`  
+    - **Considerado:** Agregar campo `PRODUCTO.imagen_url`  
     **Justificación:** Referencia a imagen del producto  
     **Acción:** Extensión futura, no crítico para MVP
 
