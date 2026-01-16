@@ -726,21 +726,21 @@ Crear un **diagrama ER completo, profesional y correctamente notado** que repres
 
 1. **En tu herramienta de diagramación (draw.io), crea el diagrama final con los siguientes elementos:**
 
-### Elementos del diagrama
+    ### Elementos del diagrama
 
-**Entidades (rectángulos):**
-- `CATEGORIA`
-- `PRODUCTO`
-- `CLIENTE`
-- `VENTA`
-- `DETALLE_VENTA`
-- `PROVEEDOR`
-- `PRODUCTO_PROVEEDOR`
+    **Entidades (rectángulos):**
+    - `CATEGORIA`
+    - `PRODUCTO`
+    - `CLIENTE`
+    - `VENTA`
+    - `DETALLE_VENTA`
+    - `PROVEEDOR`
+    - `PRODUCTO_PROVEEDOR`
 
-**Atributos dentro de cada entidad:**
-- Marca la **clave primaria (PK)** con símbolo o en **negrita**
-- Indica claramente las **claves foráneas (FK)**
-- Incluye el **tipo de dato** entre paréntesis
+    **Atributos dentro de cada entidad:**
+    - Marca la **clave primaria (PK)** con símbolo o en **negrita**
+    - Indica claramente las **claves foráneas (FK)**
+    - Incluye el **tipo de dato** entre paréntesis
 
 <br/><br/>
 
@@ -750,59 +750,59 @@ Crear un **diagrama ER completo, profesional y correctamente notado** que repres
     **RELACIONES A DIBUJAR**
 
     1. **CATEGORIA |──< PRODUCTO**
-    - Línea desde `CATEGORIA.categoria_id`
-    - Hasta `PRODUCTO.categoria_id`
-    - Lado **CATEGORIA**: línea simple (`|`) = uno
-    - Lado **PRODUCTO**: pata de gallo (`<`) = muchos
+        - Línea desde `CATEGORIA.categoria_id`
+        - Hasta `PRODUCTO.categoria_id`
+        - Lado **CATEGORIA**: línea simple (`|`) = uno
+        - Lado **PRODUCTO**: pata de gallo (`<`) = muchos
 
     2. **CLIENTE |o──< VENTA**
-    - Línea desde `CLIENTE.cliente_id`
-    - Hasta `VENTA.cliente_id`
-    - Lado **CLIENTE**: línea simple (`|`) = uno
-    - Lado **VENTA**: círculo + pata de gallo (`o<`) = cero o muchos
+        - Línea desde `CLIENTE.cliente_id`
+        - Hasta `VENTA.cliente_id`
+        - Lado **CLIENTE**: línea simple (`|`) = uno
+        - Lado **VENTA**: círculo + pata de gallo (`o<`) = cero o muchos
 
     3. **VENTA |──< DETALLE_VENTA**
-    - Línea desde `VENTA.venta_id`
-    - Hasta `DETALLE_VENTA.venta_id`
-    - Lado **VENTA**: línea simple (`|`) = uno
-    - Lado **DETALLE_VENTA**: pata de gallo (`<`) = muchos
+        - Línea desde `VENTA.venta_id`
+        - Hasta `DETALLE_VENTA.venta_id`
+        - Lado **VENTA**: línea simple (`|`) = uno
+        - Lado **DETALLE_VENTA**: pata de gallo (`<`) = muchos
 
     4. **PRODUCTO |──< DETALLE_VENTA**
-    - Línea desde `PRODUCTO.producto_id`
-    - Hasta `DETALLE_VENTA.producto_id`
-    - Lado **PRODUCTO**: línea simple (`|`) = uno
-    - Lado **DETALLE_VENTA**: pata de gallo (`<`) = muchos
+        - Línea desde `PRODUCTO.producto_id`
+        - Hasta `DETALLE_VENTA.producto_id`
+        - Lado **PRODUCTO**: línea simple (`|`) = uno
+        - Lado **DETALLE_VENTA**: pata de gallo (`<`) = muchos
 
     5. **PRODUCTO |──< PRODUCTO_PROVEEDOR**
-    - Línea desde `PRODUCTO.producto_id`
-    - Hasta `PRODUCTO_PROVEEDOR.producto_id`
-    - Lado **PRODUCTO**: línea simple (`|`) = uno
-    - Lado **PRODUCTO_PROVEEDOR**: pata de gallo (`<`) = muchos
+        - Línea desde `PRODUCTO.producto_id`
+        - Hasta `PRODUCTO_PROVEEDOR.producto_id`
+        - Lado **PRODUCTO**: línea simple (`|`) = uno
+        - Lado **PRODUCTO_PROVEEDOR**: pata de gallo (`<`) = muchos
 
     6. **PROVEEDOR |──< PRODUCTO_PROVEEDOR**
-    - Línea desde `PROVEEDOR.proveedor_id`
-    - Hasta `PRODUCTO_PROVEEDOR.proveedor_id`
-    - Lado **PROVEEDOR**: línea simple (`|`) = uno
-    - Lado **PRODUCTO_PROVEEDOR**: pata de gallo (`<`) = muchos
+        - Línea desde `PROVEEDOR.proveedor_id`
+        - Hasta `PRODUCTO_PROVEEDOR.proveedor_id`
+        - Lado **PROVEEDOR**: línea simple (`|`) = uno
+        - Lado **PRODUCTO_PROVEEDOR**: pata de gallo (`<`) = muchos
 
 
 <br/><br/>
 
 3. **Agrega elementos de documentación al diagrama:**
-- **Título:** *"Base de Datos – Tienda de Barrio El Rinconcito"*
-- **Autor y fecha:** Tu nombre y fecha
-- **Leyenda de notación:**
+    - **Título:** *"Base de Datos – Tienda de Barrio El Rinconcito"*
+    - **Autor y fecha:** Tu nombre y fecha
+    - **Leyenda de notación:**
 
-```
-LEYENDA:
-PK = Clave Primaria
-FK = Clave Foránea
-|  = Uno (obligatorio)
-o  = Cero (opcional)
-<  = Muchos
-```
+    ```md
+    LEYENDA:
+        PK = Clave Primaria
+        FK = Clave Foránea
+        |  = Uno (obligatorio)
+        o  = Cero (opcional)
+        <  = Muchos
+    ```
 
-- **Notas especiales:** Decisiones de diseño relevantes y justificaciones
+    - **Notas especiales:** Decisiones de diseño relevantes y justificaciones
 
 <br/><br/>
 
