@@ -315,48 +315,48 @@ Definir las relaciones entre entidades y determinar su cardinalidad (1:1, 1:N, N
 
 1.	Identifica y documenta las relaciones:
 
-```txt
-   RELACIONES IDENTIFICADAS:
+    ```txt
+    RELACIONES IDENTIFICADAS:
 
-   R1: CATEGORIA ──< PRODUCTO
-      Tipo: 1:N (Uno a Muchos).
-      Descripción: Una categoría contiene muchos productos.
-      Cardinalidad: Una categoría puede tener 0 o más productos.
-                    Un producto pertenece a exactamente 1 categoría.
-      Implementación: FK categoria_id en PRODUCTO.
+    R1: CATEGORIA ──< PRODUCTO
+        Tipo: 1:N (Uno a Muchos).
+        Descripción: Una categoría contiene muchos productos.
+        Cardinalidad: Una categoría puede tener 0 o más productos.
+                        Un producto pertenece a exactamente 1 categoría.
+        Implementación: FK categoria_id en PRODUCTO.
 
-   R2: CLIENTE ──< VENTA
-      Tipo: 1:N (Uno a Muchos).
-      Descripción: Un cliente puede realizar muchas ventas.
-      Cardinalidad: Un cliente puede tener 0 o más ventas.
-                    Una venta pertenece a 0 o 1 cliente (NULL = anónima).
-      Implementación: FK cliente_id en VENTA (NULLABLE).
+    R2: CLIENTE ──< VENTA
+        Tipo: 1:N (Uno a Muchos).
+        Descripción: Un cliente puede realizar muchas ventas.
+        Cardinalidad: Un cliente puede tener 0 o más ventas.
+                        Una venta pertenece a 0 o 1 cliente (NULL = anónima).
+        Implementación: FK cliente_id en VENTA (NULLABLE).
 
-   R3: VENTA ──< DETALLE_VENTA
-      Tipo: 1:N (Uno a Muchos).
-      Descripción: Una venta contiene múltiples detalles.
-      Cardinalidad: Una venta tiene 1 o más detalles.
-                    Un detalle pertenece a exactamente 1 venta.
-      Implementación: FK venta_id en DETALLE_VENTA.
+    R3: VENTA ──< DETALLE_VENTA
+        Tipo: 1:N (Uno a Muchos).
+        Descripción: Una venta contiene múltiples detalles.
+        Cardinalidad: Una venta tiene 1 o más detalles.
+                        Un detalle pertenece a exactamente 1 venta.
+        Implementación: FK venta_id en DETALLE_VENTA.
 
-   R4: PRODUCTO ──< DETALLE_VENTA
-      Tipo: 1:N (Uno a Muchos).
-      Descripción: Un producto puede aparecer en muchos detalles de venta.
-      Cardinalidad: Un producto puede estar en 0 o más detalles.
-                    Un detalle referencia exactamente 1 producto.
-      Implementación: FK producto_id en DETALLE_VENTA.
+    R4: PRODUCTO ──< DETALLE_VENTA
+        Tipo: 1:N (Uno a Muchos).
+        Descripción: Un producto puede aparecer en muchos detalles de venta.
+        Cardinalidad: Un producto puede estar en 0 o más detalles.
+                        Un detalle referencia exactamente 1 producto.
+        Implementación: FK producto_id en DETALLE_VENTA.
 
-   R5: PRODUCTO >──< PROVEEDOR (a través de PRODUCTO_PROVEEDOR)
-      Tipo: N:M (Muchos a Muchos).
-      Descripción: Un producto puede ser suministrado por varios proveedores.
-                   Un proveedor puede suministrar varios productos.
-      Cardinalidad: Un producto puede tener 1 o más proveedores.
-                    Un proveedor puede suministrar 1 o más productos.
-      Implementación: Tabla intermedia PRODUCTO_PROVEEDOR con:
-                      - FK producto_id
-                      - FK proveedor_id
-                      - Atributos adicionales: precio_compra, tiempo_entrega_dias
-```
+    R5: PRODUCTO >──< PROVEEDOR (a través de PRODUCTO_PROVEEDOR)
+        Tipo: N:M (Muchos a Muchos).
+        Descripción: Un producto puede ser suministrado por varios proveedores.
+                    Un proveedor puede suministrar varios productos.
+        Cardinalidad: Un producto puede tener 1 o más proveedores.
+                        Un proveedor puede suministrar 1 o más productos.
+        Implementación: Tabla intermedia PRODUCTO_PROVEEDOR con:
+                        - FK producto_id
+                        - FK proveedor_id
+                        - Atributos adicionales: precio_compra, tiempo_entrega_dias
+    ```
 
 2.	En tu diagrama, dibuja líneas conectando las entidades relacionadas.
 
@@ -368,16 +368,16 @@ Definir las relaciones entre entidades y determinar su cardinalidad (1:1, 1:N, N
 
 4.	Ejemplos de notación:
 
-```txt
-   CATEGORIA |──< PRODUCTO
-   (Una categoría tiene muchos productos)
+    ```txt
+    CATEGORIA |──< PRODUCTO
+    (Una categoría tiene muchos productos)
 
-   CLIENTE |o──< VENTA
-   (Un cliente puede tener cero o muchas ventas)
+    CLIENTE |o──< VENTA
+    (Un cliente puede tener cero o muchas ventas)
 
-   PRODUCTO >──< PROVEEDOR
-   (Muchos a muchos a través de tabla intermedia)
-```
+    PRODUCTO >──< PROVEEDOR
+    (Muchos a muchos a través de tabla intermedia)
+    ```
 
 #### Resultado Esperado:
 Diagrama completo con todas las entidades conectadas mediante líneas que muestran las relaciones y su cardinalidad usando notación estándar.
@@ -399,64 +399,68 @@ Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repet
 
 1. **Revisa cada entidad para verificar el cumplimiento de 1FN:**
 
-**Reglas de 1FN:**
-- Cada columna debe contener **valores atómicos** (indivisibles)
-- No debe haber **grupos repetitivos**
-- Cada columna debe contener valores de **un solo tipo**
-- Cada columna debe tener un **nombre único**
-- El **orden de las filas** no debe importar
+    **Reglas de 1FN:**
+    - Cada columna debe contener **valores atómicos** (indivisibles)
+    - No debe haber **grupos repetitivos**
+    - Cada columna debe contener valores de **un solo tipo**
+    - Cada columna debe tener un **nombre único**
+    - El **orden de las filas** no debe importar
 
+<br/><br/>
 
 2.	Analiza posibles violaciones:
-```txt
-   ANÁLISIS DE 1FN:
 
-   ENTIDAD: CLIENTE
-   ❌ Problema potencial: Atributo "nombre" podría contener nombre y apellido
-   ✅ Solución: Dividir en nombre y apellido (opcional para tienda de barrio)
-   ✅ Decisión: Mantener "nombre" completo por simplicidad del negocio
+    ```md
+    ANÁLISIS DE 1FN:
 
-   ENTIDAD: PRODUCTO
-   ✅ Todos los atributos son atómicos
-   ✅ No hay grupos repetitivos
-   ✅ stock_actual es un valor único, no múltiples ubicaciones
+    ENTIDAD: CLIENTE
+    ❌ Problema potencial: Atributo "nombre" podría contener nombre y apellido
+    ✅ Solución: Dividir en nombre y apellido (opcional para tienda de barrio)
+    ✅ Decisión: Mantener "nombre" completo por simplicidad del negocio
 
-   ENTIDAD: VENTA
-   ❌ Problema potencial: Si tuviéramos "productos" como lista en VENTA
-   ✅ Solución aplicada: Tabla DETALLE_VENTA separa cada producto
-   ✅ Cumple 1FN: Cada venta se relaciona con productos mediante tabla intermedia
+    ENTIDAD: PRODUCTO
+    ✅ Todos los atributos son atómicos
+    ✅ No hay grupos repetitivos
+    ✅ stock_actual es un valor único, no múltiples ubicaciones
 
-   ENTIDAD: DETALLE_VENTA
-   ✅ Cada detalle representa un solo producto en una venta
-   ✅ Atributos atómicos: cantidad, precio_unitario, subtotal
-   ✅ Cumple 1FN completamente
+    ENTIDAD: VENTA
+    ❌ Problema potencial: Si tuviéramos "productos" como lista en VENTA
+    ✅ Solución aplicada: Tabla DETALLE_VENTA separa cada producto
+    ✅ Cumple 1FN: Cada venta se relaciona con productos mediante tabla intermedia
 
-   ENTIDAD: PROVEEDOR
-   ✅ Datos de contacto son atómicos
-   ✅ Un solo contacto por proveedor
+    ENTIDAD: DETALLE_VENTA
+    ✅ Cada detalle representa un solo producto en una venta
+    ✅ Atributos atómicos: cantidad, precio_unitario, subtotal
+    ✅ Cumple 1FN completamente
 
-   ENTIDAD: PRODUCTO_PROVEEDOR
-   ✅ Representa una relación única producto-proveedor
-   ✅ Atributos atómicos
-```
+    ENTIDAD: PROVEEDOR
+    ✅ Datos de contacto son atómicos
+    ✅ Un solo contacto por proveedor
+
+    ENTIDAD: PRODUCTO_PROVEEDOR
+    ✅ Representa una relación única producto-proveedor
+    ✅ Atributos atómicos
+    ```
+
+<br/><br/>
 
 3.	Documenta las decisiones de diseño:
 
-```txt
-   DECISIONES DE NORMALIZACIÓN 1FN:
+    ```txt
+    ***DECISIONES DE NORMALIZACIÓN 1FN:**
 
-   1. CLIENTE.nombre: Se mantiene como campo único (no dividir en nombre/apellido)
-      Justificación: Simplicidad para tienda de barrio, no se requiere ordenamiento formal
+    1. CLIENTE.nombre: Se mantiene como campo único (no dividir en nombre/apellido)
+        Justificación: Simplicidad para tienda de barrio, no se requiere ordenamiento formal
 
-   2. DETALLE_VENTA: Tabla creada específicamente para cumplir 1FN
-      Justificación: Evita almacenar múltiples productos en un solo registro de venta
+    2. DETALLE_VENTA: Tabla creada específicamente para cumplir 1FN
+        Justificación: Evita almacenar múltiples productos en un solo registro de venta
 
-   3. PRODUCTO_PROVEEDOR: Tabla intermedia con atributos propios
-      Justificación: Permite múltiples proveedores por producto sin repetición
+    3. PRODUCTO_PROVEEDOR: Tabla intermedia con atributos propios
+        Justificación: Permite múltiples proveedores por producto sin repetición
 
-   4. Todos los campos de fecha usan TIMESTAMP (atómico)
-      Justificación: No se divide fecha y hora en campos separados
-```
+    4. Todos los campos de fecha usan TIMESTAMP (atómico)
+        Justificación: No se divide fecha y hora en campos separados
+    ```
 
 #### Resultado Esperado:
 Documentación que confirma que todas las entidades cumplen con 1FN, con justificaciones de diseño documentadas.
@@ -475,85 +479,91 @@ Verificar y aplicar la Segunda Forma Normal para eliminar dependencias parciales
 
 1.	Identifica entidades con claves primarias compuestas:
 
-```txt
-   ANÁLISIS DE 2FN:
+    ```txt
+    ANÁLISIS DE 2FN:
 
-   Regla de 2FN: Debe cumplir 1FN Y todos los atributos no-clave deben depender
-                 completamente de la clave primaria (no dependencias parciales)
+    Regla de 2FN: Debe cumplir 1FN Y todos los atributos no-clave deben depender
+                    completamente de la clave primaria (no dependencias parciales)
 
-   ENTIDADES CON CLAVE SIMPLE (Cumplen 2FN automáticamente):
-   - CATEGORIA (PK: categoria_id)
-   - PRODUCTO (PK: producto_id)
-   - CLIENTE (PK: cliente_id)
-   - VENTA (PK: venta_id)
-   - PROVEEDOR (PK: proveedor_id)
+    ENTIDADES CON CLAVE SIMPLE (Cumplen 2FN automáticamente):
+    - CATEGORIA (PK: categoria_id)
+    - PRODUCTO (PK: producto_id)
+    - CLIENTE (PK: cliente_id)
+    - VENTA (PK: venta_id)
+    - PROVEEDOR (PK: proveedor_id)
 
-   ENTIDADES CON POTENCIAL CLAVE COMPUESTA:
+    ENTIDADES CON POTENCIAL CLAVE COMPUESTA:
 
-   DETALLE_VENTA:
-   ✅ Diseño actual: PK simple (detalle_venta_id)
-   🔍 Alternativa: PK compuesta (venta_id, producto_id)
+    DETALLE_VENTA:
+    ✅ Diseño actual: PK simple (detalle_venta_id)
+    🔍 Alternativa: PK compuesta (venta_id, producto_id)
 
-   Análisis con PK compuesta (venta_id, producto_id):
-   - cantidad → depende de (venta_id, producto_id) ✅
-   - precio_unitario → depende de (venta_id, producto_id) ✅
-   - subtotal → depende de (venta_id, producto_id) ✅
+    Análisis con PK compuesta (venta_id, producto_id):
+    - cantidad → depende de (venta_id, producto_id) ✅
+    - precio_unitario → depende de (venta_id, producto_id) ✅
+    - subtotal → depende de (venta_id, producto_id) ✅
 
-   ✅ Cumple 2FN: No hay dependencias parciales
-   ✅ Decisión: Mantener PK simple por flexibilidad
+    ✅ Cumple 2FN: No hay dependencias parciales
+    ✅ Decisión: Mantener PK simple por flexibilidad
 
-   PRODUCTO_PROVEEDOR:
-   ✅ Diseño actual: PK simple (producto_proveedor_id)
-   🔍 Alternativa: PK compuesta (producto_id, proveedor_id)
+    PRODUCTO_PROVEEDOR:
+    ✅ Diseño actual: PK simple (producto_proveedor_id)
+    🔍 Alternativa: PK compuesta (producto_id, proveedor_id)
 
-   Análisis con PK compuesta (producto_id, proveedor_id):
-   - precio_compra → depende de (producto_id, proveedor_id) ✅
-   - tiempo_entrega_dias → depende de (producto_id, proveedor_id) ✅
-   - es_proveedor_principal → depende de (producto_id, proveedor_id) ✅
+    Análisis con PK compuesta (producto_id, proveedor_id):
+    - precio_compra → depende de (producto_id, proveedor_id) ✅
+    - tiempo_entrega_dias → depende de (producto_id, proveedor_id) ✅
+    - es_proveedor_principal → depende de (producto_id, proveedor_id) ✅
 
-   ✅ Cumple 2FN: No hay dependencias parciales
-   ✅ Decisión: Mantener PK simple por flexibilidad
-```
+    ✅ Cumple 2FN: No hay dependencias parciales
+    ✅ Decisión: Mantener PK simple por flexibilidad
+    ```
+
+<br/><br/>
 
 2.	Verifica dependencias funcionales:
 
-```txt
-   VERIFICACIÓN DE DEPENDENCIAS FUNCIONALES:
+    ```txt
+    VERIFICACIÓN DE DEPENDENCIAS FUNCIONALES:
 
-   PRODUCTO:
-   producto_id → nombre, descripcion, precio_venta, codigo_barras,
-                 stock_actual, stock_minimo, categoria_id, fecha_registro, activo
-   ✅ Todos los atributos dependen completamente de producto_id
+    PRODUCTO:
+    producto_id → nombre, descripcion, precio_venta, codigo_barras,
+                    stock_actual, stock_minimo, categoria_id, fecha_registro, activo
+    ✅ Todos los atributos dependen completamente de producto_id
 
-   VENTA:
-   venta_id → fecha_venta, cliente_id, subtotal, impuesto, total, metodo_pago
-   ✅ Todos los atributos dependen completamente de venta_id
+    VENTA:
+    venta_id → fecha_venta, cliente_id, subtotal, impuesto, total, metodo_pago
+    ✅ Todos los atributos dependen completamente de venta_id
 
-   DETALLE_VENTA:
-   detalle_venta_id → venta_id, producto_id, cantidad, precio_unitario, subtotal
-   ✅ Todos los atributos dependen completamente de detalle_venta_id
+    DETALLE_VENTA:
+    detalle_venta_id → venta_id, producto_id, cantidad, precio_unitario, subtotal
+    ✅ Todos los atributos dependen completamente de detalle_venta_id
 
-   ❌ Nota: precio_unitario podría obtenerse de PRODUCTO, pero se almacena
-            para mantener histórico (el precio puede cambiar con el tiempo)
-   ✅ Justificación: Es correcto almacenar precio_unitario en DETALLE_VENTA
-```
+    ❌ Nota: precio_unitario podría obtenerse de PRODUCTO, pero se almacena
+                para mantener histórico (el precio puede cambiar con el tiempo)
+    ✅ Justificación: Es correcto almacenar precio_unitario en DETALLE_VENTA
+    ```
+
+<br/><br/>
 
 3.	Documenta el cumplimiento de 2FN:
 
-```txt
-   CUMPLIMIENTO DE 2FN - RESUMEN:
+    ```txt
+    CUMPLIMIENTO DE 2FN - RESUMEN:
 
-   ✅ Todas las entidades utilizan claves primarias simples (surrogate keys)
-   ✅ No existen dependencias parciales en ninguna entidad
-   ✅ Decisión de diseño: Usar INTEGER autoincrementable como PK
-      Ventajas:
-      - Simplifica relaciones
-      - Mejor performance en índices
-      - Facilita migraciones y replicación
-      - Evita problemas de dependencias parciales
+    ✅ Todas las entidades utilizan claves primarias simples (surrogate keys)
+    ✅ No existen dependencias parciales en ninguna entidad
+    ✅ Decisión de diseño: Usar INTEGER autoincrementable como PK
+        Ventajas:
+        - Simplifica relaciones
+        - Mejor performance en índices
+        - Facilita migraciones y replicación
+        - Evita problemas de dependencias parciales
 
-   ✅ El diseño actual cumple completamente con 2FN
-```
+    ✅ El diseño actual cumple completamente con 2FN
+    ```
+
+<br/><br/>
 
 #### Resultado Esperado:
 Documentación que confirma cumplimiento de 2FN en todas las entidades, con análisis de dependencias funcionales.
