@@ -585,16 +585,16 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
 1.	Analiza dependencias transitivas en cada entidad:
 
-```md
-    ## Análisis de Tercera Forma Normal (3FN)
+
+    #### Análisis de Tercera Forma Normal (3FN)
 
     **Regla de 3FN:**  
-    Debe cumplir con 2FN y no debe haber dependencias transitivas  
-    (atributos no clave que dependan de otros atributos no clave).
+    - Debe cumplir con 2FN y no debe haber dependencias transitivas  
+    - (atributos no clave que dependan de otros atributos no clave).
 
     <br/>
 
-    ### Entidad: PRODUCTO
+    ##### Entidad: PRODUCTO
 
     **Dependencias:**
     - producto_id → categoria_id  
@@ -607,7 +607,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ### Entidad: VENTA
+    ##### Entidad: VENTA
 
     **Análisis de atributos calculados:**
     - subtotal  
@@ -633,7 +633,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ### Entidad: DETALLE_VENTA
+    ##### Entidad: DETALLE_VENTA
 
     **Dependencias:**
     - detalle_venta_id → cantidad, precio_unitario  
@@ -645,7 +645,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ### Entidad: CLIENTE
+    ##### Entidad: CLIENTE
 
     **Dependencias:**
     - cliente_id → direccion  
@@ -661,12 +661,12 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ### Entidad: PROVEEDOR
+    ##### Entidad: PROVEEDOR
 
     **Evaluación:**
     - Caso similar a CLIENTE  
     - El uso de un solo campo `direccion` es aceptable para este contexto
-```
+
 
 <br/><br/>
 
