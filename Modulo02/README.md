@@ -1901,7 +1901,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Referencia completa de tipos de datos disponibles
 
 ---
-<br/>
 
 ### Herramientas de Diagramación
 - **draw.io (diagrams.net)**  
@@ -1922,7 +1921,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
 
 
 ---
-<br/>
 
 ### Tutoriales y Guías
 - **Database Normalization Explained**  
@@ -1939,7 +1937,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
 
 
 ---
-<br/>
 
 ### Videos Educativos
 - **Database Design Course (freeCodeCamp)**  
@@ -1950,7 +1947,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Buscar en YouTube tutoriales en español sobre normalización
 
 ---
-<br/>
 
 ### Libros Recomendados
 - **"Database Design for Mere Mortals" – Michael J. Hernandez**  
@@ -1960,7 +1956,6 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Fundamentos teóricos profundos de bases de datos relacionales
 
 ---
-<br/>
 
 ### Comunidades y Foros
 
