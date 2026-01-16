@@ -452,7 +452,6 @@ Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repet
 
 3.	Documenta las decisiones de diseño:
 
-    ```md
     **DECISIONES DE NORMALIZACIÓN 1FN:**
 
     1. CLIENTE.nombre: Se mantiene como campo único (no dividir en nombre/apellido)
@@ -466,7 +465,7 @@ Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repet
 
     4. Todos los campos de fecha usan TIMESTAMP (atómico)
         Justificación: No se divide fecha y hora en campos separados
-    ```
+    
 
 <br/><br/>
 
