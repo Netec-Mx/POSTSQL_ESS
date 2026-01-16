@@ -586,7 +586,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 1.	Analiza dependencias transitivas en cada entidad:
 
 
-    #### Análisis de Tercera Forma Normal (3FN)
+    ### Análisis de Tercera Forma Normal (3FN)
 
     **Regla de 3FN:**  
     - Debe cumplir con 2FN y no debe haber dependencias transitivas  
@@ -594,7 +594,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ##### Entidad: PRODUCTO
+    #### Entidad: PRODUCTO
 
     **Dependencias:**
     - producto_id → categoria_id  
@@ -607,7 +607,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ##### Entidad: VENTA
+    #### Entidad: VENTA
 
     **Análisis de atributos calculados:**
     - subtotal  
@@ -633,7 +633,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ##### Entidad: DETALLE_VENTA
+    #### Entidad: DETALLE_VENTA
 
     **Dependencias:**
     - detalle_venta_id → cantidad, precio_unitario  
@@ -645,7 +645,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ##### Entidad: CLIENTE
+    #### Entidad: CLIENTE
 
     **Dependencias:**
     - cliente_id → direccion  
@@ -661,7 +661,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ##### Entidad: PROVEEDOR
+    #### Entidad: PROVEEDOR
 
     **Evaluación:**
     - Caso similar a CLIENTE  
@@ -674,7 +674,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     ## Resolución de Dependencias Transitivas
 
-    ### Caso 1: Categorías de Productos
+    #### Caso 1: Categorías de Productos
     **Estado:** Resuelto  
     **Solución:** Tabla `CATEGORIA` separada
 
@@ -692,7 +692,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ### Caso 2: Información de Proveedor en Productos
+    #### Caso 2: Información de Proveedor en Productos
     **Estado:** Resuelto  
     **Solución:** Tabla `PRODUCTO_PROVEEDOR`
 
@@ -711,9 +711,9 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
     <br/>
 
-    ### Caso 3: Atributos Calculados (Excepción Justificada)
-        - `VENTA.total` (calculado de `subtotal + impuesto`)
-        - `DETALLE_VENTA.subtotal` (calculado de `cantidad * precio_unitario`)
+    #### Caso 3: Atributos Calculados (Excepción Justificada)
+        `VENTA.total` (calculado de `subtotal + impuesto`)
+        `DETALLE_VENTA.subtotal` (calculado de `cantidad * precio_unitario`)
 
     **Justificación:**  
     Documentada en el análisis anterior.
