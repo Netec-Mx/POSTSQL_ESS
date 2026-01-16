@@ -86,6 +86,8 @@ Antes de comenzar, verifica que tu sistema cumple con los requisitos:
 
 
 ## Instrucciones
+<br/><br/>
+
 
 ### Paso 1. Descargar PostgreSQL 18
 
