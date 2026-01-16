@@ -500,29 +500,29 @@ Verificar y aplicar la Segunda Forma Normal para eliminar dependencias parciales
 
 - **ENTIDADES CON POTENCIAL CLAVE COMPUESTA**:
 
-    - DETALLE_VENTA:
+    - **DETALLE_VENTA**:
         - **Diseño actual**: PK simple (detalle_venta_id)
         - **Alternativa**: PK compuesta (venta_id, producto_id)
 
-    - Análisis con PK compuesta (venta_id, producto_id):
-        - cantidad → depende de (venta_id, producto_id) 
-        - precio_unitario → depende de (venta_id, producto_id) 
-        - subtotal → depende de (venta_id, producto_id) 
+        - Análisis con PK compuesta (venta_id, producto_id):
+            - cantidad → depende de (venta_id, producto_id) 
+            - precio_unitario → depende de (venta_id, producto_id) 
+            - subtotal → depende de (venta_id, producto_id) 
 
-    - Cumple 2FN: No hay dependencias parciales
-    - Decisión: Mantener PK simple por flexibilidad
+        - Cumple 2FN: No hay dependencias parciales
+        - Decisión: Mantener PK simple por flexibilidad
 
     - **PRODUCTO_PROVEEDOR**:
         - Diseño actual: PK simple (producto_proveedor_id)
         - Alternativa: PK compuesta (producto_id, proveedor_id)
 
-    - Análisis con PK compuesta (producto_id, proveedor_id):
-        - precio_compra → depende de (producto_id, proveedor_id) 
-        - tiempo_entrega_dias → depende de (producto_id, proveedor_id) 
-        - es_proveedor_principal → depende de (producto_id, proveedor_id) 
+        - Análisis con PK compuesta (producto_id, proveedor_id):
+            - precio_compra → depende de (producto_id, proveedor_id) 
+            - tiempo_entrega_dias → depende de (producto_id, proveedor_id) 
+            - es_proveedor_principal → depende de (producto_id, proveedor_id) 
 
-    - Cumple 2FN: No hay dependencias parciales
-    - Decisión: Mantener PK simple por flexibilidad
+        - Cumple 2FN: No hay dependencias parciales
+        - Decisión: Mantener PK simple por flexibilidad
 
     
 <br/><br/>
