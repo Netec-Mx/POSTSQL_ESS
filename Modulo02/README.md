@@ -1176,28 +1176,28 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
         - [ ] Las relaciones están claramente dibujadas en el diagrama
 
     #### VI. NORMALIZACIÓN
-        - [ ] **Primera Forma Normal (1FN)**
+        - [ ] Primera Forma Normal (1FN)
             - [ ] No hay grupos repetitivos
             - [ ] Todos los atributos son atómicos
-        - [ ] **Segunda Forma Normal (2FN)**
+        - [ ] Segunda Forma Normal (2FN)
             - [ ] No hay dependencias parciales
             - [ ] Todos los atributos dependen de la PK completa
-        - [ ] **Tercera Forma Normal (3FN)**
+        - [ ] Tercera Forma Normal (3FN)
             - [ ] No hay dependencias transitivas (o están justificadas)
             - [ ] Atributos no-clave no dependen de otros atributos no-clave
 
     #### VII. NOMENCLATURA Y CONVENCIONES
         - [ ] Nombres de tablas en singular o plural consistente
-        - [ ] Uso de `snake_case` para nombres
+        - [ ] Uso de snake_case para nombres
         - [ ] Nombres descriptivos y claros
         - [ ] Convenciones de PK/FK consistentes
         - [ ] Idioma consistente (español o inglés)
 
     #### VIII. INTEGRIDAD
-        - [ ] Constraints `NOT NULL` apropiados
-        - [ ] Constraints `UNIQUE` donde sea necesario
-        - [ ] Constraints `CHECK` para validaciones
-        - [ ] Consideración de `ON DELETE` / `ON UPDATE` para FKs
+        - [ ] Constraints NOT NULL apropiados
+        - [ ] Constraints UNIQUE donde sea necesario
+        - [ ] Constraints CHECK para validaciones
+        - [ ] Consideración de ON DELETE / ON UPDATE para FKs
 
     #### IX. DIAGRAMA ER
         - [ ] Usa notación estándar (Crow’s Foot o Chen)
@@ -1252,8 +1252,7 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
 
 #### Resultado
 
-**Todos los requerimientos funcionales están cubiertos**
-
+Todos los requerimientos funcionales están cubiertos
 
 <br/><br/>
 
@@ -1391,12 +1390,12 @@ Verifica que estas relaciones existan en tu diagrama:
 
 Relaciones requeridas:
 
-    - CATEGORIA (1) ──< (N) PRODUCTO  
-    - CLIENTE (1) ──< (N) VENTA (cliente_id puede ser NULL)  
-    - VENTA (1) ──< (N) DETALLE_VENTA  
-    - PRODUCTO (1) ──< (N) DETALLE_VENTA  
-    - PRODUCTO (1) ──< (N) PRODUCTO_PROVEEDOR  
-    - PROVEEDOR (1) ──< (N) PRODUCTO_PROVEEDOR  
+- CATEGORIA (1) ──< (N) PRODUCTO  
+- CLIENTE (1) ──< (N) VENTA (cliente_id puede ser NULL)  
+- VENTA (1) ──< (N) DETALLE_VENTA  
+- PRODUCTO (1) ──< (N) DETALLE_VENTA  
+- PRODUCTO (1) ──< (N) PRODUCTO_PROVEEDOR  
+- PROVEEDOR (1) ──< (N) PRODUCTO_PROVEEDOR  
 
 - Total: 6 relaciones
 
@@ -1412,20 +1411,20 @@ Las 6 relaciones están correctamente dibujadas con cardinalidad apropiada.
 
 Confirmación del cumplimiento de las formas normales:
 
-    **Primera Forma Normal (1FN):**
-        - No existen atributos multivaluados.
-        - No hay grupos repetitivos.
-        - Todos los atributos son atómicos.
+**Primera Forma Normal (1FN):**
+    - No existen atributos multivaluados.
+    - No hay grupos repetitivos.
+    - Todos los atributos son atómicos.
 
-    **Segunda Forma Normal (2FN):**
-        - Todas las entidades utilizan claves primarias simples (surrogate keys).
-        - No existen dependencias parciales.
+**Segunda Forma Normal (2FN):**
+    - Todas las entidades utilizan claves primarias simples (surrogate keys).
+    - No existen dependencias parciales.
 
-    **Tercera Forma Normal (3FN):**
-        - No existen dependencias transitivas no justificadas.
-        - Las categorías están modeladas en una tabla separada.
-        - Los proveedores están modelados en una tabla separada.
-        - Los atributos calculados persistidos están debidamente justificados.
+**Tercera Forma Normal (3FN):**
+    - No existen dependencias transitivas no justificadas.
+    - Las categorías están modeladas en una tabla separada.
+    - Los proveedores están modelados en una tabla separada.
+    - Los atributos calculados persistidos están debidamente justificados.
 
 
 #### Resultado Esperado: 
@@ -1442,10 +1441,10 @@ Verifica que tu diseño soporta esta consulta:
 
 
 Tablas necesarias:
-    - CLIENTE (nombre del cliente)
-    - VENTA (fecha, total)
-    - DETALLE_VENTA (cantidad, precio_unitario)
-    - PRODUCTO (nombre del producto)
+- CLIENTE (nombre del cliente)
+- VENTA (fecha, total)
+- DETALLE_VENTA (cantidad, precio_unitario)
+- PRODUCTO (nombre del producto)
 
 #### Validación:
 
@@ -1664,18 +1663,17 @@ producto_id → categoria_nombre → categoria_descripcion
 
 2. **Crea tabla separada para el atributo intermedio:**
 
-   **CORRECCIÓN:**
+**CORRECCIÓN:**
 
 ```
 CATEGORIA (categoria_id, nombre, descripcion)
 PRODUCTO (producto_id, nombre, categoria_id [FK])
 ```
 
-```
 **Ahora:**
 - `producto_id` → `categoria_id` (directo)
 - `categoria_id` → `nombre`, `descripcion` (en tabla separada)
-```
+
 
 #### Casos comunes en tienda de barrio:
 
@@ -1769,6 +1767,8 @@ Falta de familiaridad con la herramienta de diagramación.
    - Usa **"Arrange"** → **"Layout"** para auto-organizar
    - Mantén entidades relacionadas cerca
    - Evita cruces de líneas innecesarios
+
+<br/>
 
 **Alternativa offline (papel):**
 - Dibuja rectángulos para las entidades
@@ -1901,7 +1901,7 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Referencia completa de tipos de datos disponibles
 
 ---
-<br/><br/>
+<br/>
 
 ### Herramientas de Diagramación
 - **draw.io (diagrams.net)**  
@@ -1922,7 +1922,7 @@ Considera estas preguntas para consolidar tu aprendizaje:
 
 
 ---
-<br/><br/>
+<br/>
 
 ### Tutoriales y Guías
 - **Database Normalization Explained**  
@@ -1939,7 +1939,7 @@ Considera estas preguntas para consolidar tu aprendizaje:
 
 
 ---
-<br/><br/>
+<br/>
 
 ### Videos Educativos
 - **Database Design Course (freeCodeCamp)**  
@@ -1950,7 +1950,7 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Buscar en YouTube tutoriales en español sobre normalización
 
 ---
-<br/><br/>
+<br/>
 
 ### Libros Recomendados
 - **"Database Design for Mere Mortals" – Michael J. Hernandez**  
@@ -1960,7 +1960,7 @@ Considera estas preguntas para consolidar tu aprendizaje:
   Fundamentos teóricos profundos de bases de datos relacionales
 
 ---
-<br/><br/>
+<br/>
 
 ### Comunidades y Foros
 
@@ -2002,8 +2002,7 @@ Considera estas preguntas para consolidar tu aprendizaje:
 
 ---
 
-<br/><br/>
-
+<br/>
 
 ¡Felicitaciones por completar este laboratorio de diseño de bases de datos relacionales!
 
