@@ -1098,77 +1098,77 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
 
 1.	Utiliza la siguiente lista de verificación para revisar tu diseño:
 
-#### 1. COMPLETITUD DE ENTIDADES
-- [ ] Todas las entidades necesarias están identificadas
-- [ ] Cada entidad tiene un propósito claro
-- [ ] No hay entidades redundantes
-- [ ] Las entidades intermedias para N:M están presentes
+    #### 1. COMPLETITUD DE ENTIDADES
+        - [ ] Todas las entidades necesarias están identificadas
+        - [ ] Cada entidad tiene un propósito claro
+        - [ ] No hay entidades redundantes
+        - [ ] Las entidades intermedias para N:M están presentes
 
-#### 2. ATRIBUTOS
-- [ ] Cada entidad tiene todos los atributos necesarios
-- [ ] Todos los atributos tienen tipos de datos definidos
-- [ ] Los tipos de datos son apropiados (`VARCHAR`, `INTEGER`, `DECIMAL`, etc.)
-- [ ] No hay atributos multivaluados (violación 1FN)
-- [ ] Los atributos calculados están justificados
+    #### 2. ATRIBUTOS
+        - [ ] Cada entidad tiene todos los atributos necesarios
+        - [ ] Todos los atributos tienen tipos de datos definidos
+        - [ ] Los tipos de datos son apropiados (`VARCHAR`, `INTEGER`, `DECIMAL`, etc.)
+        - [ ] No hay atributos multivaluados (violación 1FN)
+        - [ ] Los atributos calculados están justificados
 
-#### 3. CLAVES PRIMARIAS
-- [ ] Cada entidad tiene una clave primaria definida
-- [ ] Las PKs son únicas e inmutables
-- [ ] Se usa nomenclatura consistente (`[tabla]_id`)
-- [ ] Las PKs están marcadas claramente en el diagrama
+    #### 3. CLAVES PRIMARIAS
+        - [ ] Cada entidad tiene una clave primaria definida
+        - [ ] Las PKs son únicas e inmutables
+        - [ ] Se usa nomenclatura consistente (`[tabla]_id`)
+        - [ ] Las PKs están marcadas claramente en el diagrama
 
-#### 4. CLAVES FORÁNEAS
-- [ ] Todas las relaciones tienen FKs apropiadas
-- [ ] Las FKs referencian PKs válidas
-- [ ] La nomenclatura de FKs es consistente
-- [ ] Las FKs están marcadas en el diagrama
+    #### 4. CLAVES FORÁNEAS
+        - [ ] Todas las relaciones tienen FKs apropiadas
+        - [ ] Las FKs referencian PKs válidas
+        - [ ] La nomenclatura de FKs es consistente
+        - [ ] Las FKs están marcadas en el diagrama
 
-#### 5. RELACIONES
-- [ ] Todas las relaciones necesarias están modeladas
-- [ ] La cardinalidad está correctamente definida (1:1, 1:N, N:M)
-- [ ] Las relaciones N:M usan tablas intermedias
-- [ ] La direccionalidad de las relaciones es correcta
-- [ ] Las relaciones están claramente dibujadas en el diagrama
+    #### 5. RELACIONES
+        - [ ] Todas las relaciones necesarias están modeladas
+        - [ ] La cardinalidad está correctamente definida (1:1, 1:N, N:M)
+        - [ ] Las relaciones N:M usan tablas intermedias
+        - [ ] La direccionalidad de las relaciones es correcta
+        - [ ] Las relaciones están claramente dibujadas en el diagrama
 
-#### 6. NORMALIZACIÓN
-- [ ] **Primera Forma Normal (1FN)**
-  - [ ] No hay grupos repetitivos
-  - [ ] Todos los atributos son atómicos
-- [ ] **Segunda Forma Normal (2FN)**
-  - [ ] No hay dependencias parciales
-  - [ ] Todos los atributos dependen de la PK completa
-- [ ] **Tercera Forma Normal (3FN)**
-  - [ ] No hay dependencias transitivas (o están justificadas)
-  - [ ] Atributos no-clave no dependen de otros atributos no-clave
+    #### 6. NORMALIZACIÓN
+        - [ ] **Primera Forma Normal (1FN)**
+            - [ ] No hay grupos repetitivos
+            - [ ] Todos los atributos son atómicos
+        - [ ] **Segunda Forma Normal (2FN)**
+            - [ ] No hay dependencias parciales
+            - [ ] Todos los atributos dependen de la PK completa
+        - [ ] **Tercera Forma Normal (3FN)**
+            - [ ] No hay dependencias transitivas (o están justificadas)
+            - [ ] Atributos no-clave no dependen de otros atributos no-clave
 
-#### 7. NOMENCLATURA Y CONVENCIONES
-- [ ] Nombres de tablas en singular o plural consistente
-- [ ] Uso de `snake_case` para nombres
-- [ ] Nombres descriptivos y claros
-- [ ] Convenciones de PK/FK consistentes
-- [ ] Idioma consistente (español o inglés)
+    #### 7. NOMENCLATURA Y CONVENCIONES
+        - [ ] Nombres de tablas en singular o plural consistente
+        - [ ] Uso de `snake_case` para nombres
+        - [ ] Nombres descriptivos y claros
+        - [ ] Convenciones de PK/FK consistentes
+        - [ ] Idioma consistente (español o inglés)
 
-#### 8. INTEGRIDAD
-- [ ] Constraints `NOT NULL` apropiados
-- [ ] Constraints `UNIQUE` donde sea necesario
-- [ ] Constraints `CHECK` para validaciones
-- [ ] Consideración de `ON DELETE` / `ON UPDATE` para FKs
+    #### 8. INTEGRIDAD
+        - [ ] Constraints `NOT NULL` apropiados
+        - [ ] Constraints `UNIQUE` donde sea necesario
+        - [ ] Constraints `CHECK` para validaciones
+        - [ ] Consideración de `ON DELETE` / `ON UPDATE` para FKs
 
-#### 9. DIAGRAMA ER
-- [ ] Usa notación estándar (Crow’s Foot o Chen)
-- [ ] Todas las entidades están representadas
-- [ ] Todas las relaciones están dibujadas
-- [ ] La cardinalidad está indicada correctamente
-- [ ] El diagrama es legible y organizado
-- [ ] Incluye título, autor y fecha
-- [ ] Incluye leyenda de notación
+    #### 9. DIAGRAMA ER
+        - [ ] Usa notación estándar (Crow’s Foot o Chen)
+        - [ ] Todas las entidades están representadas
+        - [ ] Todas las relaciones están dibujadas
+        - [ ] La cardinalidad está indicada correctamente
+        - [ ] El diagrama es legible y organizado
+        - [ ] Incluye título, autor y fecha
+        - [ ] Incluye leyenda de notación
 
-#### 10. DOCUMENTACIÓN
-- [ ] Las decisiones de diseño están documentadas
-- [ ] Las alternativas consideradas están explicadas
-- [ ] Las reglas de negocio están identificadas
-- [ ] Las excepciones a la normalización están justificadas
-- [ ] Las consideraciones futuras están documentadas
+    #### 10. DOCUMENTACIÓN
+        - [ ] Las decisiones de diseño están documentadas
+        - [ ] Las alternativas consideradas están explicadas
+        - [ ] Las reglas de negocio están identificadas
+        - [ ] Las excepciones a la normalización están justificadas
+        - [ ] Las consideraciones futuras están documentadas
 
 
 <br/><br/>
@@ -1177,110 +1177,111 @@ Realizar una revisión sistemática del diseño completo para asegurar **calidad
 
 #### Validación contra Requerimientos
 
-- **RF1: Gestionar catálogo de productos con información detallada**  
-  ✅ Soportado por: Entidad `PRODUCTO` con todos los atributos necesarios
+    - **RF1: Gestionar catálogo de productos con información detallada**  
+    ✅ Soportado por: Entidad `PRODUCTO` con todos los atributos necesarios
 
-- **RF2: Organizar productos por categorías**  
-  ✅ Soportado por: Entidad `CATEGORIA`, relación **1:N** con `PRODUCTO`
+    - **RF2: Organizar productos por categorías**  
+    ✅ Soportado por: Entidad `CATEGORIA`, relación **1:N** con `PRODUCTO`
 
-- **RF3: Controlar inventario de productos (stock disponible)**  
-  ✅ Soportado por: `PRODUCTO.stock_actual`, `PRODUCTO.stock_minimo`
+    - **RF3: Controlar inventario de productos (stock disponible)**  
+    ✅ Soportado por: `PRODUCTO.stock_actual`, `PRODUCTO.stock_minimo`
 
-- **RF4: Registrar información de clientes frecuentes**  
-  ✅ Soportado por: Entidad `CLIENTE` con datos de contacto
+    - **RF4: Registrar información de clientes frecuentes**  
+    ✅ Soportado por: Entidad `CLIENTE` con datos de contacto
 
-- **RF5: Procesar ventas con múltiples productos**  
-  ✅ Soportado por: Entidades `VENTA` y `DETALLE_VENTA`
+    - **RF5: Procesar ventas con múltiples productos**  
+    ✅ Soportado por: Entidades `VENTA` y `DETALLE_VENTA`
 
-- **RF6: Mantener registro histórico de ventas**  
-  ✅ Soportado por: `VENTA.fecha_venta` y persistencia de precios históricos
+    - **RF6: Mantener registro histórico de ventas**  
+    ✅ Soportado por: `VENTA.fecha_venta` y persistencia de precios históricos
 
-- **RF7: Gestionar información de proveedores**  
-  ✅ Soportado por: Entidad `PROVEEDOR`
+    - **RF7: Gestionar información de proveedores**  
+    ✅ Soportado por: Entidad `PROVEEDOR`
 
-- **RF8: Relacionar productos con sus proveedores y precios de compra**  
-  ✅ Soportado por: Entidad `PRODUCTO_PROVEEDOR` con `precio_compra`
+    - **RF8: Relacionar productos con sus proveedores y precios de compra**  
+    ✅ Soportado por: Entidad `PRODUCTO_PROVEEDOR` con `precio_compra`
 
 
 <br/>
 
 #### Resultado
-✅ **Todos los requerimientos funcionales están cubiertos**
+
+**Todos los requerimientos funcionales están cubiertos**
 
 
 <br/><br/>
 
 3.	Simula consultas típicas para verificar que el diseño las soporta:
 
-### Simulación de Consultas
+    ### Simulación de Consultas
 
-#### Q1. ¿Qué productos están por debajo del stock mínimo?
-- **Tablas necesarias:** `PRODUCTO`
-- **Validación:** ✅ Posible
-```sql
-SELECT * FROM PRODUCTO WHERE stock_actual < stock_minimo;
-```
+    #### Q1. ¿Qué productos están por debajo del stock mínimo?
+    - **Tablas necesarias:** `PRODUCTO`
+    - **Validación:** ✅ Posible
+    ```sql
+    SELECT * FROM PRODUCTO WHERE stock_actual < stock_minimo;
+    ```
 
-#### Q2. ¿Cuál es el total de ventas del mes actual?
+    #### Q2. ¿Cuál es el total de ventas del mes actual?
 
-* **Tablas necesarias:** `VENTA`
-* **Validación:** ✅ Posible
+    * **Tablas necesarias:** `VENTA`
+    * **Validación:** ✅ Posible
 
-```sql
-SELECT SUM(total) FROM VENTA WHERE fecha_venta >= [inicio_mes];
-```
+    ```sql
+    SELECT SUM(total) FROM VENTA WHERE fecha_venta >= [inicio_mes];
+    ```
 
-#### Q3. ¿Qué productos ha comprado el cliente Juan Pérez?
+    #### Q3. ¿Qué productos ha comprado el cliente Juan Pérez?
 
-* **Tablas necesarias:** `CLIENTE`, `VENTA`, `DETALLE_VENTA`, `PRODUCTO`
-* **Validación:** ✅ Posible
+    * **Tablas necesarias:** `CLIENTE`, `VENTA`, `DETALLE_VENTA`, `PRODUCTO`
+    * **Validación:** ✅ Posible
 
-```sql
--- JOIN entre CLIENTE → VENTA → DETALLE_VENTA → PRODUCTO usando las FKs
-```
+    ```sql
+    -- JOIN entre CLIENTE → VENTA → DETALLE_VENTA → PRODUCTO usando las FKs
+    ```
 
-#### Q4. ¿Cuáles son los proveedores del producto "Leche"?
+    #### Q4. ¿Cuáles son los proveedores del producto "Leche"?
 
-* **Tablas necesarias:** `PRODUCTO`, `PRODUCTO_PROVEEDOR`, `PROVEEDOR`
-* **Validación:** ✅ Posible
+    * **Tablas necesarias:** `PRODUCTO`, `PRODUCTO_PROVEEDOR`, `PROVEEDOR`
+    * **Validación:** ✅ Posible
 
-```sql
--- JOIN entre PRODUCTO → PRODUCTO_PROVEEDOR → PROVEEDOR
-```
+    ```sql
+    -- JOIN entre PRODUCTO → PRODUCTO_PROVEEDOR → PROVEEDOR
+    ```
 
-#### Q5. ¿Cuántos productos se vendieron por categoría este mes?
+    #### Q5. ¿Cuántos productos se vendieron por categoría este mes?
 
-* **Tablas necesarias:** `CATEGORIA`, `PRODUCTO`, `DETALLE_VENTA`, `VENTA`
-* **Validación:** ✅ Posible
+    * **Tablas necesarias:** `CATEGORIA`, `PRODUCTO`, `DETALLE_VENTA`, `VENTA`
+    * **Validación:** ✅ Posible
 
-```sql
--- JOIN y GROUP BY por categoría
-```
+    ```sql
+    -- JOIN y GROUP BY por categoría
+    ```
 
 #### Resultado
 
-✅ **Todas las consultas típicas del negocio están soportadas por el diseño**
+**Todas las consultas típicas del negocio están soportadas por el diseño**
 
 
 4.	Identifica posibles mejoras o ajustes finales:
 
-**MEJORAS IDENTIFICADAS:**
+    **MEJORAS IDENTIFICADAS:**
 
-- ✅ **Considerado:** Agregar índice en `PRODUCTO.codigo_barras`  
-  **Justificación:** Búsquedas frecuentes por código de barras  
-  **Acción:** Documentar para fase de implementación
+    - ✅ **Considerado:** Agregar índice en `PRODUCTO.codigo_barras`  
+    **Justificación:** Búsquedas frecuentes por código de barras  
+    **Acción:** Documentar para fase de implementación
 
-- ✅ **Considerado:** Agregar campo `VENTA.notas` (`TEXT`)  
-  **Justificación:** Permitir comentarios adicionales en ventas  
-  **Acción:** Campo opcional, agregar si es necesario
+    - ✅ **Considerado:** Agregar campo `VENTA.notas` (`TEXT`)  
+    **Justificación:** Permitir comentarios adicionales en ventas  
+    **Acción:** Campo opcional, agregar si es necesario
 
-- ✅ **Considerado:** Agregar `CHECK` constraint en `DETALLE_VENTA.cantidad`  
-  **Justificación:** Asegurar `cantidad > 0`  
-  **Acción:** Documentar para fase de implementación DDL
+    - ✅ **Considerado:** Agregar `CHECK` constraint en `DETALLE_VENTA.cantidad`  
+    **Justificación:** Asegurar `cantidad > 0`  
+    **Acción:** Documentar para fase de implementación DDL
 
-- ✅ **Considerado:** Agregar campo `PRODUCTO.imagen_url`  
-  **Justificación:** Referencia a imagen del producto  
-  **Acción:** Extensión futura, no crítico para MVP
+    - ✅ **Considerado:** Agregar campo `PRODUCTO.imagen_url`  
+    **Justificación:** Referencia a imagen del producto  
+    **Acción:** Extensión futura, no crítico para MVP
 
 
 #### Resultado Esperado:
