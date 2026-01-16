@@ -585,6 +585,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
 
 1.	Analiza dependencias transitivas en cada entidad:
 
+```md
     ## Análisis de Tercera Forma Normal (3FN)
 
     **Regla de 3FN:**  
@@ -665,7 +666,7 @@ Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitiv
     **Evaluación:**
     - Caso similar a CLIENTE  
     - El uso de un solo campo `direccion` es aceptable para este contexto
-
+```
 
 <br/><br/>
 
