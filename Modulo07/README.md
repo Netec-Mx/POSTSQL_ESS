@@ -530,23 +530,25 @@ Poblar las tablas independientes con datos realistas de prueba.
 <br/><br/>
 
 #### Salida Esperada:
-```sql
-total_usuarios
----------------
-20
 
-total_ubicaciones
-------------------
-25
+    ```sql
+    total_usuarios
+    ---------------
+    20
 
-tipo_usuario | cantidad
--------------|----------
-anfitrion    | 8
-huesped      | 10
-ambos        | 2
-```
+    total_ubicaciones
+    ------------------
+    25
+
+    tipo_usuario | cantidad
+    -------------|----------
+    anfitrion    | 8
+    huesped      | 10
+    ambos        | 2
+    ```
 
 #### Verificación:
+
 - [ ] Se insertaron al menos **20 usuarios**
 - [ ] Se insertaron al menos **25 ubicaciones**
 - [ ] Hay usuarios de los **tres tipos** (**huésped**, **anfitrión**, **ambos**)
@@ -659,43 +661,47 @@ Poblar las tablas de propiedades, amenidades y sus relaciones.
 <br/>
 
 4.	Verifica los datos insertados:
-```sql
-   SELECT COUNT(*) as total_propiedades FROM propiedades;
-   SELECT COUNT(*) as total_amenidades FROM amenidades;
+    ```sql
+    SELECT COUNT(*) as total_propiedades FROM propiedades;
+    SELECT COUNT(*) as total_amenidades FROM amenidades;
 
-   -- Ver propiedades por tipo
-   SELECT tipo_propiedad, COUNT(*) as cantidad,
-          ROUND(AVG(precio_noche), 2) as precio_promedio
-   FROM propiedades
-   GROUP BY tipo_propiedad
-   ORDER BY cantidad DESC;
-```
+    -- Ver propiedades por tipo
+    SELECT tipo_propiedad, COUNT(*) as cantidad,
+            ROUND(AVG(precio_noche), 2) as precio_promedio
+    FROM propiedades
+    GROUP BY tipo_propiedad
+    ORDER BY cantidad DESC;
+    ```
 
 <br/><br/>
 
 #### Salida Esperada:
-```sql
-total_propiedades
-------------------
-30
+    ```sql
+    total_propiedades
+    ------------------
+    30
 
-total_amenidades
------------------
-15
+    total_amenidades
+    -----------------
+    15
 
-tipo_propiedad | cantidad | precio_promedio
----------------|----------|----------------
-apartamento    | 23       | 95.43
-casa           | 5        | 152.00
-villa          | 1        | 350.00
-habitacion     | 1        | 35.00
-```
+    tipo_propiedad | cantidad | precio_promedio
+    ---------------|----------|----------------
+    apartamento    | 23       | 95.43
+    casa           | 5        | 152.00
+    villa          | 1        | 350.00
+    habitacion     | 1        | 35.00
+    ```
+
+<br/>
 
 #### Verificación:
-•	[ ] Se insertaron al menos 30 propiedades
-•	[ ] Se insertaron 15 amenidades
-•	[ ] Las propiedades tienen precios realistas
-•	[ ] Las propiedades están asociadas a amenidades
+
+- [ ] Se insertaron al menos **30 propiedades**
+- [ ] Se insertaron **15 amenidades**
+- [ ] Las **propiedades** tienen **precios realistas**
+- [ ] Las **propiedades** están **asociadas a amenidades**
+
 
 <br/><br/>
 
