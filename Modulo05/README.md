@@ -5,6 +5,8 @@
 
 ## Duración	30 minutos
 
+<br/><br/>
+
 ## Objetivos 
 
 Al completar este laboratorio, usted será capaz de:
