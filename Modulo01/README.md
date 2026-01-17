@@ -4,11 +4,11 @@
 <br/><br/>
 
 ## Tiempo estimado:
-    60 minutos
+60 minutos
 
 <br/><br/>
 
-## Objetivos de Aprendizaje
+## Objetivos
 Al completar este laboratorio, serás capaz de:
 - Descargar e instalar **PostgreSQL 18** en sistema operativo Windows.
 - Configurar el servicio de **PostgreSQL** con contraseña de superusuario.

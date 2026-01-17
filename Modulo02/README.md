@@ -2,12 +2,12 @@
 
 <br/><br/>
 
-## Duración aproximada
-**90 minutos**
+## Duración 
+60 minutos
 
 <br/><br/>
 
-## Objetivos de Aprendizaje
+## Objetivos
 
 Al completar este laboratorio, serás capaz de:
 - Identificar entidades, atributos y relaciones para el dominio de una tienda de barrio
@@ -309,7 +309,7 @@ Diagrama con todas las entidades mostrando sus atributos completos, con claves p
 
 <br/><br/>
 
-## Paso 4. Establecimiento de Relaciones entre Entidades
+### Paso 4. Establecimiento de Relaciones entre Entidades
 
 Definir las relaciones entre entidades y determinar su cardinalidad (1:1, 1:N, N:M).
 
@@ -400,7 +400,7 @@ Diagrama completo con todas las entidades conectadas mediante líneas que muestr
 
 <br/><br/>
 
-## Paso 5: Aplicación de Primera Forma Normal (1FN)
+### Paso 5: Aplicación de Primera Forma Normal (1FN)
 
 Verificar y aplicar la **Primera Forma Normal (1FN)** para eliminar grupos repetitivos y asegurar la atomicidad de los datos.
 
@@ -481,7 +481,7 @@ Documentación que confirma que todas las entidades cumplen con 1FN, con justifi
 
 <br/><br/>
 
-## Paso 6. Aplicación de Segunda Forma Normal (2FN)
+### Paso 6. Aplicación de Segunda Forma Normal (2FN)
 Verificar y aplicar la Segunda Forma Normal para eliminar dependencias parciales de claves primarias compuestas.
 
 1.	Identifica entidades con claves primarias compuestas:
@@ -580,7 +580,7 @@ Documentación que confirma cumplimiento de 2FN en todas las entidades, con aná
 
 <br/><br/>
 
-## Paso 7. Aplicación de Tercera Forma Normal (3FN)
+### Paso 7. Aplicación de Tercera Forma Normal (3FN)
 Verificar y aplicar la Tercera Forma Normal para eliminar dependencias transitivas.
 
 1.	Analiza dependencias transitivas en cada entidad:
@@ -765,7 +765,7 @@ Documentación completa del análisis de 3FN con todas las dependencias transiti
 
 <br/><br/>
 
-## Paso 8. Creación del Diagrama Entidad-Relación Final
+### Paso 8. Creación del Diagrama Entidad-Relación Final
 
 Crear un **diagrama ER completo, profesional y correctamente notado** que represente el diseño final normalizado.
 
@@ -885,7 +885,7 @@ Diagrama ER profesional y completo que muestra todas las entidades, atributos, r
 
 <br/><br/>
 
-## Paso 9. Documentación de Decisiones de Diseño
+### Paso 9. Documentación de Decisiones de Diseño
 Crear documentación complementaria que explique las decisiones de diseño y justifique el modelo propuesto.
  
 1.	Crea un documento de texto con las siguientes secciones:
@@ -1137,7 +1137,7 @@ Documento de texto completo que explica y justifica todas las decisiones de dise
 
 <br/><br/>
 
-## Paso 10. Revisión Final y Validación del Diseño
+### Paso 10. Revisión Final y Validación del Diseño
 
 Realizar una revisión sistemática del diseño completo para asegurar **calidad, consistencia y completitud.**
 

@@ -8,7 +8,7 @@
 
 <br/><br/>
 
-## Objetivos de Aprendizaje
+## Objetivos
 
 Al completar este laboratorio, usted será capaz de:
 

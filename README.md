@@ -33,7 +33,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
 - En este laboratorio, diseñarás una base de datos relacional completa para una tienda de barrio o conveniencia, aplicando principios de modelado entidad-relación y normalización. Identificarás entidades clave como Productos, **Categorías**, Clientes, Ventas, Proveedores e Inventario, establecerás relaciones entre ellas, y crearás un diagrama ER profesional. Este ejercicio simula un escenario real de diseño de bases de datos, preparándote para implementar sistemas de **información** efectivos en entornos comerciales.
 
-- ⏱️ **Duración estimada**: 45 min.
+- ⏱️ **Duración estimada**: 60 min.
 
 
 <br/>
@@ -42,7 +42,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
 - En este laboratorio implementarás físicamente la base de datos de la tienda de barrio que diseñaste en el laboratorio anterior. Utilizarás SQL DDL (Data **Definition** Language) para crear la base de datos, definir todas las tablas con sus tipos de datos apropiados, establecer constraints de integridad, y poblar las tablas con datos de prueba. Esta práctica te permitirá transformar un diseño conceptual en una base de datos funcional en PostgreSQL, aplicando principios de **integridad** referencial y buenas prácticas de modelado físico.
 
-- ⏱️ **Duración estimada**: 45 min.
+- ⏱️ **Duración estimada**: 60 min.
 
 
 <br/>
@@ -52,7 +52,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
 - Este laboratorio proporciona práctica intensiva en consultas SQL mediante la ejecución de ejercicios progresivos sobre la base de datos tienda_barrio. Los **estudiantes** aplicarán técnicas de consulta SELECT desde operaciones básicas hasta consultas complejas que combinan filtros, agregaciones, agrupamientos y **funciones** integradas. Esta práctica consolida las habilidades fundamentales de **consulta** necesarias para extraer información significativa de bases de datos **relacionales**, preparando a los estudiantes para análisis de datos más avanzados.
 
-- ⏱️ **Duración estimada**: 45 min.
+- ⏱️ **Duración estimada**: 60 min.
 
 
 <br/>
@@ -62,7 +62,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
 - Este laboratorio proporciona práctica intensiva en la manipulación de datos **utilizando** sentencias UPDATE y DELETE en PostgreSQL. Los estudiantes ejecutarán una serie de ejercicios progresivos que abarcan desde actualizaciones simples hasta operaciones complejas con subconsultas, manejo de transacciones y estrategias de eliminación segura. El enfoque está en desarrollar habilidades para modificar datos de manera controlada, comprendiendo las implicaciones de **integridad** referencial y aplicando buenas prácticas para prevenir pérdida de datos.
 
-- ⏱️ **Duración estimada**: 45 min.
+- ⏱️ **Duración estimada**: 60 min.
 
 
 <br/>

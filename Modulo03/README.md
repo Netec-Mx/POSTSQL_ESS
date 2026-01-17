@@ -3,11 +3,11 @@
 <br/><br/>
 
 ## Duración	
-30 minutos
+60 minutos
 
 <br/><br/>
 
-## Objetivos de Aprendizaje
+## Objetivos
 Al completar este laboratorio, serás capaz de:
 
 - Crear una base de datos nueva en PostgreSQL usando comandos DDL.

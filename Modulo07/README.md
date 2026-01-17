@@ -3,7 +3,7 @@
 <br/><br/>
 
 ## Duración	
-30 minutos
+60 minutos
 
 <br/><br/>
 
@@ -171,7 +171,7 @@ Al completar este laboratorio, serás capaz de:
 
 <br/><br/>
 
-## Paso 2: Creación de la Base de Datos y Esquema
+### Paso 2: Creación de la Base de Datos y Esquema
  Crear la base de datos del proyecto y establecer la estructura inicial.
  
 1.	Abre PgAdmin y conéctate a tu servidor PostgreSQL.
@@ -443,7 +443,7 @@ usuarios
 <br/><br/>
 
 
-## Paso 4: Inserción de Datos de Prueba - Usuarios y Ubicaciones
+### Paso 4: Inserción de Datos de Prueba - Usuarios y Ubicaciones
 Poblar las tablas independientes con datos realistas de prueba.
  
 1.	Inserta usuarios (huéspedes y anfitriones):
@@ -876,7 +876,7 @@ pendiente   | 1        | 240.00
 
 <br/><br/>
 
-## Paso 7: Crear Consultas de Negocio Complejas
+### Paso 7: Crear Consultas de Negocio Complejas
 Desarrollar consultas SQL avanzadas para reportes y análisis del negocio.
  
 1.	Consulta 1: Búsqueda de propiedades disponibles por ciudad y rango de precio:
@@ -1181,7 +1181,7 @@ Desarrollar consultas SQL avanzadas para reportes y análisis del negocio.
 
 <br/><br/>
 
-## Paso 8: Crear Vistas para Consultas Comunes
+### Paso 8: Crear Vistas para Consultas Comunes
 Desarrollar vistas que encapsulen consultas frecuentes para facilitar su reutilización.
  
 1.	Crea una vista para propiedades disponibles con información completa:
@@ -1336,7 +1336,7 @@ Las **vistas** deberían retornar **datos consolidados y formateados**, facilita
 
 <br/><br/>
 
-## Paso 9: Documentación del Proyecto
+### Paso 9: Documentación del Proyecto
 Crear documentación completa del proyecto incluyendo diagrama ER, descripción de tablas y guía de uso.
  
 1.	Crea un archivo README.md con la siguiente estructura (guarda en tu editor de texto):
@@ -1505,7 +1505,7 @@ Crear documentación completa del proyecto incluyendo diagrama ER, descripción 
 
 <br/><br/>
 
-## Paso 10: Validación Final y Entrega
+### Paso 10: Validación Final y Entrega
 Verificar que todos los componentes del proyecto funcionan correctamente y preparar la entrega.
  
 1.	Ejecuta una validación completa del sistema:

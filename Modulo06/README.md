@@ -5,8 +5,7 @@
 <br/><br/>
 
 ## Duración	
-
-30 minutos
+60 minutos
 
 <br/><br/>
 
@@ -711,7 +710,7 @@ cliente_id | nombre           | email              | fecha_registro
 
 <br/><br/>
 
-## Paso 8. Expresiones CASE para Lógica Condicional
+### Paso 8. Expresiones CASE para Lógica Condicional
 Utilizar CASE para crear columnas calculadas con lógica condicional.
  
 1.	Categoriza productos por rango de precio:
@@ -825,7 +824,7 @@ cliente_id | nombre          | total_pedidos | tipo_cliente | segmento_valor
 
 <br/><br/>
 
-## Paso 9. Funciones Window - Ranking y Análisis
+### Paso 9. Funciones Window - Ranking y Análisis
 Aplicar funciones window para análisis avanzado sin agrupar datos.
  
 1.	Implementa ROW_NUMBER y RANK para ranking de productos:
@@ -936,7 +935,7 @@ Ropa         |                 2 | Pantalón Levi's     |                18
 
 <br/><br/>
 
-## Paso 10. Funciones Window - LAG y LEAD para Análisis Temporal
+### Paso 10. Funciones Window - LAG y LEAD para Análisis Temporal
 Usar LAG y LEAD para comparar valores entre filas consecutivas.
  
 1.	Analiza cambios en ventas entre períodos:
@@ -1329,7 +1328,7 @@ rango_inicio | rango_fin | rango         | productos_en_rango | stock_total
 
 <br/><br/>
 
-## Paso 13. Consultas Avanzadas Integradas
+### Paso 13. Consultas Avanzadas Integradas
 Combinar múltiples técnicas avanzadas en consultas complejas únicas.
  
 1.	Crea un dashboard completo de ventas:

@@ -3,7 +3,8 @@
 
 <br/><br/>
 
-## Duración	30 minutos
+## Duración	
+60 minutos
 
 <br/><br/>
 
@@ -131,7 +132,7 @@ estudiante_id | nombre  | apellido | email                    | fecha_inscripcio
 
 <br/><br/>
 
-## Paso 2. UPDATE Simple - Modificar un Registro Específico
+### Paso 2. UPDATE Simple - Modificar un Registro Específico
 Actualizar información de un solo estudiante utilizando su clave pri-maria.
  
 1.	Primero, consulte el registro actual del estudiante con ID 1:
