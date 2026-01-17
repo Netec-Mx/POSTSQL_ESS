@@ -108,7 +108,7 @@ CREATE DATABASE tienda_barrio
 <br/><br/>
 
 #### Verificación:
-- La base de datos **tienda_barrio** aparece en el panel izquierdo bajo **"Data-bases"**.
+- La base de datos **tienda_barrio** aparece en el panel izquierdo bajo **"Databases"**.
 - Puedes expandir el nodo y ver las carpetas **"Schemas"**, **"Extensions"**, etc.
 
 <br/><br/>
@@ -160,7 +160,7 @@ INSERT INTO categorias (nombre, descripcion, activa) VALUES
 
 #### Salida Esperada:
 
-![diagrama1](../images/img3_2.png)
+![diagrama2](../images/img3_2.png)
 
 <br/><br/>
 
