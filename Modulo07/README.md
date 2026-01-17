@@ -170,10 +170,11 @@ Al completar este laboratorio, serás capaz de:
 
 #### Verificación
 
-* ☐ Has identificado al menos **8 entidades principales**
-* ☐ Cada entidad tiene **atributos relevantes** y una **clave primaria**
-* ☐ Las **relaciones entre entidades** están claramente definidas
-* ☐ El diseño está en **Tercera Forma Normal (3FN)**, sin dependencias transitivas
+- Has identificado al menos **8 entidades principales**
+- Cada entidad tiene **atributos relevantes** y una **clave primaria**
+- Las **relaciones entre entidades** están claramente definidas
+- El diseño está en **Tercera Forma Normal (3FN)**, sin dependencias transitivas
+
 
 
 <br/><br/>
@@ -219,10 +220,12 @@ datname                          | encoding | datcollate              | datctype
 sistema_reservas_alojamientos    | 6        | Spanish_Spain.1252      | Spanish_Spain.1252
 ```
 
-#### Verificación:
-•	[ ] La base de datos sistema_reservas_alojamientos aparece en el navegador de PgAdmin
-•	[ ] Puedes conectarte y abrir Query Tool en la nueva base de datos
-•	[ ] La consulta de verificación retorna la información correcta
+#### Verificación
+
+- [ ] La base de datos **sistema_reservas_alojamientos** aparece en el navegador de **pgAdmin**
+- [ ] Puedes conectarte y abrir **Query Tool** en la nueva base de datos
+- [ ] La **consulta de verificación** retorna la información correcta
+
 
 <br/><br/>
 
