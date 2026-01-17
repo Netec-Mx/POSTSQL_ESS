@@ -104,19 +104,19 @@ Combinar datos de múltiples tablas usando INNER JOIN para obtener información 
 
 1.	Ejecuta una consulta que muestre todos los pedidos con información del cliente:
 
-```sql
-   -- Ejercicio 1: Pedidos con información de clientes
-   SELECT
-       p.pedido_id,
-       p.fecha_pedido,
-       p.total,
-       c.nombre AS cliente_nombre,
-       c.email AS cliente_email,
-       c.ciudad
-   FROM pedidos p
-   INNER JOIN clientes c ON p.cliente_id = c.cliente_id
-   ORDER BY p.fecha_pedido DESC;
-```
+    ```sql
+    -- Ejercicio 1: Pedidos con información de clientes
+    SELECT
+        p.pedido_id,
+        p.fecha_pedido,
+        p.total,
+        c.nombre AS cliente_nombre,
+        c.email AS cliente_email,
+        c.ciudad
+    FROM pedidos p
+    INNER JOIN clientes c ON p.cliente_id = c.cliente_id
+    ORDER BY p.fecha_pedido DESC;
+    ```
 
 <br/><br/>
 
