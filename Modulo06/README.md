@@ -71,6 +71,7 @@ Al completar este laboratorio, serás capaz de:
 #### Configuración Inicial
 
 Verificación de la base de datos:
+
 ```sql
 -- Conectarse a la base de datos tienda_curso
 -- En PgAdmin: clic derecho en tienda_curso > Query Tool
@@ -243,7 +244,7 @@ categoria_id | categoria    | descripcion              | total_productos | stock
 4            | Libros       | Literatura y educación   |               0 |           0
 ```
 
-####  #### Verificación:
+#### Verificación:
 
 * Las categorías sin productos deben mostrar `0` en `total_productos`
 * Los clientes sin pedidos deben tener `total_pedidos = 0`
