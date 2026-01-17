@@ -1162,7 +1162,7 @@ Usar CTEs para estructurar consultas complejas de forma legible y mantenible.
 
 <br/><br/>
 
-2.	Crea CTEs recursivos para análisis jerárquico (simulación):
+3.	Crea CTEs recursivos para análisis jerárquico (simulación):
     ```sql
     -- Ejercicio 32: Serie temporal con generate_series y CTE
     WITH calendario_ventas AS (
