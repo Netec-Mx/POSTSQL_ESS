@@ -117,29 +117,21 @@ Al completar este laboratorio, serás capaz de:
 
     **Entidades identificadas:**
 
-    * **usuarios**
-    * id, nombre, apellido, email, telefono, tipo_usuario, fecha_registro, password_hash
+    * **usuarios**: id, nombre, apellido, email, telefono, tipo_usuario, fecha_registro, password_hash
 
-    * **ubicaciones**
-    * id, pais, ciudad, estado_provincia, codigo_postal, direccion
+    * **ubicaciones**: id, pais, ciudad, estado_provincia, codigo_postal, direccion
 
-    * **propiedades**
-    * id, id_anfitrion, id_ubicacion, titulo, descripcion, tipo_propiedad, precio_noche, capacidad_huespedes, num_habitaciones, num_banos, fecha_creacion
+    * **propiedades**: id, id_anfitrion, id_ubicacion, titulo, descripcion, tipo_propiedad, precio_noche, capacidad_huespedes, num_habitaciones, num_banos, fecha_creacion
 
-    * **amenidades**
-    * id, nombre, descripcion, categoria
+    * **amenidades**: id, nombre, descripcion, categoria
 
-    * **propiedades_amenidades** (tabla intermedia)
-    * id_propiedad, id_amenidad
+    * **propiedades_amenidades** (tabla intermedia): id_propiedad, id_amenidad
 
-    * **reservas**
-    * id, id_propiedad, id_huesped, fecha_inicio, fecha_fin, num_huespedes, precio_total, estado, fecha_reserva
+    * **reservas**: id, id_propiedad, id_huesped, fecha_inicio, fecha_fin, num_huespedes, precio_total, estado, fecha_reserva
 
-    * **pagos**
-    * id, id_reserva, monto, metodo_pago, estado_pago, fecha_pago
+    * **pagos**: id, id_reserva, monto, metodo_pago, estado_pago, fecha_pago
 
-    * **resenas**
-    * id, id_reserva, id_usuario, calificacion, comentario, fecha_resena
+    * **resenas**: id, id_reserva, id_usuario, calificacion, comentario, fecha_resena
 
 <br/>
 
