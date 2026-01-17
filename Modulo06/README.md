@@ -161,13 +161,13 @@ Combinar datos de múltiples tablas usando INNER JOIN para obtener información 
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    categoria          | total_pedidos | unidades_vendidas | ingresos_totales
-    -------------------+---------------+-------------------+-----------------
-    Electrónica        |             5 |                15 |         45000.00
-    Ropa               |             3 |                12 |          3600.00
-    Alimentos          |             4 |                20 |          1200.00
-    ```
+```sql
+categoria          | total_pedidos | unidades_vendidas | ingresos_totales
+-------------------+---------------+-------------------+-----------------
+Electrónica        |             5 |                15 |         45000.00
+Ropa               |             3 |                12 |          3600.00
+Alimentos          |             4 |                20 |          1200.00
+```
 
 #### Verificación:
 •	Los totales de ingresos_totales deben coincidir con los datos insertados
@@ -235,13 +235,13 @@ Utilizar LEFT JOIN para identificar registros sin coincidencias en tablas relaci
 
 #### Resultado Esperado:
 
-    ```sql
-    categoria_id | categoria    | descripcion              | total_productos | stock_total
-    -------------+--------------+--------------------------+-----------------+-------------
-    1            | Electrónica  | Dispositivos y gadgets   |               5 |         150
-    2            | Ropa         | Vestimenta y accesorios  |               8 |         320
-    4            | Libros       | Literatura y educación   |               0 |           0
-    ```
+```sql
+categoria_id | categoria    | descripcion              | total_productos | stock_total
+-------------+--------------+--------------------------+-----------------+-------------
+1            | Electrónica  | Dispositivos y gadgets   |               5 |         150
+2            | Ropa         | Vestimenta y accesorios  |               8 |         320
+4            | Libros       | Literatura y educación   |               0 |           0
+```
 
 ####  #### Verificación:
 
@@ -289,16 +289,16 @@ Aplicar RIGHT JOIN y FULL OUTER JOIN para análisis bidireccional de datos.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 7 debe retornar 0 filas (integridad correcta)
+```sql
+-- Ejercicio 7 debe retornar 0 filas (integridad correcta)
 
-    -- Ejercicio 8:
-    producto_id | producto_nombre      | stock | veces_vendido | unidades_vendidas
-    ------------+----------------------+-------+---------------+-------------------
-    15          | Laptop Dell XPS      |    25 |             8 |                45
-    23          | Camiseta Nike        |    80 |             5 |                30
-    7           | Mouse Inalámbrico    |   100 |             0 |                 0
-    ```
+-- Ejercicio 8:
+producto_id | producto_nombre      | stock | veces_vendido | unidades_vendidas
+------------+----------------------+-------+---------------+-------------------
+15          | Laptop Dell XPS      |    25 |             8 |                45
+23          | Camiseta Nike        |    80 |             5 |                30
+7           | Mouse Inalámbrico    |   100 |             0 |                 0
+```
 
 #### Verificación:
 
@@ -401,17 +401,17 @@ Crear vistas que encapsulen consultas complejas para simplificar su uso futuro.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Vista creada exitosamente
-    CREATE VIEW
+```sql
+-- Vista creada exitosamente
+CREATE VIEW
 
-    -- Al consultar vista_perfil_clientes:
-    cliente_id | nombre           | total_pedidos | total_gastado | segmento
-    -----------+------------------+---------------+---------------+----------
-    5          | Ana Martínez     |            12 |     85000.00  | VIP
-    3          | Carlos López     |             5 |     32000.00  | Regular
-    8          | María González   |             0 |         0.00  | Inactivo
-    ```
+-- Al consultar vista_perfil_clientes:
+cliente_id | nombre           | total_pedidos | total_gastado | segmento
+-----------+------------------+---------------+---------------+----------
+5          | Ana Martínez     |            12 |     85000.00  | VIP
+3          | Carlos López     |             5 |     32000.00  | Regular
+8          | María González   |             0 |         0.00  | Inactivo
+```
 
 
 #### Verificación:
@@ -492,19 +492,19 @@ Utilizar subqueries para filtrar resultados basados en condiciones complejas.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 12:
-    nombre           | email                | pedido_id | total
-    -----------------+----------------------+-----------+----------
-    Ana Martínez     | ana@email.com        |       105 | 25000.00
-    Carlos López     | carlos@email.com     |       108 | 18000.00
+```sql
+-- Ejercicio 12:
+nombre           | email                | pedido_id | total
+-----------------+----------------------+-----------+----------
+Ana Martínez     | ana@email.com        |       105 | 25000.00
+Carlos López     | carlos@email.com     |       108 | 18000.00
 
-    -- Ejercicio 13:
-    producto_id | nombre              | categoria    | precio   | promedio_categoria
-    ------------+---------------------+--------------+----------+-------------------
-    15          | Laptop Dell XPS     | Electrónica  | 12000.00 |           8500.00
-    23          | iPhone 15 Pro       | Electrónica  | 15000.00 |           8500.00
-    ```
+-- Ejercicio 13:
+producto_id | nombre              | categoria    | precio   | promedio_categoria
+------------+---------------------+--------------+----------+-------------------
+15          | Laptop Dell XPS     | Electrónica  | 12000.00 |           8500.00
+23          | iPhone 15 Pro       | Electrónica  | 15000.00 |           8500.00
+```
 
 #### Verificación:
 
@@ -597,20 +597,20 @@ Implementar subqueries escalares en SELECT y subqueries de tabla en FROM.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 15:
-    producto_id | nombre              | veces_vendido | unidades_vendidas | in-gresos_totales
-    ------------+---------------------+---------------+-------------------+-----------------
-    15          | Laptop Dell XPS     |             8 |                45 |        540000.00
-    23          | iPhone 15 Pro       |             5 |                12 |        180000.00
-    7           | Mouse Inalámbrico   |             0 |                 0 |             0.00
+```sql
+-- Ejercicio 15:
+producto_id | nombre              | veces_vendido | unidades_vendidas | in-gresos_totales
+------------+---------------------+---------------+-------------------+-----------------
+15          | Laptop Dell XPS     |             8 |                45 |        540000.00
+23          | iPhone 15 Pro       |             5 |                12 |        180000.00
+7           | Mouse Inalámbrico   |             0 |                 0 |             0.00
 
-    -- Ejercicio 16:
-    mes | anio | total_pedidos | ingresos_mes | ticket_promedio
-    ----+------+---------------+--------------+----------------
-    1   | 2024 |            15 |    125000.00 |         8333.33
-    2   | 2024 |            12 |     98000.00 |         8166.67
-    ```
+-- Ejercicio 16:
+mes | anio | total_pedidos | ingresos_mes | ticket_promedio
+----+------+---------------+--------------+----------------
+1   | 2024 |            15 |    125000.00 |         8333.33
+2   | 2024 |            12 |     98000.00 |         8166.67
+```
 
 #### Verificación:
 
@@ -683,21 +683,21 @@ Aplicar operadores de conjuntos para combinar y comparar resulta-dos de consulta
 
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 18:
-    tipo     | id | nombre              | email              | ciudad
-    ---------+----+---------------------+--------------------+---------
-    Cliente  |  5 | Ana Martínez        | ana@email.com      | Madrid
-    Cliente  |  8 | Carlos López        | carlos@email.com   | Barcelona
-    Producto | 23 | Auriculares Sony    | N/A                | Almacén
-    Producto | 45 | Teclado Mecánico    | N/A                | Almacén
+```sql
+-- Ejercicio 18:
+tipo     | id | nombre              | email              | ciudad
+---------+----+---------------------+--------------------+---------
+Cliente  |  5 | Ana Martínez        | ana@email.com      | Madrid
+Cliente  |  8 | Carlos López        | carlos@email.com   | Barcelona
+Producto | 23 | Auriculares Sony    | N/A                | Almacén
+Producto | 45 | Teclado Mecánico    | N/A                | Almacén
 
-    -- Ejercicio 20:
-    cliente_id | nombre           | email              | fecha_registro
-    -----------+------------------+--------------------+---------------
-    12         | Pedro Sánchez    | pedro@email.com    | 2024-02-15
-    18         | Laura Fernández  | laura@email.com    | 2024-01-20
-    ```
+-- Ejercicio 20:
+cliente_id | nombre           | email              | fecha_registro
+-----------+------------------+--------------------+---------------
+12         | Pedro Sánchez    | pedro@email.com    | 2024-02-15
+18         | Laura Fernández  | laura@email.com    | 2024-01-20
+```
 
 
 #### Verificación:
@@ -799,21 +799,21 @@ Utilizar CASE para crear columnas calculadas con lógica condicional.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 21:
-    producto_id | nombre              | precio   | segmento_precio | es-tado_inventario
-    ------------+---------------------+----------+-----------------+------------------
-    23          | iPhone 15 Pro       | 15000.00 | Lujo            | Stock adecuado
-    15          | Laptop Dell XPS     | 12000.00 | Lujo            | Stock bajo
-    8           | Camiseta Nike       |    45.00 | Económico       | Stock adecuado
+```sql
+-- Ejercicio 21:
+producto_id | nombre              | precio   | segmento_precio | es-tado_inventario
+------------+---------------------+----------+-----------------+------------------
+23          | iPhone 15 Pro       | 15000.00 | Lujo            | Stock adecuado
+15          | Laptop Dell XPS     | 12000.00 | Lujo            | Stock bajo
+8           | Camiseta Nike       |    45.00 | Económico       | Stock adecuado
 
-    -- Ejercicio 22:
-    cliente_id | nombre          | total_pedidos | tipo_cliente | segmento_valor
-    -----------+-----------------+---------------+--------------+----------------
-    5          | Ana Martínez    |            12 | Regular      | Valor premium
-    8          | Carlos López    |             5 | Ocasional    | Valor medio
-    12         | Pedro Sánchez   |             0 | Nuevo/Inactivo| Sin valor
-    ```
+-- Ejercicio 22:
+cliente_id | nombre          | total_pedidos | tipo_cliente | segmento_valor
+-----------+-----------------+---------------+--------------+----------------
+5          | Ana Martínez    |            12 | Regular      | Valor premium
+8          | Carlos López    |             5 | Ocasional    | Valor medio
+12         | Pedro Sánchez   |             0 | Nuevo/Inactivo| Sin valor
+```
 
 #### Verificación:
 
@@ -906,23 +906,23 @@ Aplicar funciones window para análisis avanzado sin agrupar datos.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 24:
-    producto_id | nombre              | unidades_vendidas | posicion | ranking | ranking_denso
-    ------------+---------------------+-------------------+----------+---------+--------------
-    15          | Laptop Dell XPS     |                45 |        1 |       1 |            1
-    23          | iPhone 15 Pro       |                38 |        2 |       2 |            2
-    8           | Camiseta Nike       |                30 |        3 |       3 |            3
+```sql
+-- Ejercicio 24:
+producto_id | nombre              | unidades_vendidas | posicion | ranking | ranking_denso
+------------+---------------------+-------------------+----------+---------+--------------
+15          | Laptop Dell XPS     |                45 |        1 |       1 |            1
+23          | iPhone 15 Pro       |                38 |        2 |       2 |            2
+8           | Camiseta Nike       |                30 |        3 |       3 |            3
 
-    -- Ejercicio 25:
-    categoria    | ranking_categoria | nombre              | unidades_vendidas
-    -------------+-------------------+---------------------+------------------
-    Electrónica  |                 1 | Laptop Dell XPS     |                45
-    Electrónica  |                 2 | iPhone 15 Pro       |                38
-    Electrónica  |                 3 | Mouse Logitech      |                25
-    Ropa         |                 1 | Camiseta Nike       |                30
-    Ropa         |                 2 | Pantalón Levi's     |                18
-    ```
+-- Ejercicio 25:
+categoria    | ranking_categoria | nombre              | unidades_vendidas
+-------------+-------------------+---------------------+------------------
+Electrónica  |                 1 | Laptop Dell XPS     |                45
+Electrónica  |                 2 | iPhone 15 Pro       |                38
+Electrónica  |                 3 | Mouse Logitech      |                25
+Ropa         |                 1 | Camiseta Nike       |                30
+Ropa         |                 2 | Pantalón Levi's     |                18
+```
 
 
 #### Verificación:
@@ -1023,21 +1023,21 @@ Usar LAG y LEAD para comparar valores entre filas consecutivas.
 
 #### Resultado Esperado:
 
-    ```sql
-    -- Ejercicio 27:
-    fecha      | pedidos_dia | ventas_dia | ventas_dia_anterior | diferencia | por-centaje_cambio
-    -----------+-------------+------------+---------------------+------------+------------------
-    2024-01-15 |           3 |  12000.00  | NULL                | NULL       | NULL
-    2024-01-16 |           5 |  18000.00  | 12000.00            | 6000.00    | 50.00
-    2024-01-17 |           2 |   8500.00  | 18000.00            | -9500.00   | -52.78
+```sql
+-- Ejercicio 27:
+fecha      | pedidos_dia | ventas_dia | ventas_dia_anterior | diferencia | por-centaje_cambio
+-----------+-------------+------------+---------------------+------------+------------------
+2024-01-15 |           3 |  12000.00  | NULL                | NULL       | NULL
+2024-01-16 |           5 |  18000.00  | 12000.00            | 6000.00    | 50.00
+2024-01-17 |           2 |   8500.00  | 18000.00            | -9500.00   | -52.78
 
-    -- Ejercicio 29:
-    cliente_id | nombre        | fecha_pedido | dias_entre_compras | frecuencia
-    -----------+---------------+--------------+--------------------+-------------------
-    5          | Ana Martínez  | 2024-01-15   | NULL               | Primera compra
-    5          | Ana Martínez  | 2024-01-20   | 5                  | Comprador frecuente
-    5          | Ana Martínez  | 2024-02-10   | 21                 | Comprador regu-lar
-    ```
+-- Ejercicio 29:
+cliente_id | nombre        | fecha_pedido | dias_entre_compras | frecuencia
+-----------+---------------+--------------+--------------------+-------------------
+5          | Ana Martínez  | 2024-01-15   | NULL               | Primera compra
+5          | Ana Martínez  | 2024-01-20   | 5                  | Comprador frecuente
+5          | Ana Martínez  | 2024-02-10   | 21                 | Comprador regu-lar
+```
 
 #### Verificación:
 
@@ -1204,21 +1204,21 @@ Usar CTEs para estructurar consultas complejas de forma legible y mantenible.
 
 #### Resultado Esperado:
 
-    ```sql
-    -- Ejercicio 30:
-    cliente_id | nombre          | total_gastado | promedio_global | clasificacion
-    -----------+-----------------+---------------+-----------------+--------------
-    5          | Ana Martínez    |     85000.00  |       32000.00  | Alto valor
-    3          | Carlos López    |     32000.00  |       32000.00  | Valor normal
-    8          | Luis Gómez      |     12000.00  |       32000.00  | Bajo valor
+```sql
+-- Ejercicio 30:
+cliente_id | nombre          | total_gastado | promedio_global | clasificacion
+-----------+-----------------+---------------+-----------------+--------------
+5          | Ana Martínez    |     85000.00  |       32000.00  | Alto valor
+3          | Carlos López    |     32000.00  |       32000.00  | Valor normal
+8          | Luis Gómez      |     12000.00  |       32000.00  | Bajo valor
 
-    -- Ejercicio 31:
-    producto_id | nombre              | stock | unidades_vendidas | indica-dor_rotacion | recomendacion
-    ------------+---------------------+-------+-------------------+--------------------+---------------
-    15          | Laptop Dell XPS     |    25 |                45 | ⚡ Rotación rápida | 📦 Reabastecer pronto
-    23          | iPhone 15 Pro       |    50 |                38 | 🟢 Rotación nor-mal | ✅ OK
-    7           | Mouse Inalámbrico   |   100 |                 0 | 🔴 Sin rotación    | ⚠️ Revisar stock
-    ```
+-- Ejercicio 31:
+producto_id | nombre              | stock | unidades_vendidas | indica-dor_rotacion | recomendacion
+------------+---------------------+-------+-------------------+--------------------+---------------
+15          | Laptop Dell XPS     |    25 |                45 | ⚡ Rotación rápida | 📦 Reabastecer pronto
+23          | iPhone 15 Pro       |    50 |                38 | 🟢 Rotación nor-mal | ✅ OK
+7           | Mouse Inalámbrico   |   100 |                 0 | 🔴 Sin rotación    | ⚠️ Revisar stock
+```
 
 #### Verificación:
 
@@ -1301,21 +1301,21 @@ Utilizar funciones como generate_series y unnest para generar datos dinámicos.
 
 #### Resultado Esperado:
 
-    ```sql
-    -- Ejercicio 33:
-    fecha      | dia_semana | nombre_dia | pedidos | ventas_totales
-    -----------+------------+------------+---------+---------------
-    2024-01-01 |          1 | Monday     |       3 |      12000.00
-    2024-01-02 |          2 | Tuesday    |       0 |          0.00
-    2024-01-03 |          3 | Wednesday  |       5 |      25000.00
+```sql
+-- Ejercicio 33:
+fecha      | dia_semana | nombre_dia | pedidos | ventas_totales
+-----------+------------+------------+---------+---------------
+2024-01-01 |          1 | Monday     |       3 |      12000.00
+2024-01-02 |          2 | Tuesday    |       0 |          0.00
+2024-01-03 |          3 | Wednesday  |       5 |      25000.00
 
-    -- Ejercicio 34:
-    rango_inicio | rango_fin | rango         | productos_en_rango | stock_total
-    -------------+-----------+---------------+--------------------+------------
-    0            |      1000 | 0 - 1000      |                 15 |         450
-    1000         |      2000 | 1000 - 2000   |                  8 |         200
-    10000        |     11000 | 10000 - 11000 |                  2 |          30
-    ```
+-- Ejercicio 34:
+rango_inicio | rango_fin | rango         | productos_en_rango | stock_total
+-------------+-----------+---------------+--------------------+------------
+0            |      1000 | 0 - 1000      |                 15 |         450
+1000         |      2000 | 1000 - 2000   |                  8 |         200
+10000        |     11000 | 10000 - 11000 |                  2 |          30
+```
 
 
 #### Verificación:
@@ -1511,16 +1511,16 @@ Combinar múltiples técnicas avanzadas en consultas complejas únicas.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 38 (RFM):
-    cliente_id | nombre          | recency_dias | frequency | monetary  | rfm_total | segmento
-    -----------+-----------------+--------------+-----------+-----------+-----------+------------------
-    5          | Ana Martínez    |            5 |        12 | 85000.00  |         9 | ⭐ Champions
-    3          | Carlos López    |           10 |         8 | 45000.00  |         8 | ⭐ Champions
-    8          | Luis Gómez      |           15 |         5 | 28000.00  |         7 | 💎 Loyal Customers
-    12         | María Silva     |           90 |         2 | 8000.00   |         3 | ⚠️ At Risk
-    15         | Pedro Sánchez   |          180 |         1 | 2000.00   |         2 | 😴 Hibernating
-    ```
+```sql
+-- Ejercicio 38 (RFM):
+cliente_id | nombre          | recency_dias | frequency | monetary  | rfm_total | segmento
+-----------+-----------------+--------------+-----------+-----------+-----------+------------------
+5          | Ana Martínez    |            5 |        12 | 85000.00  |         9 | ⭐ Champions
+3          | Carlos López    |           10 |         8 | 45000.00  |         8 | ⭐ Champions
+8          | Luis Gómez      |           15 |         5 | 28000.00  |         7 | 💎 Loyal Customers
+12         | María Silva     |           90 |         2 | 8000.00   |         3 | ⚠️ At Risk
+15         | Pedro Sánchez   |          180 |         1 | 2000.00   |         2 | 😴 Hibernating
+```
 
 #### Verificación:
 
@@ -1604,24 +1604,24 @@ Aprender a analizar y optimizar consultas usando EXPLAIN.
 <br/><br/>
 
 #### Resultado Esperado:
-    ```sql
-    -- Ejercicio 39 (EXPLAIN ANALYZE output):
-                                                        QUERY PLAN
-    ------------------------------------------------------------------------------------------------------------------
-    Sort  (cost=45.23..45.73 rows=200 width=48) (actual time=2.345..2.367 rows=150 loops=1)
-    Sort Key: (sum(p.total)) DESC
-    Sort Method: quicksort  Memory: 35kB
-    ->  HashAggregate  (cost=35.00..38.00 rows=200 width=48) (actual time=2.123..2.234 rows=150 loops=1)
-            Group Key: c.cliente_id
-            ->  Hash Left Join  (cost=15.00..30.00 rows=500 width=40) (actual time=0.234..1.567 rows=500 loops=1)
-                Hash Cond: (c.cliente_id = p.cliente_id)
-                ->  Seq Scan on clientes c  (cost=0.00..10.00 rows=200 width=32) (actual time=0.012..0.123 rows=150 loops=1)
-                ->  Hash  (cost=10.00..10.00 rows=400 width=16) (actual time=0.189..0.189 rows=350 loops=1)
-                        Buckets: 1024  Batches: 1  Memory Usage: 25kB
-                        ->  Seq Scan on pedidos p  (cost=0.00..10.00 rows=400 width=16) (actual time=0.008..0.098 rows=350 loops=1)
-    Planning Time: 0.456 ms
-    Execution Time: 2.456 ms
-    ```
+```sql
+-- Ejercicio 39 (EXPLAIN ANALYZE output):
+                                                    QUERY PLAN
+------------------------------------------------------------------------------------------------------------------
+Sort  (cost=45.23..45.73 rows=200 width=48) (actual time=2.345..2.367 rows=150 loops=1)
+Sort Key: (sum(p.total)) DESC
+Sort Method: quicksort  Memory: 35kB
+->  HashAggregate  (cost=35.00..38.00 rows=200 width=48) (actual time=2.123..2.234 rows=150 loops=1)
+        Group Key: c.cliente_id
+        ->  Hash Left Join  (cost=15.00..30.00 rows=500 width=40) (actual time=0.234..1.567 rows=500 loops=1)
+            Hash Cond: (c.cliente_id = p.cliente_id)
+            ->  Seq Scan on clientes c  (cost=0.00..10.00 rows=200 width=32) (actual time=0.012..0.123 rows=150 loops=1)
+            ->  Hash  (cost=10.00..10.00 rows=400 width=16) (actual time=0.189..0.189 rows=350 loops=1)
+                    Buckets: 1024  Batches: 1  Memory Usage: 25kB
+                    ->  Seq Scan on pedidos p  (cost=0.00..10.00 rows=400 width=16) (actual time=0.008..0.098 rows=350 loops=1)
+Planning Time: 0.456 ms
+Execution Time: 2.456 ms
+```
 
 #### Verificación:
 
@@ -1772,17 +1772,17 @@ Consolidar todos los conocimientos con ejercicios desafiantes.
 
 #### Resultado Esperado:
 
-    ```sql
-    -- Ejercicio 44 (Sistema de alertas):
-    tipo_alerta          | prioridad | entidad_id | entidad_nombre      | mensaje
-    ---------------------+-----------+------------+---------------------+----------------------------------------
-    PRODUCTO AGOTADO     | Crítico   | 23         | iPhone 15 Pro       | Producto agotado - Reabastecer urgente
-    PRODUCTO AGOTADO     | Crítico   | 45         | Laptop HP           | Producto agotado - Reabastecer urgente
-    STOCK CRÍTICO        | Alto      | 15         | Mouse Logitech      | Stock crítico: 8 unidades
-    STOCK CRÍTICO        | Alto      | 32         | Teclado Mecánico    | Stock crítico: 5 unidades
-    CLIENTE INACTIVO     | Medio     | 12         | Pedro Sánchez       | Sin com-pras desde hace 120 días
-    PRODUCTO SIN VENTAS  | Bajo      | 67         | Cable HDMI          | Sin ventas - Stock: 150 unidades
-    ```
+```sql
+-- Ejercicio 44 (Sistema de alertas):
+tipo_alerta          | prioridad | entidad_id | entidad_nombre      | mensaje
+---------------------+-----------+------------+---------------------+----------------------------------------
+PRODUCTO AGOTADO     | Crítico   | 23         | iPhone 15 Pro       | Producto agotado - Reabastecer urgente
+PRODUCTO AGOTADO     | Crítico   | 45         | Laptop HP           | Producto agotado - Reabastecer urgente
+STOCK CRÍTICO        | Alto      | 15         | Mouse Logitech      | Stock crítico: 8 unidades
+STOCK CRÍTICO        | Alto      | 32         | Teclado Mecánico    | Stock crítico: 5 unidades
+CLIENTE INACTIVO     | Medio     | 12         | Pedro Sánchez       | Sin com-pras desde hace 120 días
+PRODUCTO SIN VENTAS  | Bajo      | 67         | Cable HDMI          | Sin ventas - Stock: 150 unidades
+```
 
 #### Verificación:
 
