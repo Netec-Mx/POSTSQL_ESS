@@ -484,48 +484,48 @@ Poblar las tablas independientes con datos realistas de prueba.
 
 
 2.	Inserta ubicaciones en diferentes ciudades:
-```sql
-   -- Insertar ubicaciones (mínimo 30, aquí 25 como ejemplo)
-   INSERT INTO ubicaciones (pais, ciudad, estado_provincia, codigo_postal, direccion, latitud, longitud) VALUES
-   ('España', 'Madrid', 'Madrid', '28001', 'Calle Gran Vía 45', 40.4168, -3.7038),
-   ('España', 'Madrid', 'Madrid', '28013', 'Calle Alcalá 123', 40.4200, -3.6931),
-   ('España', 'Barcelona', 'Cataluña', '08001', 'Passeig de Gràcia 78', 41.3874, 2.1686),
-   ('España', 'Barcelona', 'Cataluña', '08002', 'Rambla Catalunya 56', 41.3912, 2.1649),
-   ('España', 'Valencia', 'Valencia', '46001', 'Calle Colón 34', 39.4699, -0.3763),
-   ('España', 'Valencia', 'Valencia', '46002', 'Avenida del Puerto 12', 39.4561, -0.3545),
-   ('España', 'Sevilla', 'Andalucía', '41001', 'Calle Sierpes 89', 37.3891, -5.9845),
-   ('España', 'Sevilla', 'Andalucía', '41004', 'Avenida de la Constitución 5', 37.3858, -5.9925),
-   ('España', 'Málaga', 'Andalucía', '29001', 'Calle Larios 23', 36.7213, -4.4214),
-   ('España', 'Málaga', 'Andalucía', '29016', 'Paseo Marítimo 67', 36.7156, -4.4167),
-   ('España', 'Bilbao', 'País Vasco', '48001', 'Gran Vía Don Diego López 15', 43.2630, -2.9350),
-   ('España', 'Granada', 'Andalucía', '18001', 'Calle Reyes Católicos 34', 37.1773, -3.5986),
-   ('España', 'Zaragoza', 'Aragón', '50001', 'Paseo Independencia 45', 41.6488, -0.8891),
-   ('España', 'Alicante', 'Valencia', '03001', 'Explanada de España 12', 38.3452, -0.4815),
-   ('España', 'Córdoba', 'Andalucía', '14001', 'Calle Gondomar 8', 37.8882, -4.7794),
-   ('España', 'Palma', 'Baleares', '07001', 'Paseo Marítimo 89', 39.5696, 2.6502),
-   ('España', 'Las Palmas', 'Canarias', '35001', 'Calle Triana 56', 28.1000, -15.4130),
-   ('España', 'Murcia', 'Murcia', '30001', 'Gran Vía Escultor Salzillo 23', 37.9922, -1.1307),
-   ('España', 'Santander', 'Cantabria', '39001', 'Paseo Pereda 34', 43.4623, -3.8100),
-   ('España', 'Toledo', 'Castilla-La Mancha', '45001', 'Calle Comercio 12', 39.8628, -4.0273),
-   ('España', 'San Sebastián', 'País Vasco', '20001', 'Boulevard 45', 43.3183, -1.9812),
-   ('España', 'Salamanca', 'Castilla y León', '37001', 'Plaza Mayor 8', 40.9701, -5.6635),
-   ('España', 'Cádiz', 'Andalucía', '11001', 'Calle Ancha 23', 36.5271, -6.2886),
-   ('España', 'Tarragona', 'Cataluña', '43001', 'Rambla Nova 67', 41.1189, 1.2445),
-   ('España', 'Girona', 'Cataluña', '17001', 'Carrer de la Força 34', 41.9794, 2.8214);
-```
+    ```sql
+    -- Insertar ubicaciones (mínimo 30, aquí 25 como ejemplo)
+    INSERT INTO ubicaciones (pais, ciudad, estado_provincia, codigo_postal, direccion, latitud, longitud) VALUES
+    ('España', 'Madrid', 'Madrid', '28001', 'Calle Gran Vía 45', 40.4168, -3.7038),
+    ('España', 'Madrid', 'Madrid', '28013', 'Calle Alcalá 123', 40.4200, -3.6931),
+    ('España', 'Barcelona', 'Cataluña', '08001', 'Passeig de Gràcia 78', 41.3874, 2.1686),
+    ('España', 'Barcelona', 'Cataluña', '08002', 'Rambla Catalunya 56', 41.3912, 2.1649),
+    ('España', 'Valencia', 'Valencia', '46001', 'Calle Colón 34', 39.4699, -0.3763),
+    ('España', 'Valencia', 'Valencia', '46002', 'Avenida del Puerto 12', 39.4561, -0.3545),
+    ('España', 'Sevilla', 'Andalucía', '41001', 'Calle Sierpes 89', 37.3891, -5.9845),
+    ('España', 'Sevilla', 'Andalucía', '41004', 'Avenida de la Constitución 5', 37.3858, -5.9925),
+    ('España', 'Málaga', 'Andalucía', '29001', 'Calle Larios 23', 36.7213, -4.4214),
+    ('España', 'Málaga', 'Andalucía', '29016', 'Paseo Marítimo 67', 36.7156, -4.4167),
+    ('España', 'Bilbao', 'País Vasco', '48001', 'Gran Vía Don Diego López 15', 43.2630, -2.9350),
+    ('España', 'Granada', 'Andalucía', '18001', 'Calle Reyes Católicos 34', 37.1773, -3.5986),
+    ('España', 'Zaragoza', 'Aragón', '50001', 'Paseo Independencia 45', 41.6488, -0.8891),
+    ('España', 'Alicante', 'Valencia', '03001', 'Explanada de España 12', 38.3452, -0.4815),
+    ('España', 'Córdoba', 'Andalucía', '14001', 'Calle Gondomar 8', 37.8882, -4.7794),
+    ('España', 'Palma', 'Baleares', '07001', 'Paseo Marítimo 89', 39.5696, 2.6502),
+    ('España', 'Las Palmas', 'Canarias', '35001', 'Calle Triana 56', 28.1000, -15.4130),
+    ('España', 'Murcia', 'Murcia', '30001', 'Gran Vía Escultor Salzillo 23', 37.9922, -1.1307),
+    ('España', 'Santander', 'Cantabria', '39001', 'Paseo Pereda 34', 43.4623, -3.8100),
+    ('España', 'Toledo', 'Castilla-La Mancha', '45001', 'Calle Comercio 12', 39.8628, -4.0273),
+    ('España', 'San Sebastián', 'País Vasco', '20001', 'Boulevard 45', 43.3183, -1.9812),
+    ('España', 'Salamanca', 'Castilla y León', '37001', 'Plaza Mayor 8', 40.9701, -5.6635),
+    ('España', 'Cádiz', 'Andalucía', '11001', 'Calle Ancha 23', 36.5271, -6.2886),
+    ('España', 'Tarragona', 'Cataluña', '43001', 'Rambla Nova 67', 41.1189, 1.2445),
+    ('España', 'Girona', 'Cataluña', '17001', 'Carrer de la Força 34', 41.9794, 2.8214);
+    ```
 
 <br/>
 
 3.	Verifica la inserción de datos:
-```sql
-   SELECT COUNT(*) as total_usuarios FROM usuarios;
-   SELECT COUNT(*) as total_ubicaciones FROM ubicaciones;
+    ```sql
+    SELECT COUNT(*) as total_usuarios FROM usuarios;
+    SELECT COUNT(*) as total_ubicaciones FROM ubicaciones;
 
-   -- Ver distribución de tipos de usuario
-   SELECT tipo_usuario, COUNT(*) as cantidad
-   FROM usuarios
-   GROUP BY tipo_usuario;
-```
+    -- Ver distribución de tipos de usuario
+    SELECT tipo_usuario, COUNT(*) as cantidad
+    FROM usuarios
+    GROUP BY tipo_usuario;
+    ```
 
 <br/><br/>
 
@@ -547,10 +547,11 @@ ambos        | 2
 ```
 
 #### Verificación:
-•	[ ] Se insertaron al menos 20 usuarios
-•	[ ] Se insertaron al menos 25 ubicaciones
-•	[ ] Hay usuarios de los tres tipos (huésped, anfitrión, ambos)
-•	[ ] Las ubicaciones tienen coordenadas realistas
+- [ ] Se insertaron al menos **20 usuarios**
+- [ ] Se insertaron al menos **25 ubicaciones**
+- [ ] Hay usuarios de los **tres tipos** (**huésped**, **anfitrión**, **ambos**)
+- [ ] Las **ubicaciones** tienen **coordenadas realistas**
+
 
 <br/><br/>
 
