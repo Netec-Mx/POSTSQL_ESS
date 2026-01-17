@@ -829,7 +829,7 @@ cliente_id | nombre          | total_pedidos | tipo_cliente | segmento_valor
 Aplicar funciones window para análisis avanzado sin agrupar datos.
  
 1.	Implementa ROW_NUMBER y RANK para ranking de productos:
-```sql
+    ```sql
     -- Ejercicio 24: Ranking de productos más vendidos
     SELECT
         prod.producto_id,
