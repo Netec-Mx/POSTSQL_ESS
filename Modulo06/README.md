@@ -2228,6 +2228,7 @@ ORDER BY tablename, indexname;
   [https://www.postgresql.org/docs/18/queries-with.html](https://www.postgresql.org/docs/18/queries-with.html)
   Guía completa sobre `CTEs`.
 
+<br/>
 
 ### Rendimiento y Optimización
 
@@ -2243,6 +2244,7 @@ ORDER BY tablename, indexname;
   [https://use-the-index-luke.com/](https://use-the-index-luke.com/)
   Guía completa sobre índices y optimización de consultas.
 
+<br/>
 
 ### Estilo y Buenas Prácticas
 
@@ -2250,6 +2252,8 @@ ORDER BY tablename, indexname;
   [https://www.sqlstyle.guide/](https://www.sqlstyle.guide/)
   Guía de buenas prácticas para formato y escritura de SQL.
 
+
+<br/>
 
 ### Práctica y Aprendizaje Interactivo
 
