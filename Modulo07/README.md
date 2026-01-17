@@ -65,6 +65,7 @@ Al completar este laboratorio, serás capaz de:
 | Disco Duro     | Mínimo 2 GB libres             |
 | Pantalla       | Resolución mínima 1280×720     |
 
+<br/>
 
 #### Requisitos de Software
 
