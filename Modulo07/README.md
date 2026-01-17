@@ -1797,14 +1797,15 @@ El **usuario actual** no tiene **privilegios** para **crear bases de datos**.
 
 
 #### Solución:
-    ```sql
-    -- Conectarse como superusuario (postgres) y otorgar permisos
-    GRANT CREATE ON DATABASE postgres TO tu_usuario;
 
-    -- O crear la base de datos como superusuario
-    -- y luego otorgar permisos al usuario
-    CREATE DATABASE sistema_reservas_alojamientos OWNER tu_usuario;
-    ```
+```sql
+-- Conectarse como superusuario (postgres) y otorgar permisos
+GRANT CREATE ON DATABASE postgres TO tu_usuario;
+
+-- O crear la base de datos como superusuario
+-- y luego otorgar permisos al usuario
+CREATE DATABASE sistema_reservas_alojamientos OWNER tu_usuario;
+```
 
 <br/><br/>
 
@@ -1821,15 +1822,16 @@ Se intenta insertar un **registro** que referencia un **ID inexistente** en la *
 
 
 #### Solución:
-    ```sql
-    -- Verificar que los IDs referenciados existen
-    -- Por ejemplo, antes de insertar una propiedad:
-    SELECT id_usuario FROM usuarios WHERE id_usuario = 1;
-    SELECT id_ubicacion FROM ubicaciones WHERE id_ubicacion = 1;
 
-    -- Si no existen, insertar primero en las tablas padre
-    -- o usar IDs válidos existentes
-    ```
+```sql
+-- Verificar que los IDs referenciados existen
+-- Por ejemplo, antes de insertar una propiedad:
+SELECT id_usuario FROM usuarios WHERE id_usuario = 1;
+SELECT id_ubicacion FROM ubicaciones WHERE id_ubicacion = 1;
+
+-- Si no existen, insertar primero en las tablas padre
+-- o usar IDs válidos existentes
+```
 
 <br/><br/>
 
@@ -1846,19 +1848,19 @@ Falta de **índices** en columnas **frecuentemente consultadas** o **JOINs** sin
 
 
 #### Solución:
-    ```sql
-    -- Crear índices adicionales en columnas de búsqueda
-    CREATE INDEX idx_propiedades_precio_ciudad
-    ON propiedades(precio_noche)
-    INCLUDE (id_ubicacion);
+```sql
+-- Crear índices adicionales en columnas de búsqueda
+CREATE INDEX idx_propiedades_precio_ciudad
+ON propiedades(precio_noche)
+INCLUDE (id_ubicacion);
 
-    -- Analizar el plan de ejecución
-    EXPLAIN ANALYZE [tu_consulta];
+-- Analizar el plan de ejecución
+EXPLAIN ANALYZE [tu_consulta];
 
-    -- Actualizar estadísticas de las tablas
-    ANALYZE propiedades;
-    ANALYZE reservas;
-    ```
+-- Actualizar estadísticas de las tablas
+ANALYZE propiedades;
+ANALYZE reservas;
+```
 
 <br/><br/>
 
@@ -1875,13 +1877,14 @@ La definición de la **vista** hace referencia a **sí misma** o a **otra vista*
 
 
 #### Solución:
-    ```sql
-    -- Revisar las dependencias de la vista
-    SELECT * FROM pg_views WHERE viewname = 'nombre_vista';
+```sql
+-- Revisar las dependencias de la vista
+SELECT * FROM pg_views WHERE viewname = 'nombre_vista';
 
-    -- Recrear la vista sin dependencias circulares
-    -- Usar CTEs si es necesario para estructurar mejor la consulta
-    ```
+-- Recrear la vista sin dependencias circulares
+-- Usar CTEs si es necesario para estructurar mejor la consulta
+```
+
 <br/><br/>
 
 ### Problema 5: Datos inconsistentes después de inserciones masivas
@@ -1897,23 +1900,23 @@ La definición de la **vista** hace referencia a **sí misma** o a **otra vista*
 
 
 #### Solución:
-    ```sql
-    -- Verificar transacciones pendientes
-    SELECT * FROM pg_stat_activity
-    WHERE state = 'idle in transaction';
+```sql
+-- Verificar transacciones pendientes
+SELECT * FROM pg_stat_activity
+WHERE state = 'idle in transaction';
 
-    -- Confirmar transacciones manualmente si es necesario
-    COMMIT;
+-- Confirmar transacciones manualmente si es necesario
+COMMIT;
 
-    -- Verificar conteos en todas las tablas
-    SELECT
-        schemaname,
-        tablename,
-        n_live_tup as registros
-    FROM pg_stat_user_tables
-    WHERE schemaname = 'public'
-    ORDER BY tablename;
-    ```
+-- Verificar conteos en todas las tablas
+SELECT
+    schemaname,
+    tablename,
+    n_live_tup as registros
+FROM pg_stat_user_tables
+WHERE schemaname = 'public'
+ORDER BY tablename;
+```
 
 <br/><br/>
 
