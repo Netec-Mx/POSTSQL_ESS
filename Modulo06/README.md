@@ -2158,6 +2158,7 @@ WHERE schemaname = 'public'
 ORDER BY tablename, indexname;
 ```
 
+<br/>
 
 > **Advertencia:** No elimines las `vistas` si planeas usarlas en futuros análisis. Son útiles para consultas recurrentes y no ocupan espacio adicional significativo.
 
@@ -2211,33 +2212,52 @@ ORDER BY tablename, indexname;
 
 <br/><br/>
 
-
 ## Recursos Adicionales
 
-* Documentación Oficial de PostgreSQL – `SELECT`: [https://www.postgresql.org/docs/18/sql-select.html](https://www.postgresql.org/docs/18/sql-select.html)
-  Referencia completa de la sintaxis `SELECT`
+### Documentación Oficial de PostgreSQL
 
-* Documentación Oficial – Window Functions: [https://www.postgresql.org/docs/18/tutorial-window.html](https://www.postgresql.org/docs/18/tutorial-window.html)
-  Tutorial detallado de funciones `window`
+* **SELECT**
+  [https://www.postgresql.org/docs/18/sql-select.html](https://www.postgresql.org/docs/18/sql-select.html)
+  Referencia completa de la sintaxis `SELECT`.
 
-* Documentación Oficial – `WITH` Queries (CTE): [https://www.postgresql.org/docs/18/queries-with.html](https://www.postgresql.org/docs/18/queries-with.html)
-  Guía completa de `CTEs`
+* **Window Functions**
+  [https://www.postgresql.org/docs/18/tutorial-window.html](https://www.postgresql.org/docs/18/tutorial-window.html)
+  Tutorial detallado sobre funciones `window`.
 
-* PostgreSQL Performance Tuning: [https://wiki.postgresql.org/wiki/Performance_Optimization](https://wiki.postgresql.org/wiki/Performance_Optimization)
-  Wiki oficial sobre optimización
+* **WITH Queries (CTE)**
+  [https://www.postgresql.org/docs/18/queries-with.html](https://www.postgresql.org/docs/18/queries-with.html)
+  Guía completa sobre `CTEs`.
 
-* EXPLAIN Visualizer: [https://explain.dalibo.com/](https://explain.dalibo.com/)
-  Herramienta online para visualizar planes de ejecución
 
-* SQL Style Guide: [https://www.sqlstyle.guide/](https://www.sqlstyle.guide/)
-  Guía de buenas prácticas de formato SQL
+### Rendimiento y Optimización
 
-* Use The Index, Luke: [https://use-the-index-luke.com/](https://use-the-index-luke.com/)
-  Guía completa sobre índices en bases de datos
+* **PostgreSQL Performance Tuning**
+  [https://wiki.postgresql.org/wiki/Performance_Optimization](https://wiki.postgresql.org/wiki/Performance_Optimization)
+  Wiki oficial sobre optimización y buenas prácticas.
 
-* PostgreSQL Exercises: [https://pgexercises.com/](https://pgexercises.com/)
-  Ejercicios prácticos interactivos de SQL
+* **EXPLAIN Visualizer**
+  [https://explain.dalibo.com/](https://explain.dalibo.com/)
+  Herramienta online para visualizar y analizar planes de ejecución.
 
-* Mode Analytics SQL Tutorial: [https://mode.com/sql-tutorial/](https://mode.com/sql-tutorial/)
-  Tutorial interactivo de SQL avanzado
+* **Use The Index, Luke**
+  [https://use-the-index-luke.com/](https://use-the-index-luke.com/)
+  Guía completa sobre índices y optimización de consultas.
+
+
+### Estilo y Buenas Prácticas
+
+* **SQL Style Guide**
+  [https://www.sqlstyle.guide/](https://www.sqlstyle.guide/)
+  Guía de buenas prácticas para formato y escritura de SQL.
+
+
+### Práctica y Aprendizaje Interactivo
+
+* **PostgreSQL Exercises**
+  [https://pgexercises.com/](https://pgexercises.com/)
+  Ejercicios prácticos e interactivos de SQL.
+
+* **Mode Analytics – SQL Tutorial**
+  [https://mode.com/sql-tutorial/](https://mode.com/sql-tutorial/)
+  Tutorial interactivo de SQL avanzado con ejemplos reales.
 
