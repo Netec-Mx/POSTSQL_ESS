@@ -213,49 +213,50 @@ Aplicar la cláusula ORDER BY para ordenar los resultados en orden ascendente y 
  
 1.	Ordene productos por precio de menor a mayor:
 
-```sql
-   -- Ejercicio 3.1: Ordenamiento ascendente
-   SELECT nombre, precio
-   FROM productos
-   ORDER BY precio ASC;
-```
+    ```sql
+    -- Ejercicio 3.1: Ordenamiento ascendente
+    SELECT nombre, precio
+    FROM productos
+    ORDER BY precio ASC;
+    ```
 
 2.	Ordene productos por precio de mayor a menor:
 
-```sql
-   -- Ejercicio 3.2: Ordenamiento descendente
-   SELECT nombre, precio
-   FROM productos
-   ORDER BY precio DESC;
-```
+    ```sql
+    -- Ejercicio 3.2: Ordenamiento descendente
+    SELECT nombre, precio
+    FROM productos
+    ORDER BY precio DESC;
+    ```
 
 3.	Aplique ordenamiento por múltiples columnas:
 
-```sql
-   -- Ejercicio 3.3: Ordenamiento múltiple
-   SELECT nombre, categoria_id, precio
-   FROM productos
-   ORDER BY categoria_id ASC, precio DESC;
-```
+    ```sql
+    -- Ejercicio 3.3: Ordenamiento múltiple
+    SELECT nombre, categoria_id, precio
+    FROM productos
+    ORDER BY categoria_id ASC, precio DESC;
+    ```
 
 4.	Combine ORDER BY con LIMIT para obtener top N:
 
-```sql
-   -- Ejercicio 3.4: Top 5 productos más caros
-   SELECT nombre, precio
-   FROM productos
-   ORDER BY precio DESC
-   LIMIT 5;
-```
+    ```sql
+    -- Ejercicio 3.4: Top 5 productos más caros
+    SELECT nombre, precio
+    FROM productos
+    ORDER BY precio DESC
+    LIMIT 5;
+    ```
 
 5.	Obtenga los productos con menor stock:
-```sql
-   -- Ejercicio 3.5: Productos con bajo inventario
-   SELECT nombre, stock, precio
-   FROM productos
-   ORDER BY stock ASC
-   LIMIT 10;
-```
+
+    ```sql
+    -- Ejercicio 3.5: Productos con bajo inventario
+    SELECT nombre, stock, precio
+    FROM productos
+    ORDER BY stock ASC
+    LIMIT 10;
+    ```
 
 <br/><br/>
 
@@ -278,51 +279,52 @@ Aplicar la cláusula ORDER BY para ordenar los resultados en orden ascendente y 
 Utilizar funciones de agregación para realizar cálculos sobre conjuntos de datos.
  
 1.	Cuente el total de productos:
-```sql
-   -- Ejercicio 4.1: Contar productos
-   SELECT COUNT(*) AS total_productos
-   FROM productos;
-```
+
+    ```sql
+    -- Ejercicio 4.1: Contar productos
+    SELECT COUNT(*) AS total_productos
+    FROM productos;
+    ```
 
 2.	Calcule el precio promedio de productos:
-```sql
-   -- Ejercicio 4.2: Precio promedio
-   SELECT
-       AVG(precio) AS precio_promedio,
-       ROUND(AVG(precio), 2) AS precio_promedio_redondeado
-   FROM productos;
-```
+    ```sql
+    -- Ejercicio 4.2: Precio promedio
+    SELECT
+        AVG(precio) AS precio_promedio,
+        ROUND(AVG(precio), 2) AS precio_promedio_redondeado
+    FROM productos;
+    ```
 
 3.	Encuentre el precio máximo y mínimo:
-```sql
-   -- Ejercicio 4.3: Precios extremos
-   SELECT
-       MAX(precio) AS precio_maximo,
-       MIN(precio) AS precio_minimo,
-       MAX(precio) - MIN(precio) AS diferencia
-   FROM productos;
-```
+    ```sql
+    -- Ejercicio 4.3: Precios extremos
+    SELECT
+        MAX(precio) AS precio_maximo,
+        MIN(precio) AS precio_minimo,
+        MAX(precio) - MIN(precio) AS diferencia
+    FROM productos;
+    ```
 
 4.	Calcule la suma total del inventario:
-```sql
-   -- Ejercicio 4.4: Valor total del inventario
-   SELECT
-       SUM(precio * stock) AS valor_total_inventario,
-       ROUND(SUM(precio * stock), 2) AS valor_redondeado
-   FROM productos;
-```
+    ```sql
+    -- Ejercicio 4.4: Valor total del inventario
+    SELECT
+        SUM(precio * stock) AS valor_total_inventario,
+        ROUND(SUM(precio * stock), 2) AS valor_redondeado
+    FROM productos;
+    ```
 
 5.	Combine múltiples agregaciones:
-```sql
-   -- Ejercicio 4.5: Estadísticas generales de productos
-   SELECT
-       COUNT(*) AS total_productos,
-       ROUND(AVG(precio), 2) AS precio_promedio,
-       MAX(precio) AS precio_maximo,
-       MIN(precio) AS precio_minimo,
-       SUM(stock) AS stock_total
-   FROM productos;
-```
+    ```sql
+    -- Ejercicio 4.5: Estadísticas generales de productos
+    SELECT
+        COUNT(*) AS total_productos,
+        ROUND(AVG(precio), 2) AS precio_promedio,
+        MAX(precio) AS precio_maximo,
+        MIN(precio) AS precio_minimo,
+        SUM(stock) AS stock_total
+    FROM productos;
+    ```
 
 <br/><br/>
 
@@ -343,64 +345,64 @@ Los valores numéricos deben ser coherentes con los datos almacenados en la tabl
 Agrupar datos y aplicar funciones de agregación a cada grupo.
  
 1.	Cuente productos por categoría:
-```sql
-   -- Ejercicio 5.1: Productos por categoría
-   SELECT
-       categoria_id,
-       COUNT(*) AS cantidad_productos
-   FROM productos
-   GROUP BY categoria_id
-   ORDER BY cantidad_productos DESC;
-```
+    ```sql
+    -- Ejercicio 5.1: Productos por categoría
+    SELECT
+        categoria_id,
+        COUNT(*) AS cantidad_productos
+    FROM productos
+    GROUP BY categoria_id
+    ORDER BY cantidad_productos DESC;
+    ```
 
 2.	Calcule el precio promedio por categoría:
-```sql
-   -- Ejercicio 5.2: Precio promedio por categoría
-   SELECT
-       c.nombre AS categoria,
-       COUNT(p.id) AS total_productos,
-       ROUND(AVG(p.precio), 2) AS precio_promedio
-   FROM categorias c
-   LEFT JOIN productos p ON c.id = p.categoria_id
-   GROUP BY c.id, c.nombre
-   ORDER BY precio_promedio DESC;
-```
+    ```sql
+    -- Ejercicio 5.2: Precio promedio por categoría
+    SELECT
+        c.nombre AS categoria,
+        COUNT(p.id) AS total_productos,
+        ROUND(AVG(p.precio), 2) AS precio_promedio
+    FROM categorias c
+    LEFT JOIN productos p ON c.id = p.categoria_id
+    GROUP BY c.id, c.nombre
+    ORDER BY precio_promedio DESC;
+    ```
 
 3.	Obtenga el stock total por categoría:
-```sql
-   -- Ejercicio 5.3: Stock por categoría
-   SELECT
-       categoria_id,
-       SUM(stock) AS stock_total,
-       AVG(stock) AS stock_promedio
-   FROM productos
-   GROUP BY categoria_id
-   ORDER BY stock_total DESC;
-```
+    ```sql
+    -- Ejercicio 5.3: Stock por categoría
+    SELECT
+        categoria_id,
+        SUM(stock) AS stock_total,
+        AVG(stock) AS stock_promedio
+    FROM productos
+    GROUP BY categoria_id
+    ORDER BY stock_total DESC;
+    ```
 
 4.	Analice ventas por cliente:
-```sql
-   -- Ejercicio 5.4: Cantidad de compras por cliente
-   SELECT
-       cliente_id,
-       COUNT(*) AS total_compras,
-       SUM(total) AS monto_total_gastado
-   FROM ventas
-   GROUP BY cliente_id
-   ORDER BY monto_total_gastado DESC;
-```
+    ```sql
+    -- Ejercicio 5.4: Cantidad de compras por cliente
+    SELECT
+        cliente_id,
+        COUNT(*) AS total_compras,
+        SUM(total) AS monto_total_gastado
+    FROM ventas
+    GROUP BY cliente_id
+    ORDER BY monto_total_gastado DESC;
+    ```
 
 5.	Agrupe ventas por fecha:
-```sql
-   -- Ejercicio 5.5: Ventas por día
-   SELECT
-       DATE(fecha) AS fecha_venta,
-       COUNT(*) AS numero_ventas,
-       SUM(total) AS total_vendido
-   FROM ventas
-   GROUP BY DATE(fecha)
-   ORDER BY fecha_venta DESC;
-```
+    ```sql
+    -- Ejercicio 5.5: Ventas por día
+    SELECT
+        DATE(fecha) AS fecha_venta,
+        COUNT(*) AS numero_ventas,
+        SUM(total) AS total_vendido
+    FROM ventas
+    GROUP BY DATE(fecha)
+    ORDER BY fecha_venta DESC;
+    ```
 
 <br/><br/>
 
@@ -424,73 +426,74 @@ Aplicar la cláusula HAVING para filtrar grupos después de realizar operaciones
  
 1.	Filtre categorías con más de 5 productos:
 
-```sql
-   -- Ejercicio 6.1: Categorías con muchos productos
-   SELECT
-       categoria_id,
-       COUNT(*) AS cantidad_productos
-   FROM productos
-   GROUP BY categoria_id
-   HAVING COUNT(*) > 5
-   ORDER BY cantidad_productos DESC;
-```
+    ```sql
+    -- Ejercicio 6.1: Categorías con muchos productos
+    SELECT
+        categoria_id,
+        COUNT(*) AS cantidad_productos
+    FROM productos
+    GROUP BY categoria_id
+    HAVING COUNT(*) > 5
+    ORDER BY cantidad_productos DESC;
+    ```
 
 2.	Encuentre categorías con precio promedio alto:
 
-```sql
-   -- Ejercicio 6.2: Categorías con productos caros
-   SELECT
-       categoria_id,
-       ROUND(AVG(precio), 2) AS precio_promedio,
-       COUNT(*) AS total_productos
-   FROM productos
-   GROUP BY categoria_id
-   HAVING AVG(precio) > 3000
-   ORDER BY precio_promedio DESC;
-```
+    ```sql
+    -- Ejercicio 6.2: Categorías con productos caros
+    SELECT
+        categoria_id,
+        ROUND(AVG(precio), 2) AS precio_promedio,
+        COUNT(*) AS total_productos
+    FROM productos
+    GROUP BY categoria_id
+    HAVING AVG(precio) > 3000
+    ORDER BY precio_promedio DESC;
+    ```
 
 3.	Identifique clientes con compras significativas:
 
-```sql
-   -- Ejercicio 6.3: Clientes frecuentes
-   SELECT
-       cliente_id,
-       COUNT(*) AS total_compras,
-       ROUND(SUM(total), 2) AS monto_total
-   FROM ventas
-   GROUP BY cliente_id
-   HAVING COUNT(*) >= 2
-   ORDER BY total_compras DESC;
-```
+    ```sql
+    -- Ejercicio 6.3: Clientes frecuentes
+    SELECT
+        cliente_id,
+        COUNT(*) AS total_compras,
+        ROUND(SUM(total), 2) AS monto_total
+    FROM ventas
+    GROUP BY cliente_id
+    HAVING COUNT(*) >= 2
+    ORDER BY total_compras DESC;
+    ```
 
 4.	Combine WHERE y HAVING:
 
-```sql
-   -- Ejercicio 6.4: Productos en stock por categoría (filtrado doble)
-   SELECT
-       categoria_id,
-       COUNT(*) AS productos_en_stock,
-       SUM(stock) AS stock_total
-   FROM productos
-   WHERE stock > 0
-   GROUP BY categoria_id
-   HAVING SUM(stock) > 100
-   ORDER BY stock_total DESC;
-```
+    ```sql
+    -- Ejercicio 6.4: Productos en stock por categoría (filtrado doble)
+    SELECT
+        categoria_id,
+        COUNT(*) AS productos_en_stock,
+        SUM(stock) AS stock_total
+    FROM productos
+    WHERE stock > 0
+    GROUP BY categoria_id
+    HAVING SUM(stock) > 100
+    ORDER BY stock_total DESC;
+    ```
 
 5.	Analice productos con bajo stock promedio por categoría:
-```sql
- 
-   -- Ejercicio 6.5: Categorías con bajo inventario promedio
-   SELECT
-       categoria_id,
-       COUNT(*) AS total_productos,
-       ROUND(AVG(stock), 2) AS stock_promedio
-   FROM productos
-   GROUP BY categoria_id
-   HAVING AVG(stock) < 50
-   ORDER BY stock_promedio ASC;
-```
+
+    ```sql
+    
+    -- Ejercicio 6.5: Categorías con bajo inventario promedio
+    SELECT
+        categoria_id,
+        COUNT(*) AS total_productos,
+        ROUND(AVG(stock), 2) AS stock_promedio
+    FROM productos
+    GROUP BY categoria_id
+    HAVING AVG(stock) < 50
+    ORDER BY stock_promedio ASC;
+    ```
 
 <br/><br/>
 
@@ -512,63 +515,63 @@ Aplicar funciones de manipulación de texto en consultas SQL.
 
  
 1.	Convierta nombres a mayúsculas y minúsculas:
-```sql
-   -- Ejercicio 7.1: Manipulación de mayúsculas/minúsculas
-   SELECT
-       nombre,
-       UPPER(nombre) AS nombre_mayusculas,
-       LOWER(nombre) AS nombre_minusculas
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 7.1: Manipulación de mayúsculas/minúsculas
+    SELECT
+        nombre,
+        UPPER(nombre) AS nombre_mayusculas,
+        LOWER(nombre) AS nombre_minusculas
+    FROM productos
+    LIMIT 10;
+    ```
 
 2.	Concatene columnas de texto:
-```sql
-   -- Ejercicio 7.2: Concatenación
-   SELECT
-       nombre,
-       precio,
-       CONCAT(nombre, ' - $', precio) AS producto_con_precio,
-       nombre || ' (Stock: ' || stock || ')' AS producto_con_stock
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 7.2: Concatenación
+    SELECT
+        nombre,
+        precio,
+        CONCAT(nombre, ' - $', precio) AS producto_con_precio,
+        nombre || ' (Stock: ' || stock || ')' AS producto_con_stock
+    FROM productos
+    LIMIT 10;
+    ```
 
 3.	Extraiga subcadenas y obtenga longitud:
-```sql
-   -- Ejercicio 7.3: Subcadenas y longitud
-   SELECT
-       nombre,
-       LENGTH(nombre) AS longitud,
-       SUBSTRING(nombre, 1, 10) AS primeros_10_caracteres,
-       LEFT(nombre, 5) AS primeros_5
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 7.3: Subcadenas y longitud
+    SELECT
+        nombre,
+        LENGTH(nombre) AS longitud,
+        SUBSTRING(nombre, 1, 10) AS primeros_10_caracteres,
+        LEFT(nombre, 5) AS primeros_5
+    FROM productos
+    LIMIT 10;
+    ```
 
 4.	Elimine espacios en blanco:
-```sql
-   -- Ejercicio 7.4: Limpieza de espacios
-   SELECT
-       '  ' || nombre || '  ' AS con_espacios,
-       TRIM('  ' || nombre || '  ') AS sin_espacios,
-       LTRIM('  ' || nombre) AS sin_espacios_izq,
-       RTRIM(nombre || '  ') AS sin_espacios_der
-   FROM productos
-   LIMIT 5;
-```
+    ```sql
+    -- Ejercicio 7.4: Limpieza de espacios
+    SELECT
+        '  ' || nombre || '  ' AS con_espacios,
+        TRIM('  ' || nombre || '  ') AS sin_espacios,
+        LTRIM('  ' || nombre) AS sin_espacios_izq,
+        RTRIM(nombre || '  ') AS sin_espacios_der
+    FROM productos
+    LIMIT 5;
+    ```
 
 5.	Busque y reemplace texto:
 
-```sql
-   -- Ejercicio 7.5: Reemplazo de texto
-   SELECT
-       nombre,
-       REPLACE(nombre, 'Arroz', 'ARROZ') AS nombre_modificado,
-       POSITION('a' IN LOWER(nombre)) AS posicion_primera_a
-   FROM productos
-   WHERE nombre LIKE '%Arroz%';
-```
+    ```sql
+    -- Ejercicio 7.5: Reemplazo de texto
+    SELECT
+        nombre,
+        REPLACE(nombre, 'Arroz', 'ARROZ') AS nombre_modificado,
+        POSITION('a' IN LOWER(nombre)) AS posicion_primera_a
+    FROM productos
+    WHERE nombre LIKE '%Arroz%';
+    ```
 
 <br/><br/>
 
@@ -590,66 +593,66 @@ Utilizar funciones de fecha para extraer y manipular información tem-poral.
  
 1.	Extraiga componentes de fecha:
 
-```sql
-   -- Ejercicio 8.1: Componentes de fecha
-   SELECT
-       fecha,
-       EXTRACT(YEAR FROM fecha) AS año,
-       EXTRACT(MONTH FROM fecha) AS mes,
-       EXTRACT(DAY FROM fecha) AS dia,
-       EXTRACT(DOW FROM fecha) AS dia_semana
-   FROM ventas
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 8.1: Componentes de fecha
+    SELECT
+        fecha,
+        EXTRACT(YEAR FROM fecha) AS año,
+        EXTRACT(MONTH FROM fecha) AS mes,
+        EXTRACT(DAY FROM fecha) AS dia,
+        EXTRACT(DOW FROM fecha) AS dia_semana
+    FROM ventas
+    LIMIT 10;
+    ```
 
 2.	Formatee fechas de diferentes maneras:
-```sql
-   -- Ejercicio 8.2: Formato de fechas
-   SELECT
-       fecha,
-       TO_CHAR(fecha, 'DD/MM/YYYY') AS fecha_formateada,
-       TO_CHAR(fecha, 'Day, DD Month YYYY') AS fecha_texto,
-       TO_CHAR(fecha, 'YYYY-MM') AS año_mes
-   FROM ventas
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 8.2: Formato de fechas
+    SELECT
+        fecha,
+        TO_CHAR(fecha, 'DD/MM/YYYY') AS fecha_formateada,
+        TO_CHAR(fecha, 'Day, DD Month YYYY') AS fecha_texto,
+        TO_CHAR(fecha, 'YYYY-MM') AS año_mes
+    FROM ventas
+    LIMIT 10;
+    ```
 
 3.	Calcule diferencias de tiempo:
-```sql
-   -- Ejercicio 8.3: Diferencias de fecha
-   SELECT
-       fecha,
-       CURRENT_DATE AS fecha_actual,
-       CURRENT_DATE - DATE(fecha) AS dias_transcurridos,
-       AGE(CURRENT_DATE, DATE(fecha)) AS tiempo_transcurrido
-   FROM ventas
-   ORDER BY fecha DESC
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 8.3: Diferencias de fecha
+    SELECT
+        fecha,
+        CURRENT_DATE AS fecha_actual,
+        CURRENT_DATE - DATE(fecha) AS dias_transcurridos,
+        AGE(CURRENT_DATE, DATE(fecha)) AS tiempo_transcurrido
+    FROM ventas
+    ORDER BY fecha DESC
+    LIMIT 10;
+    ```
 
 4.	Agrupe por períodos de tiempo:
-```sql
-   -- Ejercicio 8.4: Ventas por mes
-   SELECT
-       TO_CHAR(fecha, 'YYYY-MM') AS año_mes,
-       COUNT(*) AS total_ventas,
-       ROUND(SUM(total), 2) AS monto_total
-   FROM ventas
-   GROUP BY TO_CHAR(fecha, 'YYYY-MM')
-   ORDER BY año_mes DESC;
-```
+    ```sql
+    -- Ejercicio 8.4: Ventas por mes
+    SELECT
+        TO_CHAR(fecha, 'YYYY-MM') AS año_mes,
+        COUNT(*) AS total_ventas,
+        ROUND(SUM(total), 2) AS monto_total
+    FROM ventas
+    GROUP BY TO_CHAR(fecha, 'YYYY-MM')
+    ORDER BY año_mes DESC;
+    ```
 
 5.	Use DATE_TRUNC para truncar fechas:
-```sql
-   -- Ejercicio 8.5: Truncamiento de fechas
-   SELECT
-       DATE_TRUNC('month', fecha) AS inicio_mes,
-       COUNT(*) AS ventas_del_mes,
-       SUM(total) AS total_mes
-   FROM ventas
-   GROUP BY DATE_TRUNC('month', fecha)
-   ORDER BY inicio_mes DESC;
-```
+    ```sql
+    -- Ejercicio 8.5: Truncamiento de fechas
+    SELECT
+        DATE_TRUNC('month', fecha) AS inicio_mes,
+        COUNT(*) AS ventas_del_mes,
+        SUM(total) AS total_mes
+    FROM ventas
+    GROUP BY DATE_TRUNC('month', fecha)
+    ORDER BY inicio_mes DESC;
+    ```
 
 <br/><br/>
 
@@ -671,72 +674,72 @@ Aplicar funciones matemáticas para cálculos y redondeos.
  
 1.	Aplique funciones de redondeo:
 
-```sql
-   -- Ejercicio 9.1: Redondeo de números
-   SELECT
-       precio,
-       ROUND(precio) AS redondeado,
-       ROUND(precio, 1) AS un_decimal,
-       CEIL(precio) AS redondeo_superior,
-       FLOOR(precio) AS redondeo_inferior
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 9.1: Redondeo de números
+    SELECT
+        precio,
+        ROUND(precio) AS redondeado,
+        ROUND(precio, 1) AS un_decimal,
+        CEIL(precio) AS redondeo_superior,
+        FLOOR(precio) AS redondeo_inferior
+    FROM productos
+    LIMIT 10;
+    ```
 
 2.	Calcule valores absolutos y signos:
 
-```sql
-   -- Ejercicio 9.2: Valores absolutos
-   SELECT
-       precio,
-       precio - 5000 AS diferencia,
-       ABS(precio - 5000) AS diferencia_absoluta,
-       SIGN(precio - 5000) AS signo
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 9.2: Valores absolutos
+    SELECT
+        precio,
+        precio - 5000 AS diferencia,
+        ABS(precio - 5000) AS diferencia_absoluta,
+        SIGN(precio - 5000) AS signo
+    FROM productos
+    LIMIT 10;
+    ```
 
 3.	Use funciones de potencia y raíz:
 
-```sql
-   -- Ejercicio 9.3: Potencias y raíces
-   SELECT
-       stock,
-       POWER(stock, 2) AS stock_al_cuadrado,
-       SQRT(stock) AS raiz_cuadrada_stock,
-       ROUND(SQRT(stock), 2) AS raiz_redondeada
-   FROM productos
-   WHERE stock > 0
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 9.3: Potencias y raíces
+    SELECT
+        stock,
+        POWER(stock, 2) AS stock_al_cuadrado,
+        SQRT(stock) AS raiz_cuadrada_stock,
+        ROUND(SQRT(stock), 2) AS raiz_redondeada
+    FROM productos
+    WHERE stock > 0
+    LIMIT 10;
+    ```
 
 4.	Calcule módulos y divisiones:
 
-```sql
-   -- Ejercicio 9.4: Módulo y división
-   SELECT
-       id,
-       precio,
-       MOD(precio::INTEGER, 100) AS modulo_100,
-       precio / 100 AS division_entera,
-       ROUND(precio / 100.0, 2) AS division_decimal
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 9.4: Módulo y división
+    SELECT
+        id,
+        precio,
+        MOD(precio::INTEGER, 100) AS modulo_100,
+        precio / 100 AS division_entera,
+        ROUND(precio / 100.0, 2) AS division_decimal
+    FROM productos
+    LIMIT 10;
+    ```
 
 5.	Genere números aleatorios:
 
-```sql
-   -- Ejercicio 9.5: Números aleatorios
-   SELECT
-       nombre,
-       precio,
-       RANDOM() AS aleatorio_0_1,
-       ROUND(RANDOM() * 100) AS aleatorio_0_100,
-       FLOOR(RANDOM() * 10 + 1) AS aleatorio_1_10
-   FROM productos
-   LIMIT 10;
-```
+    ```sql
+    -- Ejercicio 9.5: Números aleatorios
+    SELECT
+        nombre,
+        precio,
+        RANDOM() AS aleatorio_0_1,
+        ROUND(RANDOM() * 100) AS aleatorio_0_100,
+        FLOOR(RANDOM() * 10 + 1) AS aleatorio_1_10
+    FROM productos
+    LIMIT 10;
+    ```
 
 <br/><br/>
 
@@ -759,121 +762,115 @@ Combinar múltiples técnicas aprendidas en consultas complejas.
  
 1.	Cree un reporte completo de productos:
 
-```sql
-   -- Ejercicio 10.1: Reporte detallado de productos
-   SELECT
-       UPPER(p.nombre) AS producto,
-       c.nombre AS categoria,
-       CONCAT('$', ROUND(p.precio, 2)) AS precio_formateado,
-       p.stock AS stock_actual,
-       CASE
-           WHEN p.stock = 0 THEN 'SIN STOCK'
-           WHEN p.stock < 20 THEN 'STOCK BAJO'
-           WHEN p.stock < 50 THEN 'STOCK MEDIO'
-           ELSE 'STOCK ALTO'
-       END AS estado_stock,
-       ROUND(p.precio * p.stock, 2) AS valor_inventario
-   FROM productos p
-   INNER JOIN categorias c ON p.categoria_id = c.id
-   ORDER BY valor_inventario DESC
-   LIMIT 20;
-```
+    ```sql
+    -- Ejercicio 10.1: Reporte detallado de productos
+    SELECT
+        UPPER(p.nombre) AS producto,
+        c.nombre AS categoria,
+        CONCAT('$', ROUND(p.precio, 2)) AS precio_formateado,
+        p.stock AS stock_actual,
+        CASE
+            WHEN p.stock = 0 THEN 'SIN STOCK'
+            WHEN p.stock < 20 THEN 'STOCK BAJO'
+            WHEN p.stock < 50 THEN 'STOCK MEDIO'
+            ELSE 'STOCK ALTO'
+        END AS estado_stock,
+        ROUND(p.precio * p.stock, 2) AS valor_inventario
+    FROM productos p
+    INNER JOIN categorias c ON p.categoria_id = c.id
+    ORDER BY valor_inventario DESC
+    LIMIT 20;
+    ```
 
 2.	Analice el rendimiento de ventas:
 
-```sql
-   -- Ejercicio 10.2: Análisis de ventas
-   SELECT
-       TO_CHAR(v.fecha, 'YYYY-MM') AS periodo,
-       COUNT(DISTINCT v.id) AS total_ventas,
-       COUNT(DISTINCT v.cliente_id) AS clientes_unicos,
-       SUM(v.total) AS monto_total,
-       ROUND(AVG(v.total), 2) AS ticket_promedio,
-       MAX(v.total) AS venta_maxima,
-       MIN(v.total) AS venta_minima
-   FROM ventas v
-   GROUP BY TO_CHAR(v.fecha, 'YYYY-MM')
-   ORDER BY periodo DESC;
-```
+    ```sql
+    -- Ejercicio 10.2: Análisis de ventas
+    SELECT
+        TO_CHAR(v.fecha, 'YYYY-MM') AS periodo,
+        COUNT(DISTINCT v.id) AS total_ventas,
+        COUNT(DISTINCT v.cliente_id) AS clientes_unicos,
+        SUM(v.total) AS monto_total,
+        ROUND(AVG(v.total), 2) AS ticket_promedio,
+        MAX(v.total) AS venta_maxima,
+        MIN(v.total) AS venta_minima
+    FROM ventas v
+    GROUP BY TO_CHAR(v.fecha, 'YYYY-MM')
+    ORDER BY periodo DESC;
+    ```
 
 3.	Identifique productos más vendidos:
 
-```sql
-   -- Ejercicio 10.3: Top productos vendidos
-   SELECT
-       p.nombre AS producto,
-       c.nombre AS categoria,
-       COUNT(dv.id) AS veces_vendido,
-       SUM(dv.cantidad) AS unidades_vendidas,
-       ROUND(SUM(dv.subtotal), 2) AS ingresos_generados,
-       ROUND(AVG(dv.precio_unitario), 2) AS precio_promedio_venta
-   FROM detalle_ventas dv
-   INNER JOIN productos p ON dv.producto_id = p.id
-   INNER JOIN categorias c ON p.categoria_id = c.id
-   GROUP BY p.id, p.nombre, c.nombre
-   HAVING SUM(dv.cantidad) > 0
-   ORDER BY unidades_vendidas DESC
-   LIMIT 15;
-```
+    ```sql
+    -- Ejercicio 10.3: Top productos vendidos
+    SELECT
+        p.nombre AS producto,
+        c.nombre AS categoria,
+        COUNT(dv.id) AS veces_vendido,
+        SUM(dv.cantidad) AS unidades_vendidas,
+        ROUND(SUM(dv.subtotal), 2) AS ingresos_generados,
+        ROUND(AVG(dv.precio_unitario), 2) AS precio_promedio_venta
+    FROM detalle_ventas dv
+    INNER JOIN productos p ON dv.producto_id = p.id
+    INNER JOIN categorias c ON p.categoria_id = c.id
+    GROUP BY p.id, p.nombre, c.nombre
+    HAVING SUM(dv.cantidad) > 0
+    ORDER BY unidades_vendidas DESC
+    LIMIT 15;
+    ```
 
 4.	Cree un análisis de clientes:
 
-```sql
-   -- Ejercicio 10.4: Perfil de clientes
-   SELECT
-       CONCAT(c.nombre, ' ', c.apellido) AS cliente_completo,
-       c.email,
-       COUNT(v.id) AS total_compras,
-       ROUND(SUM(v.total), 2) AS gasto_total,
-       ROUND(AVG(v.total), 2) AS gasto_promedio,
-       MAX(v.fecha) AS ultima_compra,
-       CURRENT_DATE - MAX(DATE(v.fecha)) AS dias_sin_comprar,
-       CASE
-           WHEN COUNT(v.id) >= 5 THEN 'PREMIUM'
-           WHEN COUNT(v.id) >= 3 THEN 'REGULAR'
-           ELSE 'NUEVO'
-       END AS tipo_cliente
-   FROM clientes c
-   LEFT JOIN ventas v ON c.id = v.cliente_id
-   GROUP BY c.id, c.nombre, c.apellido, c.email
-   HAVING COUNT(v.id) > 0
-   ORDER BY gasto_total DESC;
-```
+    ```sql
+    -- Ejercicio 10.4: Perfil de clientes
+    SELECT
+        CONCAT(c.nombre, ' ', c.apellido) AS cliente_completo,
+        c.email,
+        COUNT(v.id) AS total_compras,
+        ROUND(SUM(v.total), 2) AS gasto_total,
+        ROUND(AVG(v.total), 2) AS gasto_promedio,
+        MAX(v.fecha) AS ultima_compra,
+        CURRENT_DATE - MAX(DATE(v.fecha)) AS dias_sin_comprar,
+        CASE
+            WHEN COUNT(v.id) >= 5 THEN 'PREMIUM'
+            WHEN COUNT(v.id) >= 3 THEN 'REGULAR'
+            ELSE 'NUEVO'
+        END AS tipo_cliente
+    FROM clientes c
+    LEFT JOIN ventas v ON c.id = v.cliente_id
+    GROUP BY c.id, c.nombre, c.apellido, c.email
+    HAVING COUNT(v.id) > 0
+    ORDER BY gasto_total DESC;
+    ```
 
 5.	Genere un dashboard ejecutivo:
 
-```sql
-   -- Ejercicio 10.5: Dashboard general
-   SELECT
-       'Total Productos' AS metrica,
-       COUNT(*)::TEXT AS valor
-   FROM productos
-   UNION ALL
-   SELECT
-       'Valor Inventario',
-       CONCAT('$', ROUND(SUM(precio * stock), 2))
-   FROM productos
-   UNION ALL
-   SELECT
-       'Total Clientes',
-       COUNT(*)::TEXT
-   FROM clientes
-   UNION ALL
-   SELECT
-       'Total Ventas',
-       COUNT(*)::TEXT
-   FROM ventas
-   UNION ALL
-   SELECT
-       'Ingresos Totales',
-       CONCAT('$', ROUND(SUM(total), 2))
-   FROM ventas
-   UNION ALL
-   SELECT
-       'Ticket Promedio',
-       CONCAT('$', ROUND(AVG(total), 2))
-   FROM ventas;
-```
+    ```sql
+    -- Ejercicio 10.5: Dashboard general
+    SELECT 'Total Productos' AS metrica,
+        COUNT(*)::TEXT AS valor
+    FROM productos
+    UNION ALL
+    SELECT 'Valor Inventario',
+        CONCAT('$', ROUND(SUM(precio * stock), 2))
+    FROM productos
+    UNION ALL
+    SELECT 'Total Clientes',
+        COUNT(*)::TEXT
+    FROM clientes
+    UNION ALL
+    SELECT 'Total Ventas',
+        COUNT(*)::TEXT
+    FROM ventas
+    UNION ALL
+    SELECT 'Ingresos Totales',
+        CONCAT('$', ROUND(SUM(total), 2))
+    FROM ventas
+    UNION ALL
+    SELECT 'Ticket Promedio',
+        CONCAT('$', ROUND(AVG(total), 2))
+    FROM ventas;
+    ```
 
 <br/><br/>
 
@@ -910,15 +907,15 @@ Los resultados deben ser coherentes y proporcionar información valiosa sobre el
 
 ### 1. Ejecute una verificación general de todas las tablas:
 
-```sql
-   -- Test 1: Verificar integridad de datos
-   SELECT
-       (SELECT COUNT(*) FROM productos) AS total_productos,
-       (SELECT COUNT(*) FROM categorias) AS total_categorias,
-       (SELECT COUNT(*) FROM clientes) AS total_clientes,
-       (SELECT COUNT(*) FROM ventas) AS total_ventas,
-       (SELECT COUNT(*) FROM detalle_ventas) AS total_detalles;
-```
+    ```sql
+    -- Test 1: Verificar integridad de datos
+    SELECT
+        (SELECT COUNT(*) FROM productos) AS total_productos,
+        (SELECT COUNT(*) FROM categorias) AS total_categorias,
+        (SELECT COUNT(*) FROM clientes) AS total_clientes,
+        (SELECT COUNT(*) FROM ventas) AS total_ventas,
+        (SELECT COUNT(*) FROM detalle_ventas) AS total_detalles;
+    ```
 
 #### Resultado Esperado: 
 Todos los conteos deben ser mayores que cero.
@@ -927,15 +924,15 @@ Todos los conteos deben ser mayores que cero.
 
 ### 2. Valide que las agregaciones son correctas
 
-```sql
--- Test 2: Validar agregaciones
-SELECT
-    COUNT(*) AS productos_contados,
-    SUM(1) AS suma_manual,
-    COUNT(*) = SUM(1) AS conteo_correcto
-FROM
-    productos;
-```
+    ```sql
+    -- Test 2: Validar agregaciones
+    SELECT
+        COUNT(*) AS productos_contados,
+        SUM(1) AS suma_manual,
+        COUNT(*) = SUM(1) AS conteo_correcto
+    FROM
+        productos;
+    ```
 
 #### Resultado Esperado:
 La columna `conteo_correcto` debe mostrar el valor `true`.
@@ -944,24 +941,24 @@ La columna `conteo_correcto` debe mostrar el valor `true`.
 
 ### 3. Pruebe la consistencia de GROUP BY
 
-```sql
--- Test 3: Consistencia de agrupamiento
-SELECT
-    (SELECT COUNT(*) FROM productos) AS total_productos,
-    (SELECT SUM(cantidad)
-     FROM (
-         SELECT COUNT(*) AS cantidad
-         FROM productos
-         GROUP BY categoria_id
-     ) subquery) AS suma_por_grupos,
-    (SELECT COUNT(*) FROM productos) =
-    (SELECT SUM(cantidad)
-     FROM (
-         SELECT COUNT(*) AS cantidad
-         FROM productos
-         GROUP BY categoria_id
-     ) subquery) AS agrupamiento_correcto;
-```
+    ```sql
+    -- Test 3: Consistencia de agrupamiento
+    SELECT
+        (SELECT COUNT(*) FROM productos) AS total_productos,
+        (SELECT SUM(cantidad)
+        FROM (
+            SELECT COUNT(*) AS cantidad
+            FROM productos
+            GROUP BY categoria_id
+        ) subquery) AS suma_por_grupos,
+        (SELECT COUNT(*) FROM productos) =
+        (SELECT SUM(cantidad)
+        FROM (
+            SELECT COUNT(*) AS cantidad
+            FROM productos
+            GROUP BY categoria_id
+        ) subquery) AS agrupamiento_correcto;
+    ```
 
 #### Resultado Esperado:
 
@@ -971,20 +968,18 @@ La columna `agrupamiento_correcto` debe mostrar el valor `true`.
 
 ### 4. Verifique el funcionamiento de HAVING
 
-```sql
--- Test 4: Validar HAVING
-SELECT
-    categoria_id,
-    COUNT(*) AS cantidad
-FROM
-    productos
-GROUP BY
-    categoria_id
-HAVING
-    COUNT(*) > 0
-ORDER BY
-    cantidad DESC;
-```
+    ```sql
+    -- Test 4: Validar HAVING
+    SELECT  categoria_id, COUNT(*) AS cantidad
+    FROM
+        productos
+    GROUP BY
+        categoria_id
+    HAVING
+        COUNT(*) > 0
+    ORDER BY
+        cantidad DESC;
+    ```
 
 #### Resultado Esperado:
 
@@ -994,16 +989,16 @@ Debe mostrar todas las categorías que tengan al menos un producto asociado.
 
 ### 5. Pruebe las funciones de fecha
 
-```sql
--- Test 5: Validar funciones de fecha
-SELECT
-    fecha,
-    EXTRACT(YEAR FROM fecha) AS anio,
-    EXTRACT(YEAR FROM fecha) >= 2020 AS anio_valido
-FROM
-    ventas
-LIMIT 5;
-```
+    ```sql
+    -- Test 5: Validar funciones de fecha
+    SELECT
+        fecha,
+        EXTRACT(YEAR FROM fecha) AS anio,
+        EXTRACT(YEAR FROM fecha) >= 2020 AS anio_valido
+    FROM
+        ventas
+    LIMIT 5;
+    ```
 
 #### Resultado Esperado:
 
