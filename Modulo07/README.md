@@ -100,69 +100,69 @@ Al completar este laboratorio, serás capaz de:
 
 1. Análisis de requisitos del sistema
 
-Analiza los **requisitos del sistema de reservas de alojamientos**. El sistema debe manejar:
+    Analiza los **requisitos del sistema de reservas de alojamientos**. El sistema debe manejar:
 
-* **Propiedades** (alojamientos) con características detalladas.
-* **Usuarios** (**anfitriones** y **huéspedes**).
-* **Reservas** con **fechas** y **estados**.
-* **Reseñas** y **calificaciones**.
-* **Amenidades** (servicios) de las propiedades.
-* **Ubicaciones geográficas**.
-* **Pagos** y **transacciones**.
+    * **Propiedades** (alojamientos) con características detalladas.
+    * **Usuarios** (**anfitriones** y **huéspedes**).
+    * **Reservas** con **fechas** y **estados**.
+    * **Reseñas** y **calificaciones**.
+    * **Amenidades** (servicios) de las propiedades.
+    * **Ubicaciones geográficas**.
+    * **Pagos** y **transacciones**.
 
 <br/>
 
 2. Identificación de entidades y atributos
 
-**Entidades identificadas:**
+    **Entidades identificadas:**
 
-* **usuarios**
-  * id, nombre, apellido, email, telefono, tipo_usuario, fecha_registro, password_hash
+    * **usuarios**
+    * id, nombre, apellido, email, telefono, tipo_usuario, fecha_registro, password_hash
 
-* **ubicaciones**
-  * id, pais, ciudad, estado_provincia, codigo_postal, direccion
+    * **ubicaciones**
+    * id, pais, ciudad, estado_provincia, codigo_postal, direccion
 
-* **propiedades**
-  * id, id_anfitrion, id_ubicacion, titulo, descripcion, tipo_propiedad, precio_noche, capacidad_huespedes, num_habitaciones, num_banos, fecha_creacion
+    * **propiedades**
+    * id, id_anfitrion, id_ubicacion, titulo, descripcion, tipo_propiedad, precio_noche, capacidad_huespedes, num_habitaciones, num_banos, fecha_creacion
 
-* **amenidades**
-  * id, nombre, descripcion, categoria
+    * **amenidades**
+    * id, nombre, descripcion, categoria
 
-* **propiedades_amenidades** (tabla intermedia)
-  * id_propiedad, id_amenidad
+    * **propiedades_amenidades** (tabla intermedia)
+    * id_propiedad, id_amenidad
 
-* **reservas**
-  * id, id_propiedad, id_huesped, fecha_inicio, fecha_fin, num_huespedes, precio_total, estado, fecha_reserva
+    * **reservas**
+    * id, id_propiedad, id_huesped, fecha_inicio, fecha_fin, num_huespedes, precio_total, estado, fecha_reserva
 
-* **pagos**
-  * id, id_reserva, monto, metodo_pago, estado_pago, fecha_pago
+    * **pagos**
+    * id, id_reserva, monto, metodo_pago, estado_pago, fecha_pago
 
-* **resenas**
-  * id, id_reserva, id_usuario, calificacion, comentario, fecha_resena
+    * **resenas**
+    * id, id_reserva, id_usuario, calificacion, comentario, fecha_resena
 
 <br/>
 
 3. Identificación de relaciones entre entidades
 
-* Un **usuario** puede ser **anfitrión** de múltiples **propiedades** (**1:N**).
-* Una **propiedad** pertenece a una **ubicación** (**N:1**).
-* Una **propiedad** puede tener múltiples **amenidades** (**N:M**).
-* Una **propiedad** puede tener múltiples **reservas** (**1:N**).
-* Una **reserva** pertenece a un **huésped** (**usuario**) (**N:1**).
-* Una **reserva** puede tener múltiples **pagos** (**1:N**).
-* Una **reserva** puede tener una **reseña** (**1:1**).
+    * Un **usuario** puede ser **anfitrión** de múltiples **propiedades** (**1:N**).
+    * Una **propiedad** pertenece a una **ubicación** (**N:1**).
+    * Una **propiedad** puede tener múltiples **amenidades** (**N:M**).
+    * Una **propiedad** puede tener múltiples **reservas** (**1:N**).
+    * Una **reserva** pertenece a un **huésped** (**usuario**) (**N:1**).
+    * Una **reserva** puede tener múltiples **pagos** (**1:N**).
+    * Una **reserva** puede tener una **reseña** (**1:1**).
 
 <br/>
 
 4. Elaboración del diagrama Entidad–Relación (ER)
 
-Dibuja un **diagrama ER** en papel o utilizando una herramienta como **draw.io** o **dbdiagram.io**. El diagrama debe incluir:
+    Dibuja un **diagrama ER** en papel o utilizando una herramienta como **draw.io** o **dbdiagram.io**. El diagrama debe incluir:
 
-* Todas las **entidades** representadas como rectángulos.
-* **Atributos** dentro de cada entidad.
-* **Relaciones** representadas con líneas y sus **cardinalidades** (1:1, 1:N, N:M).
-* **Claves primarias** claramente identificadas (subrayadas).
-* **Claves foráneas** indicando la relación entre entidades.
+    * Todas las **entidades** representadas como rectángulos.
+    * **Atributos** dentro de cada entidad.
+    * **Relaciones** representadas con líneas y sus **cardinalidades** (1:1, 1:N, N:M).
+    * **Claves primarias** claramente identificadas (subrayadas).
+    * **Claves foráneas** indicando la relación entre entidades.
 
 
 <br/>
