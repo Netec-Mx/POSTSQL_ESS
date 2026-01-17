@@ -907,7 +907,7 @@ Los resultados deben ser coherentes y proporcionar información valiosa sobre el
 
 ### 1. Ejecute una verificación general de todas las tablas:
 
-    ```sql
+```sql
     -- Test 1: Verificar integridad de datos
     SELECT
         (SELECT COUNT(*) FROM productos) AS total_productos,
@@ -915,7 +915,7 @@ Los resultados deben ser coherentes y proporcionar información valiosa sobre el
         (SELECT COUNT(*) FROM clientes) AS total_clientes,
         (SELECT COUNT(*) FROM ventas) AS total_ventas,
         (SELECT COUNT(*) FROM detalle_ventas) AS total_detalles;
-    ```
+```
 
 #### Resultado Esperado: 
 Todos los conteos deben ser mayores que cero.
@@ -924,7 +924,7 @@ Todos los conteos deben ser mayores que cero.
 
 ### 2. Valide que las agregaciones son correctas
 
-    ```sql
+```sql
     -- Test 2: Validar agregaciones
     SELECT
         COUNT(*) AS productos_contados,
@@ -932,7 +932,7 @@ Todos los conteos deben ser mayores que cero.
         COUNT(*) = SUM(1) AS conteo_correcto
     FROM
         productos;
-    ```
+```
 
 #### Resultado Esperado:
 La columna `conteo_correcto` debe mostrar el valor `true`.
@@ -941,7 +941,7 @@ La columna `conteo_correcto` debe mostrar el valor `true`.
 
 ### 3. Pruebe la consistencia de GROUP BY
 
-    ```sql
+```sql
     -- Test 3: Consistencia de agrupamiento
     SELECT
         (SELECT COUNT(*) FROM productos) AS total_productos,
@@ -958,7 +958,7 @@ La columna `conteo_correcto` debe mostrar el valor `true`.
             FROM productos
             GROUP BY categoria_id
         ) subquery) AS agrupamiento_correcto;
-    ```
+```
 
 #### Resultado Esperado:
 
@@ -968,7 +968,7 @@ La columna `agrupamiento_correcto` debe mostrar el valor `true`.
 
 ### 4. Verifique el funcionamiento de HAVING
 
-    ```sql
+```sql
     -- Test 4: Validar HAVING
     SELECT  categoria_id, COUNT(*) AS cantidad
     FROM
@@ -979,7 +979,7 @@ La columna `agrupamiento_correcto` debe mostrar el valor `true`.
         COUNT(*) > 0
     ORDER BY
         cantidad DESC;
-    ```
+```
 
 #### Resultado Esperado:
 
@@ -989,7 +989,7 @@ Debe mostrar todas las categorías que tengan al menos un producto asociado.
 
 ### 5. Pruebe las funciones de fecha
 
-    ```sql
+```sql
     -- Test 5: Validar funciones de fecha
     SELECT
         fecha,
@@ -998,7 +998,7 @@ Debe mostrar todas las categorías que tengan al menos un producto asociado.
     FROM
         ventas
     LIMIT 5;
-    ```
+```
 
 #### Resultado Esperado:
 
