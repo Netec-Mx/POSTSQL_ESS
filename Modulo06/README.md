@@ -1216,9 +1216,9 @@ cliente_id | nombre          | total_gastado | promedio_global | clasificacion
 -- Ejercicio 31:
 producto_id | nombre              | stock | unidades_vendidas | indica-dor_rotacion | recomendacion
 ------------+---------------------+-------+-------------------+--------------------+---------------
-15          | Laptop Dell XPS     |    25 |                45 | ⚡ Rotación rápida | 📦 Reabastecer pronto
-23          | iPhone 15 Pro       |    50 |                38 | 🟢 Rotación nor-mal | ✅ OK
-7           | Mouse Inalámbrico   |   100 |                 0 | 🔴 Sin rotación    | ⚠️ Revisar stock
+15          | Laptop Dell XPS     |    25 |                45 | Rotación rápida | Reabastecer pronto
+23          | iPhone 15 Pro       |    50 |                38 | Rotación nor-mal | OK
+7           | Mouse Inalámbrico   |   100 |                 0 | Sin rotación    | Revisar stock
 ```
 
 #### Verificación:
@@ -1497,13 +1497,13 @@ Combinar múltiples técnicas avanzadas en consultas complejas únicas.
         m_score,
         (r_score + f_score + m_score) AS rfm_total,
         CASE
-            WHEN r_score + f_score + m_score >= 8 THEN '⭐ Champions'
-            WHEN r_score >= 2 AND f_score >= 2 THEN '💎 Loyal Customers'
-            WHEN r_score >= 2 AND m_score >= 2 THEN '🎯 Big Spenders'
-            WHEN r_score = 3 THEN '🆕 New Customers'
-            WHEN r_score = 1 AND f_score >= 2 THEN '⚠️ At Risk'
-            WHEN r_score = 1 THEN '😴 Hibernating'
-            ELSE '📊 Potential'
+            WHEN r_score + f_score + m_score >= 8 THEN 'Champions'
+            WHEN r_score >= 2 AND f_score >= 2 THEN 'Loyal Customers'
+            WHEN r_score >= 2 AND m_score >= 2 THEN 'Big Spenders'
+            WHEN r_score = 3 THEN 'New Customers'
+            WHEN r_score = 1 AND f_score >= 2 THEN 'At Risk'
+            WHEN r_score = 1 THEN 'Hibernating'
+            ELSE 'Potential'
         END AS segmento
     FROM scores_rfm
     ORDER BY rfm_total DESC, monetary DESC;
@@ -1516,11 +1516,11 @@ Combinar múltiples técnicas avanzadas en consultas complejas únicas.
 -- Ejercicio 38 (RFM):
 cliente_id | nombre          | recency_dias | frequency | monetary  | rfm_total | segmento
 -----------+-----------------+--------------+-----------+-----------+-----------+------------------
-5          | Ana Martínez    |            5 |        12 | 85000.00  |         9 | ⭐ Champions
-3          | Carlos López    |           10 |         8 | 45000.00  |         8 | ⭐ Champions
-8          | Luis Gómez      |           15 |         5 | 28000.00  |         7 | 💎 Loyal Customers
-12         | María Silva     |           90 |         2 | 8000.00   |         3 | ⚠️ At Risk
-15         | Pedro Sánchez   |          180 |         1 | 2000.00   |         2 | 😴 Hibernating
+5          | Ana Martínez    |            5 |        12 | 85000.00  |         9 | Champions
+3          | Carlos López    |           10 |         8 | 45000.00  |         8 | Champions
+8          | Luis Gómez      |           15 |         5 | 28000.00  |         7 | Loyal Customers
+12         | María Silva     |           90 |         2 | 8000.00   |         3 | At Risk
+15         | Pedro Sánchez   |          180 |         1 | 2000.00   |         2 | Hibernating
 ```
 
 #### Verificación:
@@ -1670,9 +1670,9 @@ Consolidar todos los conocimientos con ejercicios desafiantes.
         ROUND(ingresos - ingresos_mes_anterior, 2) AS cambio_ingresos,
         ROUND((ingresos - ingresos_mes_anterior) / NULLIF(ingresos_mes_anterior, 0) * 100, 2) AS porcentaje_crecimiento,
         CASE
-            WHEN ingresos > ingresos_mes_anterior THEN '📈 Crecimiento'
-            WHEN ingresos < ingresos_mes_anterior THEN '📉 Decrecimiento'
-            ELSE '➡️ Estable'
+            WHEN ingresos > ingresos_mes_anterior THEN 'Crecimiento'
+            WHEN ingresos < ingresos_mes_anterior THEN 'Decrecimiento'
+            ELSE 'Estable'
         END AS tendencia
     FROM comparacion_mensual
     ORDER BY mes;
