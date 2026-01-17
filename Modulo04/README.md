@@ -187,7 +187,7 @@ Utilizar la cláusula WHERE con diferentes operadores para filtrar regis-tros es
     WHERE precio < 3000
         AND stock > 50
         AND categoria_id = 1;
-```
+    ```
 
 <br/><br/>
 
