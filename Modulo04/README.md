@@ -4,7 +4,7 @@
 <br/><br/>
 
 ## Duración	
-30 minutos
+60 minutos
 
 <br/><br/>
 
@@ -100,28 +100,28 @@ Practicar consultas SELECT simples para recuperar todos los datos y proyecciones
 
 3.	Ejecute la siguiente consulta para ver todos los productos:
 
-```sql
--- Ejercicio 1.1: Seleccionar todos los productos
-SELECT * FROM productos;
-```
+    ```sql
+    -- Ejercicio 1.1: Seleccionar todos los productos
+    SELECT * FROM productos;
+    ```
 
 4.	Ejecute una consulta con proyección específica de columnas:
 
-```sql
-   -- Ejercicio 1.2: Mostrar solo nombre y precio de productos
-   SELECT nombre, precio FROM productos;
-```
+    ```sql
+    -- Ejercicio 1.2: Mostrar solo nombre y precio de productos
+    SELECT nombre, precio FROM productos;
+    ```
 
 5.	Agregue un alias a las columnas para mejorar la legibilidad:
 
-```sql
-   -- Ejercicio 1.3: Usar alias para columnas
-   SELECT
-       nombre AS nombre_producto,
-       precio AS precio_unitario,
-       stock AS cantidad_disponible
-   FROM productos;
-```
+    ```sql
+    -- Ejercicio 1.3: Usar alias para columnas
+    SELECT
+        nombre AS nombre_producto,
+        precio AS precio_unitario,
+        stock AS cantidad_disponible
+    FROM productos;
+    ```
 
 <br/><br/>
 
@@ -143,50 +143,50 @@ Utilizar la cláusula WHERE con diferentes operadores para filtrar regis-tros es
  
 1.	Filtre productos con precio mayor a 5000:
 
-```sql
-   -- Ejercicio 2.1: Productos caros
-   SELECT nombre, precio
-   FROM productos
-   WHERE precio > 5000;
-```
+    ```sql
+    -- Ejercicio 2.1: Productos caros
+    SELECT nombre, precio
+    FROM productos
+    WHERE precio > 5000;
+    ```
 
 2.	Use el operador BETWEEN para rangos:
 
-```sql
-   -- Ejercicio 2.2: Productos en rango de precio
-   SELECT nombre, precio
-   FROM productos
-   WHERE precio BETWEEN 2000 AND 5000
-   ORDER BY precio;
-```
+    ```sql
+    -- Ejercicio 2.2: Productos en rango de precio
+    SELECT nombre, precio
+    FROM productos
+    WHERE precio BETWEEN 2000 AND 5000
+    ORDER BY precio;
+    ```
 
 3.	Aplique el operador IN para múltiples valores:
 
-```sql
-   -- Ejercicio 2.3: Productos de categorías específicas
-   SELECT nombre, categoria_id, precio
-   FROM productos
-   WHERE categoria_id IN (1, 2, 3);
-```
+    ```sql
+    -- Ejercicio 2.3: Productos de categorías específicas
+    SELECT nombre, categoria_id, precio
+    FROM productos
+    WHERE categoria_id IN (1, 2, 3);
+    ```
 
 4.	Use el operador LIKE para búsquedas de texto:
 
-```sql
-   -- Ejercicio 2.4: Buscar productos que contengan "Arroz"
-   SELECT nombre, precio
-   FROM productos
-   WHERE nombre LIKE '%Arroz%';
-```
+    ```sql
+    -- Ejercicio 2.4: Buscar productos que contengan "Arroz"
+    SELECT nombre, precio
+    FROM productos
+    WHERE nombre LIKE '%Arroz%';
+    ```
 
 5.	Combine múltiples condiciones con AND y OR:
 
-```sql
-   -- Ejercicio 2.5: Productos con condiciones múltiples
-   SELECT nombre, precio, stock
-   FROM productos
-   WHERE precio < 3000
-     AND stock > 50
-     AND categoria_id = 1;
+    ```sql
+    -- Ejercicio 2.5: Productos con condiciones múltiples
+    SELECT nombre, precio, stock
+    FROM productos
+    WHERE precio < 3000
+        AND stock > 50
+        AND categoria_id = 1;
 ```
 
 <br/><br/>
@@ -402,6 +402,8 @@ Agrupar datos y aplicar funciones de agregación a cada grupo.
    ORDER BY fecha_venta DESC;
 ```
 
+<br/><br/>
+
 #### Salida esperada
 Cada consulta debe mostrar múltiples filas, una por cada grupo.  
 Los totales y promedios deben ser calculados correctamente para cada grupo.
@@ -567,6 +569,8 @@ Aplicar funciones de manipulación de texto en consultas SQL.
    FROM productos
    WHERE nombre LIKE '%Arroz%';
 ```
+
+<br/><br/>
 
 #### Salida esperada
 Cada consulta debe mostrar las transformaciones de texto aplicadas correctamente.  
