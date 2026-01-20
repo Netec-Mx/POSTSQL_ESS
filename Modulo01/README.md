@@ -86,8 +86,6 @@ Antes de comenzar, verifica que tu sistema cumple con los requisitos:
 
 
 ## Instrucciones
-<br/><br/>
-
 
 ### Paso 1. Descargar PostgreSQL 18
 
@@ -1059,11 +1057,12 @@ Lo que has logrado:
 
 
 
+
 <br/><br/>
 
 ## Credenciales Importantes (Guarda Esta Información)
 
-Servidor PostgreSQL:
+Servidor **PostgreSQL**:
 
 | Campo                         | Valor                    |
 |-------------------------------|--------------------------|
@@ -1071,4 +1070,38 @@ Servidor PostgreSQL:
 | Puerto                        | 5432                     |
 | Usuario                       | postgres                 |
 | Contraseña                    | [La que configuraste]    |
-| Base de datos predeterminada  | postgres                 |
+| Base de datos predeterminada  | postgres                 | 
+
+
+<br/><br/>
+
+## Recursos Adicionales
+
+* **PostgreSQL – Documentación Oficial (v18)**
+  [https://www.postgresql.org/docs/18/](https://www.postgresql.org/docs/18/)
+  Documentación completa con referencia detallada de comandos SQL, funciones internas y opciones de configuración del motor.
+
+* **pgAdmin 4 – Documentación Oficial**
+  [https://www.pgadmin.org/docs/pgadmin4/latest/](https://www.pgadmin.org/docs/pgadmin4/latest/)
+  Guía completa para el uso de pgAdmin, incluyendo tutoriales paso a paso y ejemplos prácticos de administración.
+
+* **PostgreSQL Tutorial**
+  [https://www.postgresqltutorial.com/](https://www.postgresqltutorial.com/)
+  Tutoriales prácticos con ejemplos de SQL, desde nivel básico hasta avanzado, enfocados en el aprendizaje progresivo.
+
+* **PostgreSQL Wiki**
+  [https://wiki.postgresql.org/](https://wiki.postgresql.org/)
+  Recursos comunitarios, consejos de configuración, extensiones y mejores prácticas compartidas por usuarios expertos.
+
+* **Stack Overflow – PostgreSQL Tag**
+  [https://stackoverflow.com/questions/tagged/postgresql](https://stackoverflow.com/questions/tagged/postgresql)
+  Comunidad activa para resolver dudas técnicas, errores comunes y escenarios reales de producción.
+
+* **Optimización de Rendimiento en PostgreSQL**
+  [https://www.postgresql.org/docs/18/performance-tips.html](https://www.postgresql.org/docs/18/performance-tips.html)
+  Guía oficial para optimizar consultas SQL, índices, memoria y parámetros de configuración del servidor.
+
+* **pgExercises**
+  [https://pgexercises.com/](https://pgexercises.com/)
+  Plataforma interactiva para practicar SQL en PostgreSQL mediante ejercicios progresivos con validación inmediata.
+
