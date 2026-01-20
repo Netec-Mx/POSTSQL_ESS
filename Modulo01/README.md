@@ -134,7 +134,9 @@ Iniciar el proceso de instalación de PostgreSQL con privilegios de administrado
 #### Salida Esperada:
 Debe aparecer la ventana inicial del asistente de instalación de PostgreSQL con el título **Setup - PostgreSQL** y un mensaje de bienvenida.
 
+<p align="center">
 ![diagrama1](../images/img1.png)
+</p>
 
 <br/>
 
