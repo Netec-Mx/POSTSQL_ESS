@@ -167,7 +167,9 @@ Seleccionar la ubicación donde se instalará PostgreSQL en el sistema.
 
 La siguiente pantalla debe mostrar la ruta de los componentes a instalar.
 
-![diagrama2](../images/img2.png)
+<p align="center">
+  <img src="../images/img2.png" alt="diagrama2">
+</p>
 
 
 #### Verificación:
@@ -192,7 +194,9 @@ Elegir los componentes de PostgreSQL que se instalarán en el sistema.
 #### Salida Esperada:
 La siguiente pantalla lista los componentes a instalar.
 
-![diagrama3](../images/img3.png)
+<p align="center">
+  <img src="../images/img3.png" alt="diagrama3">
+</p>
 
 #### Verificación:
 - Todos los componentes deben tener una marca de verificación.
@@ -217,7 +221,9 @@ Establecer la ubicación donde PostgreSQL almacenará las bases de datos.
 #### Salida Esperada:
 La siguiente pantalla debe solicitar la ruta predeterminada para la instalación del software.
 
-![diagrama4](../images/img4.png)
+<p align="center">
+  <img src="../images/img4.png" alt="diagrama4">
+</p>
 
 #### Verificación:
 - La ruta del directorio de datos debe estar dentro de la carpeta de instalación de PostgreSQL.
@@ -245,7 +251,9 @@ Configurar una contraseña segura para el usuario administrador `postgres`.
 #### Salida Esperada:
 Si las contraseñas coinciden, avanzarás a la pantalla de configuración del puerto.
 
-![diagrama5](../images/img5.png)
+<p align="center">
+  <img src="../images/img5.png" alt="diagrama5">
+</p>
 
 #### Verificación:
 - Ambos campos de contraseña deben tener el mismo valor.
@@ -275,7 +283,9 @@ Establecer el puerto TCP/IP que PostgreSQL utilizará para recibir conexiones.
 #### Salida Esperada:
 La siguiente pantalla debe solicitar el número del puerto.
 
-![diagrama6](../images/img6.png)
+<p align="center">
+  <img src="../images/img6.png" alt="diagrama6">
+</p>
 
 #### Verificación:
 - El puerto debe ser 5432 (estándar).
@@ -299,12 +309,16 @@ Establecer la configuración regional para ordenamiento y formato de datos.
 #### Salida Esperada:
 Debe aparecer las opciones para seleccionar la región.
 
-![diagrama7](../images/img7.png)
+<p align="center">
+  <img src="../images/img7.png" alt="diagrama7">
+</p>
 
 <br/>
 Debe aparecer una pantalla de resumen mostrando todas las opciones de instalación configuradas.
 
-![diagrama81](../images/img81.png)
+<p align="center">
+  <img src="../images/img81.png" alt="diagrama81">
+</p>
 
 #### Verificación:
 - El locale seleccionado debe corresponder a tu región o idioma preferido
@@ -333,11 +347,16 @@ Verificar todas las configuraciones antes de proceder con la insstalación.
 #### Salida Esperada:
 Una barra de progreso debe mostrar el avance de la instalación, pasando por diferentes fases hasta completarse al 100%.
 
-![diagrama82](../images/img82.png)
+<p align="center">
+  <img src="../images/img82.png" alt="diagrama82">
+</p>
+
 
 <br/><br/>
 
-![diagrama83](../images/img83.png)
+<p align="center">
+  <img src="../images/img83.png" alt="diagrama83">
+</p>
 
 #### Verificación:
 
@@ -374,11 +393,15 @@ Completar la instalación y verificar que el servicio de PostgreSQL esté ejecut
 
 #### Salida Esperada:
  
-![diagrama8](../images/img8.png)
+<p align="center">
+  <img src="../images/img8.png" alt="diagrama8">
+</p>
 
 <br/>
 
-![diagrama84](../images/img84.png)
+<p align="center">
+  <img src="../images/img84.png" alt="diagrama84">
+</p>
 
 #### Verificación:
 - El servicio postgresql-x64-18 debe estar en estado `Running`
@@ -424,7 +447,9 @@ Confirmar que PostgreSQL está funcionando correctamente mediante la herramienta
 
 #### Salida Esperada:
 
-![diagrama9](../images/img9.png)
+<p align="center">
+  <img src="../images/img9.png" alt="diagrama9">
+</p>
 
 #### Verificación:
 - Debes poder conectarte sin errores de autenticación.
@@ -463,7 +488,9 @@ La interfaz de PgAdmin 4 debe cargarse en tu navegador mostrando:
 - Menú superior con opciones (File, Object, Tools, Help)
 
 
-![diagrama10](../images/img10.png)
+<p align="center">
+  <img src="../images/img10.png" alt="diagrama10">
+</p>
 
 
 #### Verificación:
@@ -502,11 +529,18 @@ Crear una conexión entre PgAdmin 4 y el servidor PostgreSQL local.
 
 En el panel izquierdo debes ver:
 
-![diagrama85](../images/img85.png)
+<p align="center">
+  <img src="../images/img85.png" alt="diagrama85">
+</p>
+
+ 
 
 <br/><br/>
 
-![diagrama11](../images/img11.png)
+<p align="center">
+  <img src="../images/img11.png" alt="diagrama11">
+</p>
+
 
 #### Verificación:
 - El servidor debe aparecer con un ícono de elefante verde (conectado).
@@ -546,7 +580,9 @@ Familiarizarse con los componentes principales de la interfaz de **PgAdmin 4**.
 #### Salida Esperada:
 La consulta debe ejecutarse y mostrar resultados en la parte inferior:
 
-![diagrama12](../images/img12.png)
+<p align="center">
+  <img src="../images/img12.png" alt="diagrama12">
+</p>
 
 #### Verificación:
 - El Query Tool debe abrir sin errores.
@@ -599,11 +635,16 @@ Verificar la capacidad de crear y gestionar bases de datos usando PgAdmin.
 
 #### Salida Esperada:
 
-![diagrama13](../images/img13.png)
+ 
+<p align="center">
+  <img src="../images/img13.png" alt="diagrama13">
+</p>
 
 <br/><br/>
 
-![diagrama14](../images/img14.png)
+<p align="center">
+  <img src="../images/img14.png" alt="diagrama14">
+</p>
 
 #### Verificación:
 - La base de datos `laboratorio_prueba` debe aparecer en el Browser.
@@ -650,7 +691,9 @@ Confirmar que todos los componentes están correctamente configurados y accesibl
 #### Salida Esperada:
 El log debe mostrar mensajes como:
 
-![diagrama15](../images/img15.png)
+<p align="center">
+  <img src="../images/img15.png" alt="diagrama15">
+</p>
 
 #### Verificación:
 - No deben aparecer mensajes de ERROR o FATAL en el log

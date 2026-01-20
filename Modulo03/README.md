@@ -103,7 +103,9 @@ CREATE DATABASE tienda_barrio
 
 #### Salida Esperada:
 
-![diagrama1](../images/img3_1.png)
+<p align="center">
+  <img src="../images/img3_1.png" alt="diagrama3_1">
+</p>
 
 <br/><br/>
 
@@ -160,7 +162,10 @@ INSERT INTO categorias (nombre, descripcion, activa) VALUES
 
 #### Salida Esperada:
 
-![diagrama2](../images/img3_2.png)
+<p align="center">
+  <img src="../images/img3_2.png" alt="diagrama3_2">
+</p>
+
 
 <br/><br/>
 
@@ -260,7 +265,10 @@ INSERT INTO productos (
 
 #### Salida Esperada:
 
-![diagrama3](../images/img3_3.png)
+<p align="center">
+  <img src="../images/img3_3.png" alt="diagrama3_3">
+</p>
+
 
 <br/><br/>
 
@@ -359,7 +367,10 @@ INSERT INTO clientes (
 
 #### Salida Esperada:
 
-![diagrama4](../images/img3_4.png)
+<p align="center">
+  <img src="../images/img3_4.png" alt="diagrama3_4">
+</p>
+
 
 <br/><br/>
 
@@ -456,7 +467,10 @@ INSERT INTO ventas (
 
 #### Salida Esperada:
 
-![diagrama5](../images/img3_5.png)
+<p align="center">
+  <img src="../images/img3_5.png" alt="diagrama3_5">
+</p>
+
 
 <br/><br/>
 
@@ -583,7 +597,10 @@ INSERT INTO detalle_ventas (venta_id, producto_id, cantidad, precio_unitario, su
 
 #### Salida Esperada:
 
-![diagrama6](../images/img3_6.png)
+<p align="center">
+  <img src="../images/img3_6.png" alt="diagrama3_6">
+</p>
+
 
 <br/><br/>
 
@@ -672,7 +689,10 @@ INSERT INTO proveedores (
 
 #### Salida Esperada:
 
-![diagrama7](../images/img3_7.png)
+<p align="center">
+  <img src="../images/img3_7.png" alt="diagrama3_7">
+</p>
+
 
 <br/><br/>
 
@@ -755,7 +775,10 @@ CHECK (email IS NULL OR email LIKE '%@%.%');
 
 #### Salida Esperada:
 
-![diagrama8](../images/img3_8.png)
+<p align="center">
+  <img src="../images/img3_8.png" alt="diagrama3_8">
+</p>
+
 
 <br/><br/>
 
