@@ -5,7 +5,7 @@
 <br/><br/>
 
 ## Duración	
-60 minutos
+100 minutos
 
 <br/><br/>
 

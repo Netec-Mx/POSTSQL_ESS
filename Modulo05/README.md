@@ -3,8 +3,8 @@
 
 <br/><br/>
 
-## Duración	
-60 minutos
+## Tiempo estimado	
+95 minutos
 
 <br/><br/>
 

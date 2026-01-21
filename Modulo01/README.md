@@ -4,7 +4,7 @@
 <br/><br/>
 
 ## Tiempo estimado:
-60 minutos
+90 minutos
 
 <br/><br/>
 
