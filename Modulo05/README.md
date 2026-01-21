@@ -1,4 +1,3 @@
- 
 # Práctica 5.1 Ejercicios aplicados a la base de datos del curso
 
 <br/><br/>

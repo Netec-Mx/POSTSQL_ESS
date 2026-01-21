@@ -2,7 +2,7 @@
 
 <br/><br/>
 
-## Tiempo Estimado	
+## Tiempo estimado	
 155 minutos
 
 <br/><br/>

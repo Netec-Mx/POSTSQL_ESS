@@ -1,9 +1,8 @@
-
 # Práctica 4.1 Ejercicios aplicados a la base de datos del curso
 
 <br/><br/>
 
-## Duración	
+## Tiempo estimado	
 110 minutos
 
 <br/><br/>

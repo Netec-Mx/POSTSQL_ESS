@@ -1,4 +1,4 @@
-# Práctica: Creación de la base de datos diseñada en la práctica anterior
+# Práctica 3.1 Creación de la base de datos diseñada en la práctica anterior
 
 <br/><br/>
 

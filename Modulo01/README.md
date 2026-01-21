@@ -1,9 +1,9 @@
 
-# Práctica 1.1  Instalación de Postgresql versión 18 y Pgadmin en Windows
+# Práctica 1.1 Instalación de Postgresql versión 18 y Pgadmin en Windows
 
 <br/><br/>
 
-## Tiempo estimado:
+## Tiempo estimado
 90 minutos
 
 <br/><br/>

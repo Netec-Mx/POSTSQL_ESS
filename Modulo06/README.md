@@ -1,10 +1,8 @@
- 
-
 # Práctica 6.1 Ejercicios aplicados a la base de datos del curso
 
 <br/><br/>
 
-## Duración	
+## Tiempo estimado	
 100 minutos
 
 <br/><br/>
