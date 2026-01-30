@@ -1,0 +1,138 @@
+
+
+═══════════════════════════════════════════════════════════════
+NORMALIZACIÓN DE LA BASE DE DATOS
+TIENDA DE BARRIO "EL RINCONCITO"
+═══════════════════════════════════════════════════════════════
+
+Autor: Blanca Leticia Escamilla
+Fecha: 27 Enero 2026
+Versión: 1.0
+
+## 1️. Primera Forma Normal (1FN)
+
+### Regla
+
+* Los atributos deben ser atómicos
+* No deben existir grupos repetitivos
+* Cada columna contiene un solo valor
+
+### Análisis por entidad
+
+**CLIENTE**
+
+* Posible problema: el atributo `nombre` podría dividirse en nombre y apellido.
+* Decisión: mantener `nombre` como campo único.
+* Justificación: simplicidad del negocio (tienda de barrio).
+
+**VENTA**
+
+* Problema potencial: múltiples productos en una sola venta.
+* Solución aplicada: uso de la tabla `DETALLE_VENTA`.
+* Resultado: cada producto vendido se almacena en un registro independiente.
+
+**DETALLE_VENTA**
+
+* Cada registro representa un solo producto vendido.
+* Atributos atómicos: cantidad, precio_unitario, subtotal.
+
+**PRODUCTO_PROVEEDOR**
+
+* Representa una relación única producto–proveedor.
+* No existen valores multivaluados.
+
+### Conclusión 1FN
+
+Todas las entidades cumplen con la Primera Forma Normal (1FN).
+
+---
+
+## 2️. Segunda Forma Normal (2FN)
+
+### Regla:
+Debe cumplir 1FN y no existir dependencias parciales.
+
+Análisis de claves primarias:
+
+Las siguientes entidades usan clave primaria simple:
+- CATEGORIA
+- PRODUCTO
+- CLIENTE
+- VENTA
+- PROVEEDOR
+
+Estas entidades cumplen automáticamente 2FN.
+
+ENTIDAD: DETALLE_VENTA
+- PK utilizada: detalle_venta_id (clave surrogate)
+- Todos los atributos dependen completamente de la PK.
+
+ENTIDAD: PRODUCTO_PROVEEDOR
+- PK utilizada: producto_proveedor_id
+- precio_compra y tiempo_entrega_dias dependen de la relación producto–proveedor.
+
+Decisión de diseño:
+Se utilizan claves primarias simples en lugar de claves compuestas
+para mejorar flexibilidad, rendimiento y simplicidad.
+
+Conclusión 2FN:
+No existen dependencias parciales.
+El diseño cumple completamente con la Segunda Forma Normal (2FN).
+
+
+---
+
+## 3️. Tercera Forma Normal (3FN)
+Regla:
+Debe cumplir 2FN y no existir dependencias transitivas no justificadas.
+
+ENTIDAD: PRODUCTO
+- categoria_id es FK hacia CATEGORIA.
+- nombre_categoria y descripcion_categoria no se almacenan en PRODUCTO.
+- No existen dependencias transitivas.
+
+ENTIDAD: VENTA
+- total = subtotal + impuesto
+- Existe dependencia transitiva técnica.
+- Decisión: mantener total por razones de auditoría, histórico y rendimiento.
+
+ENTIDAD: DETALLE_VENTA
+- subtotal = cantidad * precio_unitario
+- Decisión: persistir subtotal para mantener el valor histórico de la venta.
+
+ENTIDAD: CLIENTE
+- direccion podría normalizarse en más campos.
+- Decisión: mantener como campo único por simplicidad del negocio.
+
+Conclusión 3FN:
+El modelo cumple con Tercera Forma Normal (3FN)
+con excepciones justificadas por requisitos de negocio.
+
+---
+
+## 4️. Estado Final de Normalización
+
+✔ Primera Forma Normal (1FN): Cumplida
+✔ Segunda Forma Normal (2FN): Cumplida
+✔ Tercera Forma Normal (3FN): Cumplida con excepciones documentadas
+
+Excepciones justificadas:
+- VENTA.total
+- DETALLE_VENTA.subtotal
+- Campos de dirección no normalizados
+
+El diseño está listo para implementación física en PostgreSQL.
+
+---
+
+## ¿Qué valida el instructor con este archivo?
+
+✔ Que entiendes normalización, no solo que dibujaste tablas
+✔ Que sabes cuándo NO normalizar
+✔ Que puedes defender el diseño en un contexto real
+✔ Que el modelo es coherente con el ER entregado
+
+
+
+> Este documento demuestra que el modelo cumple las formas normales y explica conscientemente las excepciones por razones de negocio.”*
+

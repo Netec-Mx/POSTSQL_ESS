@@ -1,0 +1,83 @@
+
+
+
+ Table categoria {
+  categoria_id int [pk]
+  nombre varchar(100)
+  descripcion text
+}
+
+Table producto {
+  producto_id int [pk]
+  nombre varchar(200)
+  descripcion text
+  precio_venta decimal(10,2)
+  codigo_barras varchar(50)
+  stock_actual int
+  stock_minimo int
+  categoria_id int [not null]
+  fecha_registro timestamp
+  activo boolean
+}
+
+Table cliente {
+  cliente_id int [pk]
+  nombre varchar(100)
+  telefono varchar(20)
+  email varchar(100)
+  direccion varchar(255)
+  fecha_registro timestamp
+  activo boolean
+}
+
+Table venta {
+  venta_id int [pk]
+  fecha_venta timestamp
+  cliente_id int
+  subtotal decimal(10,2)
+  impuesto decimal(10,2)
+  total decimal(10,2)
+  metodo_pago varchar(50)
+}
+
+Table detalle_venta {
+  detalle_venta_id int [pk]
+  venta_id int [not null]
+  producto_id int [not null]
+  cantidad int
+  precio_unitario decimal(10,2)
+  subtotal decimal(10,2)
+}
+
+Table proveedor {
+  proveedor_id int [pk]
+  nombre_empresa varchar(200)
+  contacto_nombre varchar(100)
+  contacto_telefono varchar(20)
+  contacto_email varchar(100)
+  direccion varchar(255)
+  activo boolean
+}
+
+Table producto_proveedor {
+  producto_proveedor_id int [pk]
+  producto_id int [not null]
+  proveedor_id int [not null]
+  precio_compra decimal(10,2)
+  tiempo_entrega_dias int
+  es_proveedor_principal boolean
+}
+
+/* Relaciones */
+
+Ref: categoria.categoria_id < producto.categoria_id
+
+Ref: cliente.cliente_id < venta.cliente_id
+
+Ref: venta.venta_id < detalle_venta.venta_id
+
+Ref: producto.producto_id < detalle_venta.producto_id
+
+Ref: producto.producto_id < producto_proveedor.producto_id
+
+Ref: proveedor.proveedor_id < producto_proveedor.proveedor_id
